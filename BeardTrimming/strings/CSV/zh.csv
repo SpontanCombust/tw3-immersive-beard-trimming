@@ -1,0 +1,8 @@
+;meta[language=zh]
+; id | key(hex) | key(str) | text
+2116620000|F93F538A|dlc_beard_trimming|Beard Trimming
+2116620001|89430A26|dlc_beard_trimming_desc|Shave Geralt step by step
+2116620002|4A57C31F|item_name_scissors|Scissors
+2116620003|ACC965D9|item_desc_scissors|Used for beard trimming
+2116620004|81F9F2A0|mod_used_scissors_success|Geralt's beard has been trimmed
+

@@ -1,0 +1,11 @@
+{
+    "files": [
+        {
+            "path": "dlc\\beard_trimming\\data\\gameplay\\gui_new\\icons\\inventory\\ingredients\\junk\\scissors_64x64.png",
+            "level": 0,
+            "seed": 1,
+            "consumed": 1,
+            "id": "D04FAF8A-C07BFB4F-110A47D6-15B2555C"
+        }
+    ]
+}
