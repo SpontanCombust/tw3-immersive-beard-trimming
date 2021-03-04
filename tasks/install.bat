@@ -7,7 +7,7 @@ chcp 65001
 set W3INSTALL="D:\Przemek\Wiedźmin 3 - Edycja GOTY\The Witcher 3 Wild Hunt GOTY"
 
 :: Mods "packed" folder
-set PACKED="..\packed"
+set PACKED="D:\Przemek\Witcher3Modding\Projects\TW3ImmersiveBeardTrimming\packed"
 
 
 :: Copy Mods and DLC

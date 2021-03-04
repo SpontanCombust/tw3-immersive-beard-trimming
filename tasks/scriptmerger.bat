@@ -8,6 +8,6 @@ set SCRIPT_MERGER="D:\Przemek\Wiedźmin 3 - Edycja GOTY\W3SM"
 
 :: move and launch
 cd %SCRIPT_MERGER%
-%SCRIPT_MERGER%\WitcherScriptMerger.exe
+WitcherScriptMerger.exe
 
 ::pause

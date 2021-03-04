@@ -8,6 +8,6 @@ set WOLVENKIT="D:\Przemek\Witcher3Modding\Wolvenkit"
 
 :: move and launch
 cd %WOLVENKIT%
-%WOLVENKIT%\WolvenKit.exe
+WolvenKit.exe
 
 ::pause
