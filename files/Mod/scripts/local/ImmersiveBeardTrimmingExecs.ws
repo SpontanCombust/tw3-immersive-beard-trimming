@@ -1,6 +1,6 @@
 exec function gimmescissors()
 {
-    thePlayer.inv.AddAnItem('Scissors', 1);
+    thePlayer.inv.AddAnItem('ibt_scissors', 1);
 }
 
 exec function ibt_growhair()
