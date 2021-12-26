@@ -111,45 +111,71 @@ function IBT_GrowGeraltBeard()
 	headManager.BlockGrowing( false );
 }
 
-enum IBT_EHairLength
+
+
+
+
+
+
+enum IBT_EHairType
 {
-	IBT_HL_VeryShort,
-	IBT_HL_Short,
-	IBT_HL_Long,
-	IBT_HL_Invalid
+	IBT_HT_Unknown		= 0,
+	IBT_HT_ShortBand	= 1,
+	IBT_HT_ShortNoBand	= 2,
+	IBT_HT_LongBand		= 3,
+	IBT_HT_LongNoBand	= 4
 }
 
-function IBT_HairNameToLength( hairName : name ) : IBT_EHairLength
+function IBT_HairNameToType( hairName : name ) : IBT_EHairType
 {
 	switch( hairName )
 	{
 		case 'Mohawk With Ponytail Hairstyle':
-			return IBT_HL_VeryShort;
-		case 'Short Loose Hairstyle':
 		case 'Shaved With Tail Hairstyle':
+			return IBT_HT_ShortBand;
+		case 'Short Loose Hairstyle':
 		case 'Nilfgaardian Hairstyle':
-			return IBT_HL_Short;
+			return IBT_HT_ShortNoBand;
 		case 'Half With Tail Hairstyle':
+			return IBT_HT_LongBand;
 		case 'Long Loose Hairstyle':
-			return IBT_HL_Long;
+			return IBT_HT_LongNoBand;
 		default:
-			return IBT_HL_Invalid;
+			return IBT_HT_Unknown;
 	}
 }
 
-function IBT_GetGeraltHairLength() : IBT_EHairLength
+//TODO use menu options for conditional result
+function IBT_HairTypeToName( hairType : IBT_EHairType ) : name
+{
+	switch( hairType )
+	{
+		case IBT_HT_ShortBand:
+			return 'Shaved With Tail Hairstyle';
+		case IBT_HT_ShortNoBand:
+			return 'Short Loose Hairstyle';
+		case IBT_HT_LongBand:
+			return 'Half With Tail Hairstyle';
+		case IBT_HT_LongNoBand:
+			return 'Long Loose Hairstyle';
+		default:
+			return '';
+	}
+}
+
+function IBT_GetGeraltHairType() : IBT_EHairType
 {
 	var inv 		: CInventoryComponent;
 	var ids			: array<SItemUniqueId>;
 	var i			: int;
 	var size		: int;
-	var length		: IBT_EHairLength;
+	var hairType	: IBT_EHairType;
 	var hairName	: name;
 
 	inv = GetWitcherPlayer().GetInventory();
 	ids = inv.GetItemsByCategory( 'hair' );
 	size = ids.Size();
-	length = IBT_HL_Invalid;
+	hairType = IBT_HT_Unknown;
 
 	if( size > 0 )
 	{
@@ -158,11 +184,71 @@ function IBT_GetGeraltHairLength() : IBT_EHairLength
 			if( inv.IsItemMounted( ids[i] ) )
 			{
 				hairName = inv.GetItemName( ids[i] );
-				length = IBT_HairNameToLength( hairName );
+				hairType = IBT_HairNameToType( hairName );
 				break;
 			}
 		}
 	}
 
-	return length;
+	return hairType;
+}
+
+function IBT_CutGeraltHair()
+{
+	var hairType	: IBT_EHairType;
+	var hairName	: name;
+	var ids 		: array<SItemUniqueId>;
+
+	hairType = IBT_GetGeraltHairType();
+	if( hairType == IBT_HT_LongBand || hairType == IBT_HT_LongNoBand )
+	{
+		hairName = IBT_HairTypeToName( hairType - 2 );
+		ids = thePlayer.inv.AddAnItem( hairName, 1 );
+		thePlayer.EquipItem( ids[0] );
+	}
+}
+
+function IBT_GrowGeraltHair()
+{
+	var hairType	: IBT_EHairType;
+	var hairName	: name;
+	var ids 		: array<SItemUniqueId>;
+
+	hairType = IBT_GetGeraltHairType();
+	if( hairType == IBT_HT_ShortBand || hairType == IBT_HT_ShortNoBand )
+	{
+		hairName = IBT_HairTypeToName( hairType + 2 );
+		ids = thePlayer.inv.AddAnItem( hairName, 1 );
+		thePlayer.EquipItem( ids[0] );
+	}
+}
+
+function IBT_EquipGeraltHairBand()
+{
+	var hairType	: IBT_EHairType;
+	var hairName	: name;
+	var ids 		: array<SItemUniqueId>;
+
+	hairType = IBT_GetGeraltHairType();
+	if( hairType == IBT_HT_ShortNoBand || hairType == IBT_HT_LongNoBand )
+	{
+		hairName = IBT_HairTypeToName( hairType - 1 );
+		ids = thePlayer.inv.AddAnItem( hairName, 1 );
+		thePlayer.EquipItem( ids[0] );
+	}
+}
+
+function IBT_UnequipGeraltHairBand()
+{
+	var hairType	: IBT_EHairType;
+	var hairName	: name;
+	var ids 		: array<SItemUniqueId>;
+
+	hairType = IBT_GetGeraltHairType();
+	if( hairType == IBT_HT_ShortBand || hairType == IBT_HT_LongBand )
+	{
+		hairName = IBT_HairTypeToName( hairType + 1 );
+		ids = thePlayer.inv.AddAnItem( hairName, 1 );
+		thePlayer.EquipItem( ids[0] );
+	}
 }
