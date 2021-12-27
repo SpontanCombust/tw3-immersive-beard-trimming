@@ -3,28 +3,28 @@
 	<Group id="ImmersiveBeardTrimming" displayName="Mods.immersive_beard_trimming">
 		<PresetArray>
 			<Preset id="0" displayName="ibt_default">
-				<Entry varId="HairShortWithBand" value="0"/>
-				<Entry varId="HairShortWithoutBand" value="0"/>
+				<Entry varId="HairShortTied" value="0"/>
+				<Entry varId="HairShortUntied" value="0"/>
 			</Preset>
 		</PresetArray>
 		<VisibleVars>
-			<Var id="HairShortWithBand" displayName="ibt_hair_short_band" displayType="OPTIONS">
+			<Var id="HairShortTied" displayName="ibt_hair_short_tied" displayType="OPTIONS">
 				<OptionsArray>
 					<Option id="0" displayName="ibt_hairstyle_shaved_with_ponytail">
-						<Entry varId="HairShortWithBand" value="0"/>
+						<Entry varId="HairShortTied" value="0"/>
 					</Option>
 					<Option id="1" displayName="ibt_hairstyle_mohawk_with_ponytail">
-						<Entry varId="HairShortWithBand" value="1"/>
+						<Entry varId="HairShortTied" value="1"/>
 					</Option>
 				</OptionsArray>
 			</Var>
-			<Var id="HairShortWithoutBand" displayName="ibt_hair_short_noband" displayType="OPTIONS">
+			<Var id="HairShortUntied" displayName="ibt_hair_short_untied" displayType="OPTIONS">
 				<OptionsArray>
 					<Option id="0" displayName="ibt_hairstyle_short_loose">
-						<Entry varId="HairShortWithoutBand" value="0"/>
+						<Entry varId="HairShortUntied" value="0"/>
 					</Option>
 					<Option id="1" displayName="ibt_hairstyle_elven_rebel">
-						<Entry varId="HairShortWithoutBand" value="1"/>
+						<Entry varId="HairShortUntied" value="1"/>
 					</Option>
 				</OptionsArray>
 			</Var>

@@ -120,10 +120,10 @@ function IBT_GrowGeraltBeard()
 enum IBT_EHairType
 {
 	IBT_HT_Unknown		= 0,
-	IBT_HT_ShortBand	= 1,
-	IBT_HT_ShortNoBand	= 2,
-	IBT_HT_LongBand		= 3,
-	IBT_HT_LongNoBand	= 4
+	IBT_HT_ShortTied	= 1,
+	IBT_HT_ShortUntied	= 2,
+	IBT_HT_LongTied		= 3,
+	IBT_HT_LongUntied	= 4
 }
 
 function IBT_HairNameToType( hairName : name ) : IBT_EHairType
@@ -132,60 +132,57 @@ function IBT_HairNameToType( hairName : name ) : IBT_EHairType
 	{
 		case 'Mohawk With Ponytail Hairstyle':
 		case 'Shaved With Tail Hairstyle':
-			return IBT_HT_ShortBand;
+			return IBT_HT_ShortTied;
 		case 'Short Loose Hairstyle':
 		case 'Nilfgaardian Hairstyle':
-			return IBT_HT_ShortNoBand;
+			return IBT_HT_ShortUntied;
 		case 'Half With Tail Hairstyle':
-			return IBT_HT_LongBand;
+			return IBT_HT_LongTied;
 		case 'Long Loose Hairstyle':
-			return IBT_HT_LongNoBand;
+			return IBT_HT_LongUntied;
 		default:
 			return IBT_HT_Unknown;
 	}
 }
 
-//TODO rename to "tied" and "untied"
-function IBT_Menu_ShortHairWithBandName() : name
+function IBT_MenuShortHairName( tied: bool ) : name
 {
 	var config	: CInGameConfigWrapper;
 	var idx		: int;
 
 	config = theGame.GetInGameConfigWrapper();
-	idx = StringToInt( config.GetVarValue('ImmersiveBeardTrimming', 'HairShortWithBand'), 0);
 
-	if( idx == 0 )
-		return 'Shaved With Tail Hairstyle';
+	if( tied )
+	{
+		idx = StringToInt( config.GetVarValue('ImmersiveBeardTrimming', 'HairShortTied'), 0);
+
+		if( idx == 0 )
+			return 'Shaved With Tail Hairstyle';
+		else
+			return 'Mohawk With Ponytail Hairstyle';
+	}
 	else
-		return 'Mohawk With Ponytail Hairstyle';
+	{
+		idx = StringToInt( config.GetVarValue('ImmersiveBeardTrimming', 'HairShortUntied'), 0);
+
+		if( idx == 0 )
+			return 'Short Loose Hairstyle';
+		else
+			return 'Nilfgaardian Hairstyle';
+	}
 }
 
-function IBT_Menu_ShortHairWithoutBandName() : name
-{
-	var config	: CInGameConfigWrapper;
-	var idx		: int;
-
-	config = theGame.GetInGameConfigWrapper();
-	idx = StringToInt( config.GetVarValue('ImmersiveBeardTrimming', 'HairShortWithoutBand'), 0);
-
-	if( idx == 0 )
-		return 'Short Loose Hairstyle';
-	else
-		return 'Nilfgaardian Hairstyle';
-}
-
-//TODO use menu options for conditional result
 function IBT_HairTypeToName( hairType : IBT_EHairType ) : name
 {
 	switch( hairType )
 	{
-		case IBT_HT_ShortBand:
-			return IBT_Menu_ShortHairWithBandName();
-		case IBT_HT_ShortNoBand:
-			return IBT_Menu_ShortHairWithoutBandName();
-		case IBT_HT_LongBand:
+		case IBT_HT_ShortTied:
+			return IBT_MenuShortHairName(true);
+		case IBT_HT_ShortUntied:
+			return IBT_MenuShortHairName(false);
+		case IBT_HT_LongTied:
 			return 'Half With Tail Hairstyle';
-		case IBT_HT_LongNoBand:
+		case IBT_HT_LongUntied:
 			return 'Long Loose Hairstyle';
 		default:
 			return '';
@@ -229,7 +226,7 @@ function IBT_CutGeraltHair()
 	var ids 		: array<SItemUniqueId>;
 
 	hairType = IBT_GetGeraltHairType();
-	if( hairType == IBT_HT_LongBand || hairType == IBT_HT_LongNoBand )
+	if( hairType == IBT_HT_LongTied || hairType == IBT_HT_LongUntied )
 	{
 		hairName = IBT_HairTypeToName( hairType - 2 );
 		ids = thePlayer.inv.AddAnItem( hairName, 1 );
@@ -244,7 +241,7 @@ function IBT_GrowGeraltHair()
 	var ids 		: array<SItemUniqueId>;
 
 	hairType = IBT_GetGeraltHairType();
-	if( hairType == IBT_HT_ShortBand || hairType == IBT_HT_ShortNoBand )
+	if( hairType == IBT_HT_ShortTied || hairType == IBT_HT_ShortUntied )
 	{
 		hairName = IBT_HairTypeToName( hairType + 2 );
 		ids = thePlayer.inv.AddAnItem( hairName, 1 );
@@ -252,14 +249,14 @@ function IBT_GrowGeraltHair()
 	}
 }
 
-function IBT_EquipGeraltHairBand()
+function IBT_TieGeraltHair()
 {
 	var hairType	: IBT_EHairType;
 	var hairName	: name;
 	var ids 		: array<SItemUniqueId>;
 
 	hairType = IBT_GetGeraltHairType();
-	if( hairType == IBT_HT_ShortNoBand || hairType == IBT_HT_LongNoBand )
+	if( hairType == IBT_HT_ShortUntied || hairType == IBT_HT_LongUntied )
 	{
 		hairName = IBT_HairTypeToName( hairType - 1 );
 		ids = thePlayer.inv.AddAnItem( hairName, 1 );
@@ -267,14 +264,14 @@ function IBT_EquipGeraltHairBand()
 	}
 }
 
-function IBT_UnequipGeraltHairBand()
+function IBT_UntieGeraltHair()
 {
 	var hairType	: IBT_EHairType;
 	var hairName	: name;
 	var ids 		: array<SItemUniqueId>;
 
 	hairType = IBT_GetGeraltHairType();
-	if( hairType == IBT_HT_ShortBand || hairType == IBT_HT_LongBand )
+	if( hairType == IBT_HT_ShortTied || hairType == IBT_HT_LongTied )
 	{
 		hairName = IBT_HairTypeToName( hairType + 1 );
 		ids = thePlayer.inv.AddAnItem( hairName, 1 );

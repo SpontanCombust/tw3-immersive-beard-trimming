@@ -13,14 +13,14 @@ exec function ibt_cuthair()
     IBT_CutGeraltHair();
 }
 
-exec function ibt_band()
+exec function ibt_tiehair()
 {
-    IBT_EquipGeraltHairBand();
+    IBT_TieGeraltHair();
 }
 
-exec function ibt_noband()
+exec function ibt_untiehair()
 {
-    IBT_UnequipGeraltHairBand();
+    IBT_UntieGeraltHair();
 }
 
 exec function ibt_growbeard()
