@@ -1,8 +1,21 @@
 ;meta[language=en]
 ; id | key(hex) | key(str) | text
-2116620000|F93F538A|dlc_beard_trimming|Beard Trimming
-2116620001|89430A26|dlc_beard_trimming_desc|Shave Geralt step by step
-2116620002|4A57C31F|item_name_scissors|Scissors
-2116620003|ACC965D9|item_desc_scissors|Used for beard trimming
-2116620004|81F9F2A0|mod_used_scissors_success|Geralt's beard has been trimmed
-
+2114818000||dlc_beard_trimming|Immersive Beard Trimming
+2114818001||dlc_beard_trimming_desc|Cut Geralt's hair and beard like a true barber
+2114818002||item_name_ibt_scissors|Scissors
+2114818003||item_desc_ibt_scissors|Used for grooming beard and hair
+2114818004||ibt_notif_used_scissors_beard|Geralt's beard has been trimmed
+2114818005||ibt_notif_used_scissors_hair|Geralt's hair has been shortened
+2114818006||item_desc_ibt_scissors_mode_preamble|Mode
+2114818007||item_desc_ibt_scissors_mode_beard|Beard
+2114818008||item_desc_ibt_scissors_mode_hair|Hair
+2114818009||panel_immersive_beard_trimming|Immersive Beard Trimming
+2114818010||preset_value_ibt_default|Default
+2114818011||option_ibt_hair_short_tied|Short tied hair
+2114818012||preset_value_ibt_hairstyle_shaved_with_ponytail|Shaved except for a pony tail
+2114818013||preset_value_ibt_hairstyle_mohawk_with_ponytail|Shaved on the sides, short on top, and a ponytail
+2114818014||option_ibt_hair_short_untied|Short untied hair
+2114818015||preset_value_ibt_hairstyle_short_loose|Loose, not too long
+2114818016||preset_value_ibt_hairstyle_elven_rebel|The elven rebel
+2114818017||ibt_panel_button_changeScissorsMode|Change scissors mode
+2114818018||preset_Mods_immersive_beard_trimming|Presets

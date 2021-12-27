@@ -1,8 +1,21 @@
 ;meta[language=pl]
 ; id | key(hex) | key(str) | text
-2116620000|F93F538A|dlc_beard_trimming|Podcinanie Brody
-2116620001|89430A26|dlc_beard_trimming_desc|Podcinaj brodę Geralta krok po kroku
-2116620002|4A57C31F|item_name_scissors|Nożyczki
-2116620003|ACC965D9|item_desc_scissors|Używane do podcinania brody
-2116620004|81F9F2A0|mod_used_scissors_success|Broda Geralta została podcięta
-
+2114818000||dlc_beard_trimming|Podcinanie Brody
+2114818001||dlc_beard_trimming_desc|Podcinaj brodę Geralta krok po kroku
+2114818002||item_name_ibt_scissors|Nożyczki
+2114818003||item_desc_ibt_scissors|Używane do podcinania brody i włosów
+2114818004||ibt_notif_used_scissors_beard|Broda Geralta została podcięta
+2114818005||ibt_notif_used_scissors_hair|Długość włosów Geralta została skrócona
+2114818006||item_desc_ibt_scissors_mode_preamble|Tryb
+2114818007||item_desc_ibt_scissors_mode_beard|Broda
+2114818008||item_desc_ibt_scissors_mode_hair|Włosy
+2114818009||panel_immersive_beard_trimming|Immmersyjne Podcinanie Brody
+2114818010||preset_value_ibt_default|Domyślne
+2114818011||option_ibt_hair_short_tied|Krótkie związane włosy
+2114818012||preset_value_ibt_hairstyle_shaved_with_ponytail|Golenie i koński ogon
+2114818013||preset_value_ibt_hairstyle_mohawk_with_ponytail|Wygolone na skroniach i koński ogon
+2114818014||option_ibt_hair_short_untied|Krótkie rozpuszczone włosy
+2114818015||preset_value_ibt_hairstyle_short_loose|Niezbyt długie rozpuszczone
+2114818016||preset_value_ibt_hairstyle_elven_rebel|Na elfiego buntownika
+2114818017||ibt_panel_button_changeScissorsMode|Zmień tryb nożyczek
+2114818018||preset_Mods_immersive_beard_trimming|Predefiniowane ustawienia
