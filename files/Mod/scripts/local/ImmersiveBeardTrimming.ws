@@ -145,15 +145,44 @@ function IBT_HairNameToType( hairName : name ) : IBT_EHairType
 	}
 }
 
+//TODO rename to "tied" and "untied"
+function IBT_Menu_ShortHairWithBandName() : name
+{
+	var config	: CInGameConfigWrapper;
+	var idx		: int;
+
+	config = theGame.GetInGameConfigWrapper();
+	idx = StringToInt( config.GetVarValue('ImmersiveBeardTrimming', 'HairShortWithBand'), 0);
+
+	if( idx == 0 )
+		return 'Shaved With Tail Hairstyle';
+	else
+		return 'Mohawk With Ponytail Hairstyle';
+}
+
+function IBT_Menu_ShortHairWithoutBandName() : name
+{
+	var config	: CInGameConfigWrapper;
+	var idx		: int;
+
+	config = theGame.GetInGameConfigWrapper();
+	idx = StringToInt( config.GetVarValue('ImmersiveBeardTrimming', 'HairShortWithoutBand'), 0);
+
+	if( idx == 0 )
+		return 'Short Loose Hairstyle';
+	else
+		return 'Nilfgaardian Hairstyle';
+}
+
 //TODO use menu options for conditional result
 function IBT_HairTypeToName( hairType : IBT_EHairType ) : name
 {
 	switch( hairType )
 	{
 		case IBT_HT_ShortBand:
-			return 'Shaved With Tail Hairstyle';
+			return IBT_Menu_ShortHairWithBandName();
 		case IBT_HT_ShortNoBand:
-			return 'Short Loose Hairstyle';
+			return IBT_Menu_ShortHairWithoutBandName();
 		case IBT_HT_LongBand:
 			return 'Half With Tail Hairstyle';
 		case IBT_HT_LongNoBand:

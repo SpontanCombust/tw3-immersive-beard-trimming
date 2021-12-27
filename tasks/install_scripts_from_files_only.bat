@@ -12,7 +12,7 @@ set FILES="D:\Przemek\Witcher3Modding\Projects\TW3ImmersiveBeardTrimming\files"
 set MOD_NAME="modBeardTrimming"
 
 
-:: Copy Mods and DLC
+:: Copy scripts
 xcopy /YS %FILES%\Mod\scripts\ %W3INSTALL%\Mods\%MOD_NAME%\content\scripts\
 
 ::pause
