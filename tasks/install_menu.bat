@@ -7,7 +7,7 @@ chcp 65001
 set W3MODMENUS="D:\Przemek\Wiedźmin 3 - Edycja GOTY\The Witcher 3 Wild Hunt GOTY\bin\config\r4game\user_config_matrix\pc"
 
 :: Mod's "menu" folder
-set MENU="D:\Przemek\Witcher3Modding\Projects\TW3ImmersiveBeardTrimming\menu"
+set MENU="D:\Przemek\Witcher3Modding\Projects\BeardTrimming\menu"
 
 
 :: Copy the menu

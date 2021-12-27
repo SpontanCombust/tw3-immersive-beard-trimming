@@ -7,7 +7,7 @@ chcp 65001
 set W3INSTALL="D:\Przemek\Wiedźmin 3 - Edycja GOTY\The Witcher 3 Wild Hunt GOTY"
 
 :: Mod's "files" folder
-set FILES="D:\Przemek\Witcher3Modding\Projects\TW3ImmersiveBeardTrimming\files"
+set FILES="D:\Przemek\Witcher3Modding\Projects\BeardTrimming\files"
 
 set MOD_NAME="modBeardTrimming"
 
