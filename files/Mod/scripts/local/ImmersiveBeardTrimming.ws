@@ -377,7 +377,7 @@ function IBT_GetScissorsTooltipModeDescription( item: SItemUniqueId, inv: CInven
 
 	mode = IBT_GetScissorsMode( item, inv );
 
-	modeDesc = "<font color=\"#FCDA66\">" + GetLocStringByKeyExt("item_desc_ibt_scissors_mode_preamble") + ":</font> ";
+	modeDesc = "<font color=\"#C6A534\">" + GetLocStringByKeyExt("item_desc_ibt_scissors_mode_preamble") + ":</font> ";
 
 	modeDesc += "<font color=\"#00FF00\">[";
 	if( mode == IBT_SM_Beard )

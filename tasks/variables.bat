@@ -1,4 +1,4 @@
-@REM @echo off
+@echo off
 
 :: Enable non ascii characters
 chcp 65001
