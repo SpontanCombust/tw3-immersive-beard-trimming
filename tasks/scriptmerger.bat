@@ -1,13 +1,6 @@
-@echo off
+call variables.bat
 
-:: Enable non ascii characters
-chcp 65001
-
-:: SM main directory
-set SCRIPT_MERGER="D:\Przemek\Wiedźmin 3 - Edycja GOTY\W3SM"
 
 :: move and launch
-cd %SCRIPT_MERGER%
-WitcherScriptMerger.exe
-
-::pause
+cd %SCRIPT_MERGER_DIR%
+%SCRIPT_MERGER%
