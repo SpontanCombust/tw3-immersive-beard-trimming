@@ -109,7 +109,7 @@ function IBT_GrowGeraltBeard() : bool
 		destBeardStage = IBT_GetGeraltBeardStage() + 1;
 	}
 
-	if( destBeardStage < 4 && destBeardStage >= 1 )
+	if( estBeardStage >= 1 && destBeardStage <= 4 )
 	{
 		thePlayer.ClearRememberedCustomHead();
 		headManager.RemoveCustomHead();
