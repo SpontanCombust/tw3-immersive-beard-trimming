@@ -17,7 +17,9 @@
 2114818014||item_desc_ibt_scissors_mode_beard|Broda
 2114818015||item_desc_ibt_scissors_mode_hair|Włosy
 2114818016||ibt_panel_button_changeScissorsMode|Zmień tryb nożyczek
-2114818017||ibt_notif_used_scissors_beard|Broda Geralta została podcięta
-2114818018||ibt_notif_used_scissors_hair|Włosy Geralta zostały skrócone
-2114818019||item_name_ibt_hairtie|Gumka do włosów
-2114818020||item_desc_ibt_hairtie|Używana do wiązania włosów w koński ogon
+2114818017||ibt_notif_used_scissors_beard_success|Broda Geralta została podcięta
+2114818018||ibt_notif_used_scissors_beard_failure|Geralt jest już ogolony na gładko
+2114818019||ibt_notif_used_scissors_hair_success|Włosy Geralta zostały skrócone
+2114818020||ibt_notif_used_scissors_hair_failure|Włosy Geralta nie mogą już zostać dalej skrócone
+2114818021||item_name_ibt_hairtie|Gumka do włosów
+2114818022||item_desc_ibt_hairtie|Używana do wiązania włosów w koński ogon

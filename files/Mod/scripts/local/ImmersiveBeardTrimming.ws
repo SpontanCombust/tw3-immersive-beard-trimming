@@ -53,13 +53,13 @@ function IBT_GetGeraltBeardStage() : int
 			stage = 4;
 			break;
 		default:
-			stage = 0;
+			stage = -1;
 	}
 
 	return stage;
 }
 
-function IBT_TrimGeraltBeard()
+function IBT_TrimGeraltBeard() : bool
 {
 	var components		: array< CComponent >;
 	var headManager		: CHeadManagerComponent;
@@ -77,15 +77,21 @@ function IBT_TrimGeraltBeard()
 		destBeardStage = IBT_GetGeraltBeardStage() - 1;
 	}
 
-	// used by vanilla's RemoveCustomHead, so I assume it should work
-	thePlayer.ClearRememberedCustomHead();
-	headManager.RemoveCustomHead();
-
-	headManager.SetBeardStage( false, Max( 0, destBeardStage ) );
-	headManager.BlockGrowing( false );
+	if( destBeardStage >= 0 )
+	{
+		thePlayer.ClearRememberedCustomHead();
+		headManager.RemoveCustomHead();
+		headManager.SetBeardStage( false, destBeardStage );
+		headManager.BlockGrowing( false );
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
-function IBT_GrowGeraltBeard()
+function IBT_GrowGeraltBeard() : bool
 {
 	var components		: array< CComponent >;
 	var headManager		: CHeadManagerComponent;
@@ -103,12 +109,18 @@ function IBT_GrowGeraltBeard()
 		destBeardStage = IBT_GetGeraltBeardStage() + 1;
 	}
 
-	// used by vanilla's RemoveCustomHead, so I assume it should work
-	thePlayer.ClearRememberedCustomHead();
-	headManager.RemoveCustomHead();
-
-	headManager.SetBeardStage( false, Min( 4, destBeardStage ) );
-	headManager.BlockGrowing( false );
+	if( destBeardStage < 4 && destBeardStage >= 1 )
+	{
+		thePlayer.ClearRememberedCustomHead();
+		headManager.RemoveCustomHead();
+		headManager.SetBeardStage( false, destBeardStage );
+		headManager.BlockGrowing( false );
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 
@@ -219,7 +231,7 @@ function IBT_GetGeraltHairType() : IBT_EHairType
 	return hairType;
 }
 
-function IBT_CutGeraltHair()
+function IBT_CutGeraltHair() : bool
 {
 	var hairType	: IBT_EHairType;
 	var hairName	: name;
@@ -231,10 +243,15 @@ function IBT_CutGeraltHair()
 		hairName = IBT_HairTypeToName( hairType - 2 );
 		ids = thePlayer.inv.AddAnItem( hairName, 1 );
 		thePlayer.EquipItem( ids[0] );
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 }
 
-function IBT_GrowGeraltHair()
+function IBT_GrowGeraltHair() : bool
 {
 	var hairType	: IBT_EHairType;
 	var hairName	: name;
@@ -246,6 +263,11 @@ function IBT_GrowGeraltHair()
 		hairName = IBT_HairTypeToName( hairType + 2 );
 		ids = thePlayer.inv.AddAnItem( hairName, 1 );
 		thePlayer.EquipItem( ids[0] );
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 }
 
@@ -292,28 +314,37 @@ enum IBT_EScissorsMode
 
 function IBT_UseScissors( mode: IBT_EScissorsMode )
 {
+	var success: bool;
+
 	if (thePlayer.IsInCombat())
 	{
 		theGame.GetGuiManager().ShowNotification( GetLocStringByKeyExt("menu_cannot_perform_action_combat") );
-		theSound.SoundEvent("gui_global_denied");
+		success = false;
 	}
 	else
 	{
 		if( mode == IBT_SM_Beard )
 		{
-			IBT_TrimGeraltBeard();
-			//FIXME showing notification
-			theGame.GetGuiManager().ShowNotification( GetLocStringByKeyExt("ibt_notif_used_scissors_beard") );
+			success = IBT_TrimGeraltBeard();
+			if( success )
+				theGame.GetGuiManager().ShowNotification( GetLocStringByKeyExt("ibt_notif_used_scissors_beard_success") );
+			else
+				theGame.GetGuiManager().ShowNotification( GetLocStringByKeyExt("ibt_notif_used_scissors_beard_failure") );
 		}
 		else
 		{
-			IBT_CutGeraltHair();
-			//FIXME showing notification
-			theGame.GetGuiManager().ShowNotification( GetLocStringByKeyExt("ibt_notif_used_scissors_hair") );
+			success = IBT_CutGeraltHair();
+			if( success )
+				theGame.GetGuiManager().ShowNotification( GetLocStringByKeyExt("ibt_notif_used_scissors_hair_success") );
+			else
+				theGame.GetGuiManager().ShowNotification( GetLocStringByKeyExt("ibt_notif_used_scissors_hair_failure") );
 		}
-		
-		theSound.SoundEvent("gui_inventory_other_attach");
 	}
+
+	if( success )
+		theSound.SoundEvent("gui_inventory_other_attach");
+	else
+		theSound.SoundEvent("gui_global_denied");
 }
 
 function IBT_GetScissorsMode( item: SItemUniqueId, inv: CInventoryComponent ) : IBT_EScissorsMode
@@ -346,7 +377,7 @@ function IBT_GetScissorsTooltipModeDescription( item: SItemUniqueId, inv: CInven
 
 	mode = IBT_GetScissorsMode( item, inv );
 
-	modeDesc = "<font color=\"#FFDB00\">" + GetLocStringByKeyExt("item_desc_ibt_scissors_mode_preamble") + ":</font> ";
+	modeDesc = "<font color=\"#FCDA66\">" + GetLocStringByKeyExt("item_desc_ibt_scissors_mode_preamble") + ":</font> ";
 
 	modeDesc += "<font color=\"#00FF00\">[";
 	if( mode == IBT_SM_Beard )
