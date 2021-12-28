@@ -302,13 +302,13 @@ function IBT_UseScissors( mode: IBT_EScissorsMode )
 		if( mode == IBT_SM_Beard )
 		{
 			IBT_TrimGeraltBeard();
-			//TODO update strings
+			//FIXME showing notification
 			theGame.GetGuiManager().ShowNotification( GetLocStringByKeyExt("ibt_notif_used_scissors_beard") );
 		}
 		else
 		{
 			IBT_CutGeraltHair();
-			//TODO update strings
+			//FIXME showing notification
 			theGame.GetGuiManager().ShowNotification( GetLocStringByKeyExt("ibt_notif_used_scissors_hair") );
 		}
 		
@@ -346,18 +346,15 @@ function IBT_GetScissorsTooltipModeDescription( item: SItemUniqueId, inv: CInven
 
 	mode = IBT_GetScissorsMode( item, inv );
 
-	//TODO update strings
 	modeDesc = "<font color=\"#FFDB00\">" + GetLocStringByKeyExt("item_desc_ibt_scissors_mode_preamble") + ":</font> ";
 
 	modeDesc += "<font color=\"#00FF00\">[";
 	if( mode == IBT_SM_Beard )
 	{
-		//TODO update strings
 		modeDesc += GetLocStringByKeyExt("item_desc_ibt_scissors_mode_beard");
 	}
 	else
 	{
-		//TODO update strings
 		modeDesc += GetLocStringByKeyExt("item_desc_ibt_scissors_mode_hair");
 	}
 	modeDesc += "]</font>";

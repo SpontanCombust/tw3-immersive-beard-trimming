@@ -1,11 +1,18 @@
 {
     "files": [
         {
-            "path": "dlc\\beard_trimming\\data\\gameplay\\gui_new\\icons\\inventory\\ingredients\\junk\\scissors_64x64.png",
+            "path": "dlc\\beard_trimming\\data\\gameplay\\gui_new\\icons\\hair_tie64x64.png",
             "level": 0,
             "seed": 1,
             "consumed": 1,
-            "id": "D04FAF8A-C07BFB4F-110A47D6-15B2555C"
+            "id": "3CE7C949-0969255C-09082F1E-4A323E34"
+        },
+        {
+            "path": "dlc\\beard_trimming\\data\\gameplay\\gui_new\\icons\\scissors_64x64.png",
+            "level": 0,
+            "seed": 1,
+            "consumed": 1,
+            "id": "0FC0864E-D9F2D422-4654F9D4-DE625845"
         }
     ]
 }
