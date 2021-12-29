@@ -2,6 +2,8 @@ exec function ibt_items()
 {
     thePlayer.inv.AddAnItem('ibt_scissors', 1);
     thePlayer.inv.AddAnItem('ibt_hairtie', 1);
+    thePlayer.inv.AddAnItem('ibt_tonic_beard', 1);
+    thePlayer.inv.AddAnItem('ibt_tonic_hair', 1);
 }
 
 exec function ibt_growhair()
