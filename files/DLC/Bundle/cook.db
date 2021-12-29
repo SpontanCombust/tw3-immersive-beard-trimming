@@ -1,11 +1,11 @@
 {
     "files": [
         {
-            "path": "dlc\\beard_trimming\\data\\gameplay\\gui_new\\icons\\hair_tie64x64.png",
+            "path": "dlc\\beard_trimming\\data\\gameplay\\gui_new\\icons\\hair_tie_64x64.png",
             "level": 0,
             "seed": 1,
             "consumed": 1,
-            "id": "3CE7C949-0969255C-09082F1E-4A323E34"
+            "id": "3F5DB111-6BB69C57-F98E5236-96B0760A"
         },
         {
             "path": "dlc\\beard_trimming\\data\\gameplay\\gui_new\\icons\\scissors_64x64.png",
@@ -13,6 +13,20 @@
             "seed": 1,
             "consumed": 1,
             "id": "0FC0864E-D9F2D422-4654F9D4-DE625845"
+        },
+        {
+            "path": "dlc\\beard_trimming\\data\\gameplay\\gui_new\\icons\\tonic_beard_64x64.png",
+            "level": 0,
+            "seed": 1,
+            "consumed": 1,
+            "id": "5396B9DD-3B31AD64-C35D0D27-F5FB9C8A"
+        },
+        {
+            "path": "dlc\\beard_trimming\\data\\gameplay\\gui_new\\icons\\tonic_hair_64x64.png",
+            "level": 0,
+            "seed": 1,
+            "consumed": 1,
+            "id": "494E603B-DD87741D-A44EC9C3-B7E5BB74"
         }
     ]
 }
