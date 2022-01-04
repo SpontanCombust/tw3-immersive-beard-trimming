@@ -231,18 +231,41 @@ function IBT_GetGeraltHairType() : IBT_EHairType
 	return hairType;
 }
 
+function IBT_EquipHair( hairName : name )
+{
+	var inv 		: CInventoryComponent;
+	var ids			: array<SItemUniqueId>;
+	var i			: int;
+	var size		: int;
+
+	inv = GetWitcherPlayer().GetInventory();
+	ids = inv.GetItemsByCategory( 'hair' );
+	size = ids.Size();
+
+	// first clean up all hair items that are in inventory...
+	if( size > 0 )
+	{
+		for( i = 0; i < size; i+=1 )
+		{
+			inv.RemoveItem( ids[i], 1 );
+		}
+	}
+
+	// ... and only then add new hair item and mount it onto player model
+	ids = inv.AddAnItem( hairName );
+	inv.MountItem(ids[0]);
+}
+
 function IBT_CutGeraltHair() : bool
 {
 	var hairType	: IBT_EHairType;
 	var hairName	: name;
-	var ids 		: array<SItemUniqueId>;
 
 	hairType = IBT_GetGeraltHairType();
 	if( hairType == IBT_HT_LongTied || hairType == IBT_HT_LongUntied )
 	{
 		hairName = IBT_HairTypeToName( hairType - 2 );
-		ids = thePlayer.inv.AddAnItem( hairName, 1 );
-		thePlayer.EquipItem( ids[0] );
+		IBT_EquipHair( hairName );
 		return true;
 	}
 	else
@@ -255,14 +278,12 @@ function IBT_GrowGeraltHair() : bool
 {
 	var hairType	: IBT_EHairType;
 	var hairName	: name;
-	var ids 		: array<SItemUniqueId>;
 
 	hairType = IBT_GetGeraltHairType();
 	if( hairType == IBT_HT_ShortTied || hairType == IBT_HT_ShortUntied )
 	{
 		hairName = IBT_HairTypeToName( hairType + 2 );
-		ids = thePlayer.inv.AddAnItem( hairName, 1 );
-		thePlayer.EquipItem( ids[0] );
+		IBT_EquipHair( hairName );
 		return true;
 	}
 	else
@@ -275,14 +296,12 @@ function IBT_TieGeraltHair()
 {
 	var hairType	: IBT_EHairType;
 	var hairName	: name;
-	var ids 		: array<SItemUniqueId>;
 
 	hairType = IBT_GetGeraltHairType();
 	if( hairType == IBT_HT_ShortUntied || hairType == IBT_HT_LongUntied )
 	{
 		hairName = IBT_HairTypeToName( hairType - 1 );
-		ids = thePlayer.inv.AddAnItem( hairName, 1 );
-		thePlayer.EquipItem( ids[0] );
+		IBT_EquipHair( hairName );
 	}
 }
 
@@ -290,14 +309,12 @@ function IBT_UntieGeraltHair()
 {
 	var hairType	: IBT_EHairType;
 	var hairName	: name;
-	var ids 		: array<SItemUniqueId>;
 
 	hairType = IBT_GetGeraltHairType();
 	if( hairType == IBT_HT_ShortTied || hairType == IBT_HT_LongTied )
 	{
 		hairName = IBT_HairTypeToName( hairType + 1 );
-		ids = thePlayer.inv.AddAnItem( hairName, 1 );
-		thePlayer.EquipItem( ids[0] );
+		IBT_EquipHair( hairName );
 	}
 }
 
