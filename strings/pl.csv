@@ -1,9 +1,9 @@
 ;meta[language=pl]
 ; id | key(hex) | key(str) | text
-2114818000||dlc_beard_trimming|Podcinanie Brody
+2114818000||dlc_beard_trimming|Immmersyjne Podcinanie Brody
 2114818001||dlc_beard_trimming_desc|Podcinaj brodę i włosy Geralta jak prawdziwy golibroda
 2114818002||panel_immersive_beard_trimming|Immmersyjne Podcinanie Brody
-2114818003||preset_Mods_immersive_beard_trimming|Predefiniowane ustawienia
+2114818003||preset_Mods_immersive_beard_trimming_ibt_hair_styles|Predefiniowane ustawienia
 2114818004||preset_value_ibt_default|Domyślne
 2114818005||option_ibt_hair_short_tied|Krótkie związane włosy
 2114818006||preset_value_ibt_hairstyle_shaved_with_ponytail|Golenie i koński ogon
@@ -23,11 +23,29 @@
 2114818020||ibt_notif_used_scissors_hair_failure|Włosy Geralta nie mogą już zostać dalej skrócone
 2114818021||item_name_ibt_hairtie|Gumka do włosów
 2114818022||item_desc_ibt_hairtie|Używana do wiązania włosów w koński ogon.
-2114818023||item_name_ibt_tonic_beard|Tonik na porost brody
-2114818024||item_desc_ibt_tonic_beard|Używany do natychmiastowego rozwijania stadium zarostu.
-2114818025||item_name_ibt_tonic_hair|Tonik na porost włoów
-2114818026||item_desc_ibt_tonic_hair|Używany do natychmiastowego wydłużania włosów.
-2114818027||ibt_notif_drank_tonic_beard_success|Broda Geralta urosła o jeden stopień
-2114818028||ibt_notif_drank_tonic_beard_failure|Broda Geralta jest już w swoim ostatnim stadium
-2114818029||ibt_notif_drank_tonic_hair_success|Włosy Geralta zostały wydłużone
-2114818030||ibt_notif_drank_tonic_hair_failure|Włosy Geralta już są długie
+2114818023||ibt_notif_equipped_hairtie_success|Włosy Geralta zostały zawiązane w koński ogon
+2114818024||ibt_notif_equipped_hairtie_failure|Włosy Geralta nie mogą zostać znów zawiązane w koński ogon
+2114818025||ibt_notif_unequipped_hairtie_success|Włosy Geralta zostały rozpuszczone
+2114818026||ibt_notif_unequipped_hairtie_failure|Włosy Geralta nie mogły zostać jeszcze bardziej rozpuszczone
+2114818027||item_name_ibt_tonic_beard|Tonik na porost brody
+2114818028||item_desc_ibt_tonic_beard|Używany do natychmiastowego rozwijania stadium zarostu.
+2114818029||item_name_ibt_tonic_hair|Tonik na porost włoów
+2114818030||item_desc_ibt_tonic_hair|Używany do natychmiastowego wydłużania włosów.
+2114818031||ibt_notif_drank_tonic_beard_success|Broda Geralta urosła o jeden stopień
+2114818032||ibt_notif_drank_tonic_beard_failure|Broda Geralta jest już w swoim ostatnim stadium
+2114818033||ibt_notif_drank_tonic_hair_success|Włosy Geralta zostały wydłużone
+2114818034||ibt_notif_drank_tonic_hair_failure|Włosy Geralta już są długie
+2114818035||ibt_notif_exception|Immmersyjne Podcinanie Brody napotkało nieprzewidzianą sytuację
+2114818036||panel_ibt_hair_styles|Opcje fryzur
+2114818037||panel_ibt_item_behaviour|Zachowanie przedmiotów
+2114818038||preset_Mods_immersive_beard_trimming_ibt_item_behaviour|Predefiniowane ustawienia
+2114818039||option_ibt_behaviour_combat_block|Blokuj akcje w czasie walki
+2114818040||option_ibt_behaviour_custom_beard_trim|Podcinanie niestandardowej brody
+2114818041||preset_value_ibt_behaviour_do_nothing|Nie rób nic
+2114818042||preset_value_ibt_behaviour_beard_set_0|Ustaw na gładko ogolony
+2114818043||preset_value_ibt_behaviour_beard_set_1|Ustaw na stopień 1
+2114818044||preset_value_ibt_behaviour_beard_set_2|Ustaw na stopień 2
+2114818045||preset_value_ibt_behaviour_beard_set_3|Ustaw na stopień 3
+2114818046||preset_value_ibt_behaviour_beard_set_4|Ustaw na stopień 4
+2114818047||option_ibt_behaviour_custom_beard_grow|Porost niestandardowej brody
+2114818048||option_ibt_behaviour_block_unnecessary_tonic_consumption|Zapobiegnij niepotrzebnemu zużyciu toników

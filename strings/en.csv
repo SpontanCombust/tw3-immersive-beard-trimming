@@ -3,7 +3,7 @@
 2114818000||dlc_beard_trimming|Immersive Beard Trimming
 2114818001||dlc_beard_trimming_desc|Cut Geralt's hair and beard like a true barber
 2114818002||panel_immersive_beard_trimming|Immersive Beard Trimming
-2114818003||preset_Mods_immersive_beard_trimming|Presets
+2114818003||preset_Mods_immersive_beard_trimming_ibt_hair_styles|Presets
 2114818004||preset_value_ibt_default|Default
 2114818005||option_ibt_hair_short_tied|Short tied hair
 2114818006||preset_value_ibt_hairstyle_shaved_with_ponytail|Shaved except for a pony tail
@@ -23,11 +23,29 @@
 2114818020||ibt_notif_used_scissors_hair_failure|Geralt's hair can't be shortened any further
 2114818021||item_name_ibt_hairtie|Hair tie
 2114818022||item_desc_ibt_hairtie|Used for tieing hair into a ponytail.
-2114818023||item_name_ibt_tonic_beard|Beard Growth Tonic
-2114818024||item_desc_ibt_tonic_beard|Used for instantly making beard thicker.
-2114818025||item_name_ibt_tonic_hair|Hair Growth Tonic
-2114818026||item_desc_ibt_tonic_hair|Used for instantly making hair longer.
-2114818027||ibt_notif_drank_tonic_beard_success|Geralt's beard growth has been advanced by one stage
-2114818028||ibt_notif_drank_tonic_beard_failure|Geralt's beard is already at the last growth stage
-2114818029||ibt_notif_drank_tonic_hair_success|Geralt's hair has grown longer
-2114818030||ibt_notif_drank_tonic_hair_failure|Geralt's hair is already long
+2114818023||ibt_notif_equipped_hairtie_success|Geralt's hair has been tied into a ponytail
+2114818024||ibt_notif_equipped_hairtie_failure|Geralt's hair could not be tied into a ponytail again
+2114818025||ibt_notif_unequipped_hairtie_success|Geralt's hair has been made loose
+2114818026||ibt_notif_unequipped_hairtie_failure|Geralt's hair could not be made loose any further
+2114818027||item_name_ibt_tonic_beard|Beard Growth Tonic
+2114818028||item_desc_ibt_tonic_beard|Used for instantly making beard thicker.
+2114818029||item_name_ibt_tonic_hair|Hair Growth Tonic
+2114818030||item_desc_ibt_tonic_hair|Used for instantly making hair longer.
+2114818031||ibt_notif_drank_tonic_beard_success|Geralt's beard growth has been advanced by one stage
+2114818032||ibt_notif_drank_tonic_beard_failure|Geralt's beard is already at the last growth stage
+2114818033||ibt_notif_drank_tonic_hair_success|Geralt's hair has grown longer
+2114818034||ibt_notif_drank_tonic_hair_failure|Geralt's hair is already long
+2114818035||ibt_notif_exception|Immersive Beard Trimming ran into an unexpected situation
+2114818036||panel_ibt_hair_styles|Hair Style Options
+2114818037||panel_ibt_item_behaviour|Item behaviour
+2114818038||preset_Mods_immersive_beard_trimming_ibt_item_behaviour|Presets
+2114818039||option_ibt_behaviour_combat_block|Block actions during combat
+2114818040||option_ibt_behaviour_custom_beard_trim|Trimming a custom beard
+2114818041||preset_value_ibt_behaviour_do_nothing|Do nothing
+2114818042||preset_value_ibt_behaviour_beard_set_0|Set beard to clean shaved
+2114818043||preset_value_ibt_behaviour_beard_set_1|Set beard to stage 1
+2114818044||preset_value_ibt_behaviour_beard_set_2|Set beard to stage 2
+2114818045||preset_value_ibt_behaviour_beard_set_3|Set beard to stage 3
+2114818046||preset_value_ibt_behaviour_beard_set_4|Set beard to stage 4
+2114818047||option_ibt_behaviour_custom_beard_grow|Growing a custom beard
+2114818048||option_ibt_behaviour_block_unnecessary_tonic_consumption|Prevent unnecessary tonic consumption

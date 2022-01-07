@@ -5,6 +5,18 @@ enum IBT_EReturnStatus
 	IBT_RS_Exception
 }
 
+function IBT_ExceptionString() : string
+{
+	var s: string;
+
+	s += "<font color=\"#ff0000\">";
+	s += "[ERROR]";
+	s += "</font> ";
+	s += GetLocStringByKeyExt( "ibt_notif_exception" );
+
+	return s;
+}
+
 
 
 
@@ -460,7 +472,7 @@ function IBT_UseScissors( mode: IBT_EScissorsMode )
 	else
 	{
 		theSound.SoundEvent("gui_ingame_low_stamina_warning");
-		notifString = GetLocStringByKeyExt( "ibt_notif_exception" ); //TODO update strings
+		notifString = GetLocStringByKeyExt( "ibt_notif_exception" );
 	}
 
 	theGame.GetGuiManager().ShowNotification( notifString );
@@ -524,15 +536,15 @@ function IBT_OnEquipHairTie()
 
 	if( ret == IBT_RS_Success )
 	{
-		notifString = GetLocStringByKeyExt( "ibt_notif_equipped_hairtie_success" ); //TODO update strings
+		notifString = GetLocStringByKeyExt( "ibt_notif_equipped_hairtie_success" );
 	}
 	else if( ret == IBT_RS_Fail )
 	{
-		notifString = GetLocStringByKeyExt( "ibt_notif_equipped_hairtie_failure" ); //TODO update strings
+		notifString = GetLocStringByKeyExt( "ibt_notif_equipped_hairtie_failure" );
 	}
 	else
 	{
-		notifString = GetLocStringByKeyExt( "ibt_notif_exception" ); //TODO update strings
+		notifString = GetLocStringByKeyExt( "ibt_notif_exception" );
 		theSound.SoundEvent("gui_ingame_low_stamina_warning");
 	}
 	
@@ -548,15 +560,15 @@ function IBT_OnUnequipHairTie()
 
 	if( ret == IBT_RS_Success )
 	{
-		notifString = GetLocStringByKeyExt( "ibt_notif_unequipped_hairtie_success" ); //TODO update strings
+		notifString = GetLocStringByKeyExt( "ibt_notif_unequipped_hairtie_success" );
 	}
 	else if( ret == IBT_RS_Fail )
 	{
-		notifString = GetLocStringByKeyExt( "ibt_notif_unequipped_hairtie_failure" ); //TODO update strings
+		notifString = GetLocStringByKeyExt( "ibt_notif_unequipped_hairtie_failure" );
 	}
 	else
 	{
-		notifString = GetLocStringByKeyExt( "ibt_notif_exception" ); //TODO update strings
+		notifString = GetLocStringByKeyExt( "ibt_notif_exception" );
 		theSound.SoundEvent("gui_ingame_low_stamina_warning");
 	}
 	
@@ -611,7 +623,7 @@ function IBT_ConsumeTonicBeard( item: SItemUniqueId, inv: CInventoryComponent ) 
 	else
 	{
 		theSound.SoundEvent("gui_ingame_low_stamina_warning");
-		notifString = GetLocStringByKeyExt( "ibt_notif_exception" ); //TODO update strings
+		notifString = GetLocStringByKeyExt( "ibt_notif_exception" );
 	}
 
 	theGame.GetGuiManager().ShowNotification( notifString );
@@ -663,7 +675,7 @@ function IBT_ConsumeTonicHair( item: SItemUniqueId, inv: CInventoryComponent ) :
 	else
 	{
 		theSound.SoundEvent("gui_ingame_low_stamina_warning");
-		notifString = GetLocStringByKeyExt( "ibt_notif_exception" ); //TODO update strings
+		notifString = GetLocStringByKeyExt( "ibt_notif_exception" );
 	}
 
 	theGame.GetGuiManager().ShowNotification( notifString );
