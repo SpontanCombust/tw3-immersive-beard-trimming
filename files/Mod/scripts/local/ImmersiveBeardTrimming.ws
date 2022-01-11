@@ -436,7 +436,7 @@ function IBT_UseScissors( mode: IBT_EScissorsMode )
 	var ret			: IBT_EReturnStatus;
 	var notifString	: string;
 
-	if (thePlayer.IsInCombat())
+	if( IBT_Menu_BlockActionsDuringCombat() && thePlayer.IsInCombat() )
 	{
 		notifString = GetLocStringByKeyExt( "menu_cannot_perform_action_combat" );
 		ret = IBT_RS_Fail;
@@ -586,7 +586,7 @@ function IBT_ConsumeTonicBeard( item: SItemUniqueId, inv: CInventoryComponent ) 
 	var menu			: CR4InventoryMenu;
 	var wasItemRemoved	: bool;
 
-	if (thePlayer.IsInCombat())
+	if( IBT_Menu_BlockActionsDuringCombat() && thePlayer.IsInCombat() )
 	{
 		notifString = GetLocStringByKeyExt("menu_cannot_perform_action_combat");
 		ret = IBT_RS_Fail;
@@ -603,7 +603,7 @@ function IBT_ConsumeTonicBeard( item: SItemUniqueId, inv: CInventoryComponent ) 
 
 	wasItemRemoved = false;
 
-	if( ret == IBT_RS_Success )
+	if( ret == IBT_RS_Success || !IBT_Menu_BlockUnnecessaryTonicConsumption() )
 	{
 		theSound.SoundEvent("gui_inventory_drink");
 
@@ -638,7 +638,7 @@ function IBT_ConsumeTonicHair( item: SItemUniqueId, inv: CInventoryComponent ) :
 	var menu			: CR4InventoryMenu;
 	var wasItemRemoved	: bool;
 
-	if (thePlayer.IsInCombat())
+	if( IBT_Menu_BlockActionsDuringCombat() && thePlayer.IsInCombat() )
 	{
 		notifString = GetLocStringByKeyExt("menu_cannot_perform_action_combat");
 		ret = IBT_RS_Fail;
@@ -655,7 +655,7 @@ function IBT_ConsumeTonicHair( item: SItemUniqueId, inv: CInventoryComponent ) :
 
 	wasItemRemoved = false;
 
-	if( ret == IBT_RS_Success )
+	if( ret == IBT_RS_Success || !IBT_Menu_BlockUnnecessaryTonicConsumption() )
 	{
 		theSound.SoundEvent("gui_inventory_drink");
 
