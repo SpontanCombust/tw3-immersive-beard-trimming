@@ -36,12 +36,12 @@ function IBT_Menu_BlockActionsDuringCombat() : bool
 
 enum IBT_ECustomBeardBehaviour
 {
-    IBT_CBB_DoNothing,
-    IBT_CBB_SetBeard0,
-    IBT_CBB_SetBeard1,
-    IBT_CBB_SetBeard2,
-    IBT_CBB_SetBeard3,
-    IBT_CBB_SetBeard4
+    IBT_CBB_DoNothing = -1,
+    IBT_CBB_SetBeard0 = 0,
+    IBT_CBB_SetBeard1 = 1,
+    IBT_CBB_SetBeard2 = 2,
+    IBT_CBB_SetBeard3 = 3,
+    IBT_CBB_SetBeard4 = 4
 }
 
 function IBT_Menu_CustomBeardTrimBehaviour() : IBT_ECustomBeardBehaviour

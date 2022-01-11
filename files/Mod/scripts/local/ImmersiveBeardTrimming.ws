@@ -54,29 +54,6 @@ function IBT_GetGeraltBeardStage( headName: name ) : int
 	}
 }
 
-function IBT_IsDLC2VanillaBeard( headName: name ) : bool
-{
-	switch( headName )
-	{
-		case 'head_5':
-		case 'head_5_tattoo':
-		case 'head_5_mark':
-		case 'head_5_mark_tattoo':
-		case 'head_6':
-		case 'head_6_tattoo':
-		case 'head_6_mark':
-		case 'head_6_mark_tattoo':
-		case 'head_7':
-		case 'head_7_tattoo':
-		case 'head_7_mark':
-		case 'head_7_mark_tattoo':
-			return true;
-		default:
-			return false;
-	}
-}
-
-
 
 
 
@@ -144,19 +121,21 @@ function IBT_SetGeraltHead( head : IBT_SGeraltHead )
 
 function IBT_TrimGeraltBeard() : IBT_EReturnStatus
 {
-	var head		: IBT_SGeraltHead;
-	var ret			: IBT_EReturnStatus;
+	var head	: IBT_SGeraltHead;
+	var ret		: IBT_EReturnStatus;
+	var beh		: IBT_ECustomBeardBehaviour;
 
 	head = IBT_GetGeraltHead();
 
 	if( head.isCustom )
 	{
-		if( IBT_IsDLC2VanillaBeard( head.headName ) )
+		beh = IBT_Menu_CustomBeardTrimBehaviour();
+
+		if( beh != IBT_CBB_DoNothing )
 		{
-			// FIXME for now just default to clean shaved
-			head.isCustom = false;
-			head.beardStage = 0;
 			ret = IBT_RS_Success;
+			head.isCustom = false;
+			head.beardStage = (int)beh;
 		}
 		else
 		{
@@ -186,19 +165,21 @@ function IBT_TrimGeraltBeard() : IBT_EReturnStatus
 
 function IBT_GrowGeraltBeard() : IBT_EReturnStatus
 {
-	var head		: IBT_SGeraltHead;
-	var ret			: IBT_EReturnStatus;
+	var head	: IBT_SGeraltHead;
+	var ret		: IBT_EReturnStatus;
+	var beh		: IBT_ECustomBeardBehaviour;
 
 	head = IBT_GetGeraltHead();
 
 	if( head.isCustom )
 	{
-		if( IBT_IsDLC2VanillaBeard( head.headName ) )
+		beh = IBT_Menu_CustomBeardGrowBehaviour();
+
+		if( beh != IBT_CBB_DoNothing )
 		{
-			// FIXME for now default to full beard
-			head.isCustom = false;
-			head.beardStage = 4;
 			ret = IBT_RS_Success;
+			head.isCustom = false;
+			head.beardStage = (int)beh;
 		}
 		else
 		{
