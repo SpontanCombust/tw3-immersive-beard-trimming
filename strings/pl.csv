@@ -35,17 +35,16 @@
 2114818032||ibt_notif_drank_tonic_beard_failure|Broda Geralta jest już w swoim ostatnim stadium
 2114818033||ibt_notif_drank_tonic_hair_success|Włosy Geralta zostały wydłużone
 2114818034||ibt_notif_drank_tonic_hair_failure|Włosy Geralta już są długie
-2114818035||ibt_notif_exception|Immmersyjne Podcinanie Brody napotkało nieprzewidzianą sytuację
-2114818036||panel_ibt_hair_styles|Opcje fryzur
-2114818037||panel_ibt_item_behaviour|Zachowanie przedmiotów
-2114818038||preset_Mods_immersive_beard_trimming_ibt_item_behaviour|Predefiniowane ustawienia
-2114818039||option_ibt_behaviour_combat_block|Blokuj akcje w czasie walki
-2114818040||option_ibt_behaviour_custom_beard_trim|Podcinanie niestandardowej brody
-2114818041||preset_value_ibt_behaviour_do_nothing|Nie rób nic
-2114818042||preset_value_ibt_behaviour_beard_set_0|Ustaw na gładko ogolony
-2114818043||preset_value_ibt_behaviour_beard_set_1|Ustaw na stopień 1
-2114818044||preset_value_ibt_behaviour_beard_set_2|Ustaw na stopień 2
-2114818045||preset_value_ibt_behaviour_beard_set_3|Ustaw na stopień 3
-2114818046||preset_value_ibt_behaviour_beard_set_4|Ustaw na stopień 4
-2114818047||option_ibt_behaviour_custom_beard_grow|Porost niestandardowej brody
-2114818048||option_ibt_behaviour_block_unnecessary_tonic_consumption|Zapobiegnij niepotrzebnemu zużyciu toników
+2114818035||panel_ibt_hair_styles|Opcje fryzur
+2114818036||panel_ibt_item_behaviour|Zachowanie przedmiotów
+2114818037||preset_Mods_immersive_beard_trimming_ibt_item_behaviour|Predefiniowane ustawienia
+2114818038||option_ibt_behaviour_combat_block|Blokuj akcje w czasie walki
+2114818039||option_ibt_behaviour_custom_beard_trim|Podcinanie niestandardowej brody
+2114818040||preset_value_ibt_behaviour_do_nothing|Nie rób nic
+2114818041||preset_value_ibt_behaviour_beard_set_0|Ustaw na gładko ogolony
+2114818042||preset_value_ibt_behaviour_beard_set_1|Ustaw na stopień 1
+2114818043||preset_value_ibt_behaviour_beard_set_2|Ustaw na stopień 2
+2114818044||preset_value_ibt_behaviour_beard_set_3|Ustaw na stopień 3
+2114818045||preset_value_ibt_behaviour_beard_set_4|Ustaw na stopień 4
+2114818046||option_ibt_behaviour_custom_beard_grow|Porost niestandardowej brody
+2114818047||option_ibt_behaviour_block_unnecessary_tonic_consumption|Zapobiegnij niepotrzebnemu zużyciu toników

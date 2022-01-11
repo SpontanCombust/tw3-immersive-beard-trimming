@@ -1,25 +1,3 @@
-enum IBT_EReturnStatus
-{
-	IBT_RS_Success,
-	IBT_RS_Fail,
-	IBT_RS_Exception
-}
-
-function IBT_ExceptionString() : string
-{
-	var s: string;
-
-	s += "<font color=\"#ff0000\">";
-	s += "[ERROR]";
-	s += "</font> ";
-	s += GetLocStringByKeyExt( "ibt_notif_exception" );
-
-	return s;
-}
-
-
-
-
 function IBT_GetGeraltBeardStage( headName: name ) : int
 {
 	switch( headName )
@@ -119,10 +97,10 @@ function IBT_SetGeraltHead( head : IBT_SGeraltHead )
 	}
 }
 
-function IBT_TrimGeraltBeard() : IBT_EReturnStatus
+function IBT_TrimGeraltBeard() : bool
 {
 	var head	: IBT_SGeraltHead;
-	var ret		: IBT_EReturnStatus;
+	var ret		: bool;
 	var beh		: IBT_ECustomBeardBehaviour;
 
 	head = IBT_GetGeraltHead();
@@ -131,42 +109,39 @@ function IBT_TrimGeraltBeard() : IBT_EReturnStatus
 	{
 		beh = IBT_Menu_CustomBeardTrimBehaviour();
 
-		if( beh != IBT_CBB_DoNothing )
+		if( beh == IBT_CBB_DoNothing )
 		{
-			ret = IBT_RS_Success;
-			head.isCustom = false;
-			head.beardStage = (int)beh;
+			// if we're supposed to do nothing then just return with true right away and pretend everything is nice and dandy
+			return true;
 		}
-		else
-		{
-			ret = IBT_RS_Exception;
-		}
+
+		// ...otherwise continue on with changing the beard
+		head.isCustom = false;
+		head.beardStage = (int)beh;
+		ret = true;
 	}
 	else if( head.beardStage > 0 )
 	{
+		head.isCustom = false;
 		head.beardStage -= 1;
-		ret = IBT_RS_Success;
-	}
-	else if( head.beardStage == 0 )
-	{
-		// geralt is clean shaved and can't be shaved any more
-		ret = IBT_RS_Fail;
+		ret = true;
 	}
 	else
 	{
-		ret = IBT_RS_Exception;
+		// geralt is clean shaved and can't be shaved any more
+		ret = false;
 	}
 
-	if( ret == IBT_RS_Success )
+	if( ret )
 		IBT_SetGeraltHead( head );
 	
 	return ret;
 }
 
-function IBT_GrowGeraltBeard() : IBT_EReturnStatus
+function IBT_GrowGeraltBeard() : bool
 {
 	var head	: IBT_SGeraltHead;
-	var ret		: IBT_EReturnStatus;
+	var ret		: bool;
 	var beh		: IBT_ECustomBeardBehaviour;
 
 	head = IBT_GetGeraltHead();
@@ -175,33 +150,27 @@ function IBT_GrowGeraltBeard() : IBT_EReturnStatus
 	{
 		beh = IBT_Menu_CustomBeardGrowBehaviour();
 
-		if( beh != IBT_CBB_DoNothing )
+		if( beh == IBT_CBB_DoNothing )
 		{
-			ret = IBT_RS_Success;
-			head.isCustom = false;
-			head.beardStage = (int)beh;
+			return true;
 		}
-		else
-		{
-			ret = IBT_RS_Exception;
-		}
+
+		head.isCustom = false;
+		head.beardStage = (int)beh;
+		ret = true;
 	}
 	else if( head.beardStage >= 0 && head.beardStage < 4 )
 	{
 		head.beardStage += 1;
-		ret = IBT_RS_Success;
-	}
-	else if( head.beardStage == 4 )
-	{
-		// beard is at full stage and can't grow any more
-		ret = IBT_RS_Fail;
+		ret = true;
 	}
 	else
 	{
-		ret = IBT_RS_Exception;
+		// beard is at full stage and can't grow any more
+		ret = false;
 	}
 
-	if( ret == IBT_RS_Success )
+	if( ret )
 		IBT_SetGeraltHead( head );
 
 	return ret;
@@ -313,7 +282,7 @@ function IBT_EquipGeraltHair( hairName : name )
 	inv.MountItem(ids[0]);
 }
 
-function IBT_CutGeraltHair() : IBT_EReturnStatus
+function IBT_CutGeraltHair() : bool
 {
 	var hairType	: IBT_EHairType;
 	var hairName	: name;
@@ -323,19 +292,13 @@ function IBT_CutGeraltHair() : IBT_EReturnStatus
 	{
 		hairName = IBT_HairTypeToName( hairType - 2 );
 		IBT_EquipGeraltHair( hairName );
-		return IBT_RS_Success;
+		return true;
 	}
-	else if( hairType == IBT_HT_Unknown )
-	{
-		return IBT_RS_Exception;
-	}
-	else
-	{
-		return IBT_RS_Fail;
-	}
+
+	return false;
 }
 
-function IBT_GrowGeraltHair() : IBT_EReturnStatus
+function IBT_GrowGeraltHair() : bool
 {
 	var hairType	: IBT_EHairType;
 	var hairName	: name;
@@ -345,19 +308,13 @@ function IBT_GrowGeraltHair() : IBT_EReturnStatus
 	{
 		hairName = IBT_HairTypeToName( hairType + 2 );
 		IBT_EquipGeraltHair( hairName );
-		return IBT_RS_Success;
+		return true;
 	}
-	else if( hairType == IBT_HT_Unknown )
-	{
-		return IBT_RS_Exception;
-	}
-	else
-	{
-		return IBT_RS_Fail;
-	}
+	
+	return false;
 }
 
-function IBT_TieGeraltHair() : IBT_EReturnStatus
+function IBT_TieGeraltHair() : bool
 {
 	var hairType	: IBT_EHairType;
 	var hairName	: name;
@@ -367,19 +324,13 @@ function IBT_TieGeraltHair() : IBT_EReturnStatus
 	{
 		hairName = IBT_HairTypeToName( hairType - 1 );
 		IBT_EquipGeraltHair( hairName );
-		return IBT_RS_Success;
+		return true;
 	}
-	else if( hairType == IBT_HT_Unknown )
-	{
-		return IBT_RS_Exception;
-	}
-	else
-	{
-		return IBT_RS_Fail;
-	}
+	
+	return false;
 }
 
-function IBT_UntieGeraltHair() : IBT_EReturnStatus
+function IBT_UntieGeraltHair() : bool
 {
 	var hairType	: IBT_EHairType;
 	var hairName	: name;
@@ -389,16 +340,10 @@ function IBT_UntieGeraltHair() : IBT_EReturnStatus
 	{
 		hairName = IBT_HairTypeToName( hairType + 1 );
 		IBT_EquipGeraltHair( hairName );
-		return IBT_RS_Success;
+		return true;
 	}
-	else if( hairType == IBT_HT_Unknown )
-	{
-		return IBT_RS_Exception;
-	}
-	else
-	{
-		return IBT_RS_Fail;
-	}
+	
+	return false;
 }
 
 
@@ -414,47 +359,38 @@ enum IBT_EScissorsMode
 
 function IBT_UseScissors( mode: IBT_EScissorsMode )
 {
-	var ret			: IBT_EReturnStatus;
+	var ret			: bool;
 	var notifString	: string;
 
 	if( IBT_Menu_BlockActionsDuringCombat() && thePlayer.IsInCombat() )
 	{
 		notifString = GetLocStringByKeyExt( "menu_cannot_perform_action_combat" );
-		ret = IBT_RS_Fail;
+		ret = false;
 	}
 	else
 	{
 		if( mode == IBT_SM_Beard )
 		{
 			ret = IBT_TrimGeraltBeard();
-			if( ret == IBT_RS_Success )
+			if( ret )
 				notifString = GetLocStringByKeyExt( "ibt_notif_used_scissors_beard_success" );
-			else if( ret == IBT_RS_Fail )
+			else
 				notifString = GetLocStringByKeyExt( "ibt_notif_used_scissors_beard_failure" );
 		}
 		else
 		{
 			ret = IBT_CutGeraltHair();
-			if( ret == IBT_RS_Success )
+			if( ret )
 				notifString = GetLocStringByKeyExt( "ibt_notif_used_scissors_hair_success" );
-			else if( ret == IBT_RS_Fail )
+			else
 				notifString = GetLocStringByKeyExt( "ibt_notif_used_scissors_hair_failure" );
 		}
 	}
 
-	if( ret == IBT_RS_Success )
-	{
+	if( ret )
 		theSound.SoundEvent("gui_inventory_other_attach");
-	}
-	else if( ret == IBT_RS_Fail )
-	{
-		theSound.SoundEvent("gui_global_denied");
-	}
 	else
-	{
-		theSound.SoundEvent("gui_ingame_low_stamina_warning");
-		notifString = GetLocStringByKeyExt( "ibt_notif_exception" );
-	}
+		theSound.SoundEvent("gui_global_denied");
 
 	theGame.GetGuiManager().ShowNotification( notifString );
 }
@@ -493,13 +429,10 @@ function IBT_GetScissorsTooltipModeDescription( item: SItemUniqueId, inv: CInven
 
 	modeDesc += "<font color=\"#00FF00\">[";
 	if( mode == IBT_SM_Beard )
-	{
 		modeDesc += GetLocStringByKeyExt("item_desc_ibt_scissors_mode_beard");
-	}
 	else
-	{
 		modeDesc += GetLocStringByKeyExt("item_desc_ibt_scissors_mode_hair");
-	}
+
 	modeDesc += "]</font>";
 
 	return modeDesc;
@@ -510,48 +443,30 @@ function IBT_GetScissorsTooltipModeDescription( item: SItemUniqueId, inv: CInven
 
 function IBT_OnEquipHairTie()
 {
-	var ret 		: IBT_EReturnStatus;
+	var ret 		: bool;
 	var notifString	: string;
 
 	ret = IBT_TieGeraltHair();
 
-	if( ret == IBT_RS_Success )
-	{
+	if( ret )
 		notifString = GetLocStringByKeyExt( "ibt_notif_equipped_hairtie_success" );
-	}
-	else if( ret == IBT_RS_Fail )
-	{
-		notifString = GetLocStringByKeyExt( "ibt_notif_equipped_hairtie_failure" );
-	}
 	else
-	{
-		notifString = GetLocStringByKeyExt( "ibt_notif_exception" );
-		theSound.SoundEvent("gui_ingame_low_stamina_warning");
-	}
+		notifString = GetLocStringByKeyExt( "ibt_notif_equipped_hairtie_failure" );
 	
 	theGame.GetGuiManager().ShowNotification( notifString );
 }
 
 function IBT_OnUnequipHairTie()
 {
-	var ret 		: IBT_EReturnStatus;
+	var ret 		: bool;
 	var notifString	: string;
 
 	ret = IBT_UntieGeraltHair();
 
-	if( ret == IBT_RS_Success )
-	{
+	if( ret )
 		notifString = GetLocStringByKeyExt( "ibt_notif_unequipped_hairtie_success" );
-	}
-	else if( ret == IBT_RS_Fail )
-	{
-		notifString = GetLocStringByKeyExt( "ibt_notif_unequipped_hairtie_failure" );
-	}
 	else
-	{
-		notifString = GetLocStringByKeyExt( "ibt_notif_exception" );
-		theSound.SoundEvent("gui_ingame_low_stamina_warning");
-	}
+		notifString = GetLocStringByKeyExt( "ibt_notif_unequipped_hairtie_failure" );
 	
 	theGame.GetGuiManager().ShowNotification( notifString ); 
 }
@@ -562,7 +477,7 @@ function IBT_OnUnequipHairTie()
 
 function IBT_ConsumeTonicBeard( item: SItemUniqueId, inv: CInventoryComponent ) : bool
 {
-	var ret				: IBT_EReturnStatus;
+	var ret				: bool;
 	var notifString		: string;
 	var menu			: CR4InventoryMenu;
 	var wasItemRemoved	: bool;
@@ -570,21 +485,21 @@ function IBT_ConsumeTonicBeard( item: SItemUniqueId, inv: CInventoryComponent ) 
 	if( IBT_Menu_BlockActionsDuringCombat() && thePlayer.IsInCombat() )
 	{
 		notifString = GetLocStringByKeyExt("menu_cannot_perform_action_combat");
-		ret = IBT_RS_Fail;
+		ret = false;
 	}
 	else
 	{
 		ret = IBT_GrowGeraltBeard();
-		if( ret == IBT_RS_Success )
+		if( ret )
 			notifString = GetLocStringByKeyExt("ibt_notif_drank_tonic_beard_success");
-		else if( ret == IBT_RS_Fail )
+		else
 			notifString = GetLocStringByKeyExt("ibt_notif_drank_tonic_beard_failure");
 	}
 
 
 	wasItemRemoved = false;
 
-	if( ret == IBT_RS_Success || !IBT_Menu_BlockUnnecessaryTonicConsumption() )
+	if( ret || !IBT_Menu_BlockUnnecessaryTonicConsumption() )
 	{
 		theSound.SoundEvent("gui_inventory_drink");
 
@@ -597,14 +512,9 @@ function IBT_ConsumeTonicBeard( item: SItemUniqueId, inv: CInventoryComponent ) 
 
 		wasItemRemoved = inv.RemoveItem( item, 1 );
 	}
-	else if( ret == IBT_RS_Fail )
-	{
-		theSound.SoundEvent("gui_global_denied");	
-	}
 	else
 	{
-		theSound.SoundEvent("gui_ingame_low_stamina_warning");
-		notifString = GetLocStringByKeyExt( "ibt_notif_exception" );
+		theSound.SoundEvent("gui_global_denied");	
 	}
 
 	theGame.GetGuiManager().ShowNotification( notifString );
@@ -614,7 +524,7 @@ function IBT_ConsumeTonicBeard( item: SItemUniqueId, inv: CInventoryComponent ) 
 
 function IBT_ConsumeTonicHair( item: SItemUniqueId, inv: CInventoryComponent ) : bool
 {
-	var ret				: IBT_EReturnStatus;
+	var ret				: bool;
 	var notifString		: string;
 	var menu			: CR4InventoryMenu;
 	var wasItemRemoved	: bool;
@@ -622,21 +532,21 @@ function IBT_ConsumeTonicHair( item: SItemUniqueId, inv: CInventoryComponent ) :
 	if( IBT_Menu_BlockActionsDuringCombat() && thePlayer.IsInCombat() )
 	{
 		notifString = GetLocStringByKeyExt("menu_cannot_perform_action_combat");
-		ret = IBT_RS_Fail;
+		ret = false;
 	}
 	else
 	{
 		ret = IBT_GrowGeraltHair();
-		if( ret == IBT_RS_Success )
+		if( ret )
 			notifString = GetLocStringByKeyExt("ibt_notif_drank_tonic_hair_success");
-		else if( ret == IBT_RS_Fail )
+		else
 			notifString = GetLocStringByKeyExt("ibt_notif_drank_tonic_hair_failure");
 	}
 
 
 	wasItemRemoved = false;
 
-	if( ret == IBT_RS_Success || !IBT_Menu_BlockUnnecessaryTonicConsumption() )
+	if( ret || !IBT_Menu_BlockUnnecessaryTonicConsumption() )
 	{
 		theSound.SoundEvent("gui_inventory_drink");
 
@@ -649,14 +559,9 @@ function IBT_ConsumeTonicHair( item: SItemUniqueId, inv: CInventoryComponent ) :
 
 		wasItemRemoved = inv.RemoveItem( item, 1 );
 	}
-	else if( ret == IBT_RS_Fail )
-	{
-		theSound.SoundEvent("gui_global_denied");	
-	}
 	else
 	{
-		theSound.SoundEvent("gui_ingame_low_stamina_warning");
-		notifString = GetLocStringByKeyExt( "ibt_notif_exception" );
+		theSound.SoundEvent("gui_global_denied");	
 	}
 
 	theGame.GetGuiManager().ShowNotification( notifString );
