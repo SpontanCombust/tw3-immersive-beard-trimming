@@ -34,6 +34,7 @@
 	<Group id="ImmersiveBeardTrimming_ItemBehaviour" displayName="Mods.immersive_beard_trimming.ibt_item_behaviour">
 		<PresetsArray>
 			<Preset id="0" displayName="ibt_default">
+				<Entry varId="BehaviourShowNotifications" value="true"/>
 				<Entry varId="BehaviourBlockActionsDuringCombat" value="true"/>
 				<Entry varId="BehaviourCustomBeardTrim" value="2"/>
 				<Entry varId="BehaviourCustomBeardGrow" value="3"/>
@@ -41,6 +42,7 @@
 			</Preset>
 		</PresetsArray>
 		<VisibleVars>
+			<Var id="BehaviourShowNotifications" displayName="ibt_behaviour_show_notifications" displayType="TOGGLE"/>
 			<Var id="BehaviourBlockActionsDuringCombat" displayName="ibt_behaviour_combat_block" displayType="TOGGLE"/>
 			<Var id="BehaviourCustomBeardTrim" displayName="ibt_behaviour_custom_beard_trim" displayType="OPTIONS">
 				<OptionsArray>
@@ -67,22 +69,22 @@
 			<Var id="BehaviourCustomBeardGrow" displayName="ibt_behaviour_custom_beard_grow" displayType="OPTIONS">
 				<OptionsArray>
 					<Option id="0" displayName="ibt_behaviour_do_nothing">
-						<Entry varId="BehaviourCustomBeardTrim" value="0"/>
+						<Entry varId="BehaviourCustomBeardGrow" value="0"/>
 					</Option>
 					<Option id="1" displayName="ibt_behaviour_beard_set_0">
-						<Entry varId="BehaviourCustomBeardTrim" value="1"/>
+						<Entry varId="BehaviourCustomBeardGrow" value="1"/>
 					</Option>
 					<Option id="2" displayName="ibt_behaviour_beard_set_1">
-						<Entry varId="BehaviourCustomBeardTrim" value="2"/>
+						<Entry varId="BehaviourCustomBeardGrow" value="2"/>
 					</Option>
 					<Option id="3" displayName="ibt_behaviour_beard_set_2">
-						<Entry varId="BehaviourCustomBeardTrim" value="3"/>
+						<Entry varId="BehaviourCustomBeardGrow" value="3"/>
 					</Option>
 					<Option id="4" displayName="ibt_behaviour_beard_set_3">
-						<Entry varId="BehaviourCustomBeardTrim" value="4"/>
+						<Entry varId="BehaviourCustomBeardGrow" value="4"/>
 					</Option>
 					<Option id="5" displayName="ibt_behaviour_beard_set_4">
-						<Entry varId="BehaviourCustomBeardTrim" value="5"/>
+						<Entry varId="BehaviourCustomBeardGrow" value="5"/>
 					</Option>
 				</OptionsArray>
 			</Var>

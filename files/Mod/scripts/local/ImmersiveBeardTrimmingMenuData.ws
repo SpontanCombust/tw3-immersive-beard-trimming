@@ -73,3 +73,11 @@ function IBT_Menu_BlockUnnecessaryTonicConsumption() : bool
 	config = theGame.GetInGameConfigWrapper();
     return config.GetVarValue('ImmersiveBeardTrimming_ItemBehaviour', 'BehaviourBlockUnnecessaryTonicConsumption');
 }
+
+function IBT_Menu_ShowNotifications() : bool
+{
+    var config	: CInGameConfigWrapper;
+
+	config = theGame.GetInGameConfigWrapper();
+    return config.GetVarValue('ImmersiveBeardTrimming_ItemBehaviour', 'BehaviourShowNotifications');
+}

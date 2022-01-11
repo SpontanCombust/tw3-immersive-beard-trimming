@@ -392,7 +392,8 @@ function IBT_UseScissors( mode: IBT_EScissorsMode )
 	else
 		theSound.SoundEvent("gui_global_denied");
 
-	theGame.GetGuiManager().ShowNotification( notifString );
+	if( IBT_Menu_ShowNotifications() )
+		theGame.GetGuiManager().ShowNotification( notifString );
 }
 
 function IBT_GetScissorsMode( item: SItemUniqueId, inv: CInventoryComponent ) : IBT_EScissorsMode
@@ -453,7 +454,8 @@ function IBT_OnEquipHairTie()
 	else
 		notifString = GetLocStringByKeyExt( "ibt_notif_equipped_hairtie_failure" );
 	
-	theGame.GetGuiManager().ShowNotification( notifString );
+	if( IBT_Menu_ShowNotifications() )
+		theGame.GetGuiManager().ShowNotification( notifString );
 }
 
 function IBT_OnUnequipHairTie()
@@ -468,7 +470,8 @@ function IBT_OnUnequipHairTie()
 	else
 		notifString = GetLocStringByKeyExt( "ibt_notif_unequipped_hairtie_failure" );
 	
-	theGame.GetGuiManager().ShowNotification( notifString ); 
+	if( IBT_Menu_ShowNotifications() )
+		theGame.GetGuiManager().ShowNotification( notifString ); 
 }
 
 
@@ -517,7 +520,8 @@ function IBT_ConsumeTonicBeard( item: SItemUniqueId, inv: CInventoryComponent ) 
 		theSound.SoundEvent("gui_global_denied");	
 	}
 
-	theGame.GetGuiManager().ShowNotification( notifString );
+	if( IBT_Menu_ShowNotifications() )
+		theGame.GetGuiManager().ShowNotification( notifString );
 
 	return wasItemRemoved;
 }
@@ -564,7 +568,8 @@ function IBT_ConsumeTonicHair( item: SItemUniqueId, inv: CInventoryComponent ) :
 		theSound.SoundEvent("gui_global_denied");	
 	}
 
-	theGame.GetGuiManager().ShowNotification( notifString );
+	if( IBT_Menu_ShowNotifications() )
+		theGame.GetGuiManager().ShowNotification( notifString );
 
 	return wasItemRemoved;
 }
