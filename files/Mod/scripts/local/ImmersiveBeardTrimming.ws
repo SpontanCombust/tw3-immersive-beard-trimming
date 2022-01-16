@@ -1,47 +1,3 @@
-function IBT_GetGeraltBeardStage( headName: name ) : int
-{
-	switch( headName )
-	{
-		case 'head_0':
-		case 'head_0_tattoo':
-		case 'head_0_mark':
-		case 'head_0_mark_tattoo':
-			return 0;
-		case 'head_1':
-		case 'head_1_tattoo':
-		case 'head_1_mark':
-		case 'head_1_mark_tattoo':
-			return 1;
-		case 'head_2':
-		case 'head_2_tattoo':
-		case 'head_2_mark':
-		case 'head_2_mark_tattoo':
-			return 2;
-		case 'head_3':
-		case 'head_3_tattoo':
-		case 'head_3_mark':
-		case 'head_3_mark_tattoo':
-			return 3;
-		case 'head_4':
-		case 'head_4_tattoo':
-		case 'head_4_mark':
-		case 'head_4_mark_tattoo':
-			return 4;
-		default:
-			return -1;
-	}
-}
-
-
-
-
-struct IBT_SGeraltHead
-{
-	var isCustom	: bool;
-	var headName	: name;
-	var beardStage	: int;
-}
-
 function IBT_GetGeraltHead() : IBT_SGeraltHead
 {
 	var head 		: IBT_SGeraltHead;
@@ -63,7 +19,7 @@ function IBT_GetGeraltHead() : IBT_SGeraltHead
 		headManager = ( (CHeadManagerComponent)components[0] );
 
 		head.headName = headManager.GetCurHeadName();
-		head.beardStage = IBT_GetGeraltBeardStage( head.headName );
+		head.beardStage = IBT_HeadNameToBeardStage( head.headName );
 	}
 	else
 	{
@@ -107,7 +63,7 @@ function IBT_TrimGeraltBeard() : bool
 
 	if( head.isCustom )
 	{
-		beh = IBT_Menu_CustomBeardTrimBehaviour();
+		beh = IBT_Config_CustomBeardTrimBehaviour();
 
 		if( beh == IBT_CBB_DoNothing )
 		{
@@ -148,7 +104,7 @@ function IBT_GrowGeraltBeard() : bool
 
 	if( head.isCustom )
 	{
-		beh = IBT_Menu_CustomBeardGrowBehaviour();
+		beh = IBT_Config_CustomBeardGrowBehaviour();
 
 		if( beh == IBT_CBB_DoNothing )
 		{
@@ -182,64 +138,19 @@ function IBT_GrowGeraltBeard() : bool
 
 
 
-enum IBT_EHairType
-{
-	IBT_HT_Unknown		= 0,
-	IBT_HT_ShortTied	= 1,
-	IBT_HT_ShortUntied	= 2,
-	IBT_HT_LongTied		= 3,
-	IBT_HT_LongUntied	= 4
-}
-
-function IBT_HairNameToType( hairName : name ) : IBT_EHairType
-{
-	switch( hairName )
-	{
-		case 'Mohawk With Ponytail Hairstyle':
-		case 'Shaved With Tail Hairstyle':
-			return IBT_HT_ShortTied;
-		case 'Short Loose Hairstyle':
-		case 'Nilfgaardian Hairstyle':
-			return IBT_HT_ShortUntied;
-		case 'Half With Tail Hairstyle':
-			return IBT_HT_LongTied;
-		case 'Long Loose Hairstyle':
-			return IBT_HT_LongUntied;
-		default:
-			return IBT_HT_Unknown;
-	}
-}
-
-function IBT_HairTypeToName( hairType : IBT_EHairType ) : name
-{
-	switch( hairType )
-	{
-		case IBT_HT_ShortTied:
-			return IBT_Menu_ShortTiedHairName();
-		case IBT_HT_ShortUntied:
-			return IBT_Menu_ShortUntiedHairName();
-		case IBT_HT_LongTied:
-			return 'Half With Tail Hairstyle';
-		case IBT_HT_LongUntied:
-			return 'Long Loose Hairstyle';
-		default:
-			return '';
-	}
-}
-
-function IBT_GetGeraltHairType() : IBT_EHairType
+function IBT_GetGeraltHairClass() : IBT_EHairClass
 {
 	var inv 		: CInventoryComponent;
 	var ids			: array<SItemUniqueId>;
 	var i			: int;
 	var size		: int;
-	var hairType	: IBT_EHairType;
+	var hairClass	: IBT_EHairClass;
 	var hairName	: name;
 
 	inv = GetWitcherPlayer().GetInventory();
 	ids = inv.GetItemsByCategory( 'hair' );
 	size = ids.Size();
-	hairType = IBT_HT_Unknown;
+	hairClass = IBT_HC_Unknown;
 
 	if( size > 0 )
 	{
@@ -248,13 +159,13 @@ function IBT_GetGeraltHairType() : IBT_EHairType
 			if( inv.IsItemMounted( ids[i] ) )
 			{
 				hairName = inv.GetItemName( ids[i] );
-				hairType = IBT_HairNameToType( hairName );
+				hairClass = IBT_Config_HairNameToHairClass( hairName );
 				break;
 			}
 		}
 	}
 
-	return hairType;
+	return hairClass;
 }
 
 function IBT_EquipGeraltHair( hairName : name )
@@ -284,13 +195,13 @@ function IBT_EquipGeraltHair( hairName : name )
 
 function IBT_CutGeraltHair() : bool
 {
-	var hairType	: IBT_EHairType;
+	var hairClass	: IBT_EHairClass;
 	var hairName	: name;
 
-	hairType = IBT_GetGeraltHairType();
-	if( hairType == IBT_HT_LongTied || hairType == IBT_HT_LongUntied )
+	hairClass = IBT_GetGeraltHairClass();
+	if( hairClass == IBT_HC_Stage2Tied || hairClass == IBT_HC_Stage2Loose )
 	{
-		hairName = IBT_HairTypeToName( hairType - 2 );
+		hairName = IBT_Config_HairClassToHairName( hairClass - 2 );
 		IBT_EquipGeraltHair( hairName );
 		return true;
 	}
@@ -300,13 +211,13 @@ function IBT_CutGeraltHair() : bool
 
 function IBT_GrowGeraltHair() : bool
 {
-	var hairType	: IBT_EHairType;
+	var hairClass	: IBT_EHairClass;
 	var hairName	: name;
 
-	hairType = IBT_GetGeraltHairType();
-	if( hairType == IBT_HT_ShortTied || hairType == IBT_HT_ShortUntied )
+	hairClass = IBT_GetGeraltHairClass();
+	if( hairClass == IBT_HC_Stage1Tied || hairClass == IBT_HC_Stage1Loose )
 	{
-		hairName = IBT_HairTypeToName( hairType + 2 );
+		hairName = IBT_Config_HairClassToHairName( hairClass + 2 );
 		IBT_EquipGeraltHair( hairName );
 		return true;
 	}
@@ -316,13 +227,13 @@ function IBT_GrowGeraltHair() : bool
 
 function IBT_TieGeraltHair() : bool
 {
-	var hairType	: IBT_EHairType;
+	var hairClass	: IBT_EHairClass;
 	var hairName	: name;
 
-	hairType = IBT_GetGeraltHairType();
-	if( hairType == IBT_HT_ShortUntied || hairType == IBT_HT_LongUntied )
+	hairClass = IBT_GetGeraltHairClass();
+	if( hairClass == IBT_HC_Stage1Loose || hairClass == IBT_HC_Stage2Loose )
 	{
-		hairName = IBT_HairTypeToName( hairType - 1 );
+		hairName = IBT_Config_HairClassToHairName( hairClass + 1 );
 		IBT_EquipGeraltHair( hairName );
 		return true;
 	}
@@ -332,13 +243,13 @@ function IBT_TieGeraltHair() : bool
 
 function IBT_UntieGeraltHair() : bool
 {
-	var hairType	: IBT_EHairType;
+	var hairClass	: IBT_EHairClass;
 	var hairName	: name;
 
-	hairType = IBT_GetGeraltHairType();
-	if( hairType == IBT_HT_ShortTied || hairType == IBT_HT_LongTied )
+	hairClass = IBT_GetGeraltHairClass();
+	if( hairClass == IBT_HC_Stage1Tied || hairClass == IBT_HC_Stage2Tied )
 	{
-		hairName = IBT_HairTypeToName( hairType + 1 );
+		hairName = IBT_Config_HairClassToHairName( hairClass - 1 );
 		IBT_EquipGeraltHair( hairName );
 		return true;
 	}
@@ -351,18 +262,13 @@ function IBT_UntieGeraltHair() : bool
 
 
 
-enum IBT_EScissorsMode
-{
-	IBT_SM_Beard	= 0,
-	IBT_SM_Hair		= 1
-}
 
 function IBT_UseScissors( mode: IBT_EScissorsMode )
 {
 	var ret			: bool;
 	var notifString	: string;
 
-	if( IBT_Menu_BlockActionsDuringCombat() && thePlayer.IsInCombat() )
+	if( IBT_Config_BlockActionsDuringCombat() && thePlayer.IsInCombat() )
 	{
 		notifString = GetLocStringByKeyExt( "menu_cannot_perform_action_combat" );
 		ret = false;
@@ -392,7 +298,7 @@ function IBT_UseScissors( mode: IBT_EScissorsMode )
 	else
 		theSound.SoundEvent("gui_global_denied");
 
-	if( IBT_Menu_ShowNotifications() )
+	if( IBT_Config_ShowNotifications() )
 		theGame.GetGuiManager().ShowNotification( notifString );
 }
 
@@ -454,7 +360,7 @@ function IBT_OnEquipHairTie()
 	else
 		notifString = GetLocStringByKeyExt( "ibt_notif_equipped_hairtie_failure" );
 	
-	if( IBT_Menu_ShowNotifications() )
+	if( IBT_Config_ShowNotifications() )
 		theGame.GetGuiManager().ShowNotification( notifString );
 }
 
@@ -470,7 +376,7 @@ function IBT_OnUnequipHairTie()
 	else
 		notifString = GetLocStringByKeyExt( "ibt_notif_unequipped_hairtie_failure" );
 	
-	if( IBT_Menu_ShowNotifications() )
+	if( IBT_Config_ShowNotifications() )
 		theGame.GetGuiManager().ShowNotification( notifString ); 
 }
 
@@ -485,7 +391,7 @@ function IBT_ConsumeTonicBeard( item: SItemUniqueId, inv: CInventoryComponent ) 
 	var menu			: CR4InventoryMenu;
 	var wasItemRemoved	: bool;
 
-	if( IBT_Menu_BlockActionsDuringCombat() && thePlayer.IsInCombat() )
+	if( IBT_Config_BlockActionsDuringCombat() && thePlayer.IsInCombat() )
 	{
 		notifString = GetLocStringByKeyExt("menu_cannot_perform_action_combat");
 		ret = false;
@@ -502,7 +408,7 @@ function IBT_ConsumeTonicBeard( item: SItemUniqueId, inv: CInventoryComponent ) 
 
 	wasItemRemoved = false;
 
-	if( ret || !IBT_Menu_BlockUnnecessaryTonicConsumption() )
+	if( ret || !IBT_Config_BlockUnnecessaryTonicConsumption() )
 	{
 		theSound.SoundEvent("gui_inventory_drink");
 
@@ -520,7 +426,7 @@ function IBT_ConsumeTonicBeard( item: SItemUniqueId, inv: CInventoryComponent ) 
 		theSound.SoundEvent("gui_global_denied");	
 	}
 
-	if( IBT_Menu_ShowNotifications() )
+	if( IBT_Config_ShowNotifications() )
 		theGame.GetGuiManager().ShowNotification( notifString );
 
 	return wasItemRemoved;
@@ -533,7 +439,7 @@ function IBT_ConsumeTonicHair( item: SItemUniqueId, inv: CInventoryComponent ) :
 	var menu			: CR4InventoryMenu;
 	var wasItemRemoved	: bool;
 
-	if( IBT_Menu_BlockActionsDuringCombat() && thePlayer.IsInCombat() )
+	if( IBT_Config_BlockActionsDuringCombat() && thePlayer.IsInCombat() )
 	{
 		notifString = GetLocStringByKeyExt("menu_cannot_perform_action_combat");
 		ret = false;
@@ -550,7 +456,7 @@ function IBT_ConsumeTonicHair( item: SItemUniqueId, inv: CInventoryComponent ) :
 
 	wasItemRemoved = false;
 
-	if( ret || !IBT_Menu_BlockUnnecessaryTonicConsumption() )
+	if( ret || !IBT_Config_BlockUnnecessaryTonicConsumption() )
 	{
 		theSound.SoundEvent("gui_inventory_drink");
 
@@ -568,7 +474,7 @@ function IBT_ConsumeTonicHair( item: SItemUniqueId, inv: CInventoryComponent ) :
 		theSound.SoundEvent("gui_global_denied");	
 	}
 
-	if( IBT_Menu_ShowNotifications() )
+	if( IBT_Config_ShowNotifications() )
 		theGame.GetGuiManager().ShowNotification( notifString );
 
 	return wasItemRemoved;
