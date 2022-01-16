@@ -1,35 +1,257 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <UserConfig>
-	<Group id="ImmersiveBeardTrimming_HairStyles" displayName="Mods.immersive_beard_trimming.ibt_hair_styles">
+
+	<Group id="ImmersiveBeardTrimming_HairClasses" displayName="Mods.immersive_beard_trimming.ibt_hair_classes">
 		<PresetsArray>
 			<Preset id="0" displayName="ibt_default">
-				<Entry varId="HairShortTied" value="0"/>
-				<Entry varId="HairShortUntied" value="0"/>
+				<Entry varId="HairClassHalfWithPonytail" value="4"/>
+				<Entry varId="HairClassLongLoose" value="3"/>
+				<Entry varId="HairClassShavedWithPonytail" value="2"/>
+				<Entry varId="HairClassShortLoose" value="1"/>
+				<Entry varId="HairClassMohawkWithPonytail" value="2"/>
+				<Entry varId="HairClassElvenRebel" value="1"/>
 			</Preset>
 		</PresetsArray>
+
 		<VisibleVars>
-			<Var id="HairShortTied" displayName="ibt_hair_short_tied" displayType="OPTIONS">
+			<Var id="HairClassHalfWithPonytail" displayName="ibt_hairstyle_half_with_ponytail" displayType="OPTIONS">
 				<OptionsArray>
-					<Option id="0" displayName="ibt_hairstyle_shaved_with_ponytail">
-						<Entry varId="HairShortTied" value="0"/>
+					<Option id="0" displayName="ibt_ibt_hairclass_unknown">
+						<Entry varId="HairClassHalfWithPonytail" value="0"/>
 					</Option>
-					<Option id="1" displayName="ibt_hairstyle_mohawk_with_ponytail">
-						<Entry varId="HairShortTied" value="1"/>
+					<Option id="1" displayName="ibt_ibt_hairclass_stage1_loose">
+						<Entry varId="HairClassHalfWithPonytail" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_ibt_hairclass_stage1_tied">
+						<Entry varId="HairClassHalfWithPonytail" value="2"/>
+					</Option>
+					<Option id="3" displayName="ibt_ibt_hairclass_stage2_loose">
+						<Entry varId="HairClassHalfWithPonytail" value="3"/>
+					</Option>
+					<Option id="4" displayName="ibt_ibt_hairclass_stage2_tied">
+						<Entry varId="HairClassHalfWithPonytail" value="4"/>
 					</Option>
 				</OptionsArray>
 			</Var>
-			<Var id="HairShortUntied" displayName="ibt_hair_short_untied" displayType="OPTIONS">
+			<Var id="HairClassLongLoose" displayName="ibt_hairstyle_long_loose" displayType="OPTIONS">
 				<OptionsArray>
-					<Option id="0" displayName="ibt_hairstyle_short_loose">
-						<Entry varId="HairShortUntied" value="0"/>
+					<Option id="0" displayName="ibt_ibt_hairclass_unknown">
+						<Entry varId="HairClassLongLoose" value="0"/>
 					</Option>
-					<Option id="1" displayName="ibt_hairstyle_elven_rebel">
-						<Entry varId="HairShortUntied" value="1"/>
+					<Option id="1" displayName="ibt_ibt_hairclass_stage1_loose">
+						<Entry varId="HairClassLongLoose" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_ibt_hairclass_stage1_tied">
+						<Entry varId="HairClassLongLoose" value="2"/>
+					</Option>
+					<Option id="3" displayName="ibt_ibt_hairclass_stage2_loose">
+						<Entry varId="HairClassLongLoose" value="3"/>
+					</Option>
+					<Option id="4" displayName="ibt_ibt_hairclass_stage2_tied">
+						<Entry varId="HairClassLongLoose" value="4"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="HairClassShavedWithPonytail" displayName="ibt_hairstyle_shaved_with_ponytail" displayType="OPTIONS">
+				<OptionsArray>
+					<Option id="0" displayName="ibt_ibt_hairclass_unknown">
+						<Entry varId="HairClassShavedWithPonytail" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_ibt_hairclass_stage1_loose">
+						<Entry varId="HairClassShavedWithPonytail" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_ibt_hairclass_stage1_tied">
+						<Entry varId="HairClassShavedWithPonytail" value="2"/>
+					</Option>
+					<Option id="3" displayName="ibt_ibt_hairclass_stage2_loose">
+						<Entry varId="HairClassShavedWithPonytail" value="3"/>
+					</Option>
+					<Option id="4" displayName="ibt_ibt_hairclass_stage2_tied">
+						<Entry varId="HairClassShavedWithPonytail" value="4"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="HairClassShortLoose" displayName="ibt_hairstyle_short_loose" displayType="OPTIONS">
+				<OptionsArray>
+					<Option id="0" displayName="ibt_ibt_hairclass_unknown">
+						<Entry varId="HairClassShortLoose" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_ibt_hairclass_stage1_loose">
+						<Entry varId="HairClassShortLoose" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_ibt_hairclass_stage1_tied">
+						<Entry varId="HairClassShortLoose" value="2"/>
+					</Option>
+					<Option id="3" displayName="ibt_ibt_hairclass_stage2_loose">
+						<Entry varId="HairClassShortLoose" value="3"/>
+					</Option>
+					<Option id="4" displayName="ibt_ibt_hairclass_stage2_tied">
+						<Entry varId="HairClassShortLoose" value="4"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="HairClassMohawkWithPonytail" displayName="ibt_hairstyle_mohawk_with_ponytail" displayType="OPTIONS">
+				<OptionsArray>
+					<Option id="0" displayName="ibt_ibt_hairclass_unknown">
+						<Entry varId="HairClassMohawkWithPonytail" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_ibt_hairclass_stage1_loose">
+						<Entry varId="HairClassMohawkWithPonytail" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_ibt_hairclass_stage1_tied">
+						<Entry varId="HairClassMohawkWithPonytail" value="2"/>
+					</Option>
+					<Option id="3" displayName="ibt_ibt_hairclass_stage2_loose">
+						<Entry varId="HairClassMohawkWithPonytail" value="3"/>
+					</Option>
+					<Option id="4" displayName="ibt_ibt_hairclass_stage2_tied">
+						<Entry varId="HairClassMohawkWithPonytail" value="4"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="HairClassElvenRebel" displayName="ibt_hairstyle_elven_rebel" displayType="OPTIONS">
+				<OptionsArray>
+					<Option id="0" displayName="ibt_ibt_hairclass_unknown">
+						<Entry varId="HairClassElvenRebel" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_ibt_hairclass_stage1_loose">
+						<Entry varId="HairClassElvenRebel" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_ibt_hairclass_stage1_tied">
+						<Entry varId="HairClassElvenRebel" value="2"/>
+					</Option>
+					<Option id="3" displayName="ibt_ibt_hairclass_stage2_loose">
+						<Entry varId="HairClassElvenRebel" value="3"/>
+					</Option>
+					<Option id="4" displayName="ibt_ibt_hairclass_stage2_tied">
+						<Entry varId="HairClassElvenRebel" value="4"/>
 					</Option>
 				</OptionsArray>
 			</Var>
 		</VisibleVars>
 	</Group>
+
+
+
+
+
+	<Group id="ImmersiveBeardTrimming_DefaultHairStyles" displayName="Mods.immersive_beard_trimming.ibt_default_hair_styles">
+		<PresetsArray>
+			<Preset id="0" displayName="ibt_default">
+				<Entry varId="DefaultHairstyleStage1Loose" value="4"/>
+				<Entry varId="DefaultHairstyleStage1Tied" value="3"/>
+				<Entry varId="DefaultHairstyleStage2Loose" value="2"/>
+				<Entry varId="DefaultHairstyleStage2Tied" value="1"/>
+			</Preset>
+		</PresetsArray>
+
+		<VisibleVars>
+			<Var id="DefaultHairstyleStage1Loose" displayName="ibt_ibt_hairclass_stage1_loose" displayType="OPTIONS">
+				<OptionsArray>
+					<Option id="0" displayName="ibt_hairstyle_none">
+						<Entry varId="DefaultHairstyleStage1Loose" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hairstyle_half_with_ponytail">
+						<Entry varId="DefaultHairstyleStage1Loose" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hairstyle_long_loose">
+						<Entry varId="DefaultHairstyleStage1Loose" value="2"/>
+					</Option>
+					<Option id="3" displayName="ibt_hairstyle_shaved_with_ponytail">
+						<Entry varId="DefaultHairstyleStage1Loose" value="3"/>
+					</Option>
+					<Option id="4" displayName="ibt_hairstyle_short_loose">
+						<Entry varId="DefaultHairstyleStage1Loose" value="4"/>
+					</Option>
+					<Option id="5" displayName="ibt_hairstyle_mohawk_with_ponytail">
+						<Entry varId="DefaultHairstyleStage1Loose" value="5"/>
+					</Option>
+					<Option id="6" displayName="ibt_hairstyle_elven_rebel">
+						<Entry varId="DefaultHairstyleStage1Loose" value="6"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="DefaultHairstyleStage1Tied" displayName="ibt_ibt_hairclass_stage1_tied" displayType="OPTIONS">
+				<OptionsArray>
+					<Option id="0" displayName="ibt_hairstyle_none">
+						<Entry varId="DefaultHairstyleStage1Tied" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hairstyle_half_with_ponytail">
+						<Entry varId="DefaultHairstyleStage1Tied" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hairstyle_long_loose">
+						<Entry varId="DefaultHairstyleStage1Tied" value="2"/>
+					</Option>
+					<Option id="3" displayName="ibt_hairstyle_shaved_with_ponytail">
+						<Entry varId="DefaultHairstyleStage1Tied" value="3"/>
+					</Option>
+					<Option id="4" displayName="ibt_hairstyle_short_loose">
+						<Entry varId="DefaultHairstyleStage1Tied" value="4"/>
+					</Option>
+					<Option id="5" displayName="ibt_hairstyle_mohawk_with_ponytail">
+						<Entry varId="DefaultHairstyleStage1Tied" value="5"/>
+					</Option>
+					<Option id="6" displayName="ibt_hairstyle_elven_rebel">
+						<Entry varId="DefaultHairstyleStage1Tied" value="6"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="DefaultHairstyleStage2Loose" displayName="ibt_ibt_hairclass_stage2_loose" displayType="OPTIONS">
+				<OptionsArray>
+					<Option id="0" displayName="ibt_hairstyle_none">
+						<Entry varId="DefaultHairstyleStage2Loose" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hairstyle_half_with_ponytail">
+						<Entry varId="DefaultHairstyleStage2Loose" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hairstyle_long_loose">
+						<Entry varId="DefaultHairstyleStage2Loose" value="2"/>
+					</Option>
+					<Option id="3" displayName="ibt_hairstyle_shaved_with_ponytail">
+						<Entry varId="DefaultHairstyleStage2Loose" value="3"/>
+					</Option>
+					<Option id="4" displayName="ibt_hairstyle_short_loose">
+						<Entry varId="DefaultHairstyleStage2Loose" value="4"/>
+					</Option>
+					<Option id="5" displayName="ibt_hairstyle_mohawk_with_ponytail">
+						<Entry varId="DefaultHairstyleStage2Loose" value="5"/>
+					</Option>
+					<Option id="6" displayName="ibt_hairstyle_elven_rebel">
+						<Entry varId="DefaultHairstyleStage2Loose" value="6"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="DefaultHairstyleStage2Tied" displayName="ibt_ibt_hairclass_stage2_tied" displayType="OPTIONS">
+				<OptionsArray>
+					<Option id="0" displayName="ibt_hairstyle_none">
+						<Entry varId="DefaultHairstyleStage2Tied" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hairstyle_half_with_ponytail">
+						<Entry varId="DefaultHairstyleStage2Tied" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hairstyle_long_loose">
+						<Entry varId="DefaultHairstyleStage2Tied" value="2"/>
+					</Option>
+					<Option id="3" displayName="ibt_hairstyle_shaved_with_ponytail">
+						<Entry varId="DefaultHairstyleStage2Tied" value="3"/>
+					</Option>
+					<Option id="4" displayName="ibt_hairstyle_short_loose">
+						<Entry varId="DefaultHairstyleStage2Tied" value="4"/>
+					</Option>
+					<Option id="5" displayName="ibt_hairstyle_mohawk_with_ponytail">
+						<Entry varId="DefaultHairstyleStage2Tied" value="5"/>
+					</Option>
+					<Option id="6" displayName="ibt_hairstyle_elven_rebel">
+						<Entry varId="DefaultHairstyleStage2Tied" value="6"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+		</VisibleVars>
+	</Group>
+
+
+
+
 
 	<Group id="ImmersiveBeardTrimming_ItemBehaviour" displayName="Mods.immersive_beard_trimming.ibt_item_behaviour">
 		<PresetsArray>
@@ -41,6 +263,7 @@
 				<Entry varId="BehaviourBlockUnnecessaryTonicConsumption" value="true"/>
 			</Preset>
 		</PresetsArray>
+
 		<VisibleVars>
 			<Var id="BehaviourShowNotifications" displayName="ibt_behaviour_show_notifications" displayType="TOGGLE"/>
 			<Var id="BehaviourBlockActionsDuringCombat" displayName="ibt_behaviour_combat_block" displayType="TOGGLE"/>
