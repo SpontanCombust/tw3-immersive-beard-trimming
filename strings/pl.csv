@@ -1,51 +1,69 @@
 ;meta[language=pl]
 ; id | key(hex) | key(str) | text
 2114818000||dlc_beard_trimming|Immmersyjne Podcinanie Brody
-2114818001||dlc_beard_trimming_desc|Podcinaj brodę i włosy Geralta jak prawdziwy golibroda
+2114818001||dlc_beard_trimming_desc|Podcinaj brodę i włosy Geralta jak profesjonalny golibroda
 2114818002||panel_immersive_beard_trimming|Immmersyjne Podcinanie Brody
-2114818003||preset_Mods_immersive_beard_trimming_ibt_hair_styles|Predefiniowane ustawienia
-2114818004||preset_value_ibt_default|Domyślne
-2114818005||option_ibt_hair_short_tied|Krótkie związane włosy
-2114818006||preset_value_ibt_hairstyle_shaved_with_ponytail|Golenie i koński ogon
-2114818007||preset_value_ibt_hairstyle_mohawk_with_ponytail|Wygolone na skroniach i koński ogon
-2114818008||option_ibt_hair_short_untied|Krótkie rozpuszczone włosy
-2114818009||preset_value_ibt_hairstyle_short_loose|Niezbyt długie rozpuszczone
-2114818010||preset_value_ibt_hairstyle_elven_rebel|Na elfiego buntownika
-2114818011||item_name_ibt_scissors|Nożyczki
-2114818012||item_desc_ibt_scissors|Używane do podcinania brody i włosów.
-2114818013||item_desc_ibt_scissors_mode_preamble|Tryb
-2114818014||item_desc_ibt_scissors_mode_beard|Broda
-2114818015||item_desc_ibt_scissors_mode_hair|Włosy
-2114818016||ibt_panel_button_changeScissorsMode|Zmień tryb nożyczek
-2114818017||ibt_notif_used_scissors_beard_success|Broda Geralta została podcięta
-2114818018||ibt_notif_used_scissors_beard_failure|Geralt jest już ogolony na gładko
-2114818019||ibt_notif_used_scissors_hair_success|Włosy Geralta zostały skrócone
-2114818020||ibt_notif_used_scissors_hair_failure|Włosy Geralta nie mogą już zostać dalej skrócone
-2114818021||item_name_ibt_hairtie|Gumka do włosów
-2114818022||item_desc_ibt_hairtie|Używana do wiązania włosów w koński ogon.
-2114818023||ibt_notif_equipped_hairtie_success|Włosy Geralta zostały zawiązane w koński ogon
-2114818024||ibt_notif_equipped_hairtie_failure|Włosy Geralta nie mogą zostać znów zawiązane w koński ogon
-2114818025||ibt_notif_unequipped_hairtie_success|Włosy Geralta zostały rozpuszczone
-2114818026||ibt_notif_unequipped_hairtie_failure|Włosy Geralta nie mogły zostać jeszcze bardziej rozpuszczone
-2114818027||item_name_ibt_tonic_beard|Tonik na porost brody
-2114818028||item_desc_ibt_tonic_beard|Używany do natychmiastowego rozwijania stadium zarostu.
-2114818029||item_name_ibt_tonic_hair|Tonik na porost włoów
-2114818030||item_desc_ibt_tonic_hair|Używany do natychmiastowego wydłużania włosów.
-2114818031||ibt_notif_drank_tonic_beard_success|Broda Geralta urosła o jeden stopień
-2114818032||ibt_notif_drank_tonic_beard_failure|Broda Geralta jest już w swoim ostatnim stadium
-2114818033||ibt_notif_drank_tonic_hair_success|Włosy Geralta zostały wydłużone
-2114818034||ibt_notif_drank_tonic_hair_failure|Włosy Geralta już są długie
-2114818035||panel_ibt_hair_styles|Opcje fryzur
-2114818036||panel_ibt_item_behaviour|Zachowanie przedmiotów
-2114818037||preset_Mods_immersive_beard_trimming_ibt_item_behaviour|Predefiniowane ustawienia
-2114818038||option_ibt_behaviour_combat_block|Blokuj akcje w czasie walki
-2114818039||option_ibt_behaviour_custom_beard_trim|Podcinanie niestandardowej brody
-2114818040||preset_value_ibt_behaviour_do_nothing|Nie rób nic
-2114818041||preset_value_ibt_behaviour_beard_set_0|Ustaw na gładko ogolony
-2114818042||preset_value_ibt_behaviour_beard_set_1|Ustaw na stopień 1
-2114818043||preset_value_ibt_behaviour_beard_set_2|Ustaw na stopień 2
-2114818044||preset_value_ibt_behaviour_beard_set_3|Ustaw na stopień 3
-2114818045||preset_value_ibt_behaviour_beard_set_4|Ustaw na stopień 4
-2114818046||option_ibt_behaviour_custom_beard_grow|Porost niestandardowej brody
-2114818047||option_ibt_behaviour_block_unnecessary_tonic_consumption|Zapobiegnij niepotrzebnemu zużyciu toników
-2114818048||option_ibt_behaviour_show_notifications|Pokazuj powiadomienia
+2114818003||panel_ibt_hair_classes|Kategorie fryzur
+2114818004||preset_Mods_immersive_beard_trimming_ibt_hair_classes|Predefiniowane ustawienia kategorii
+2114818005||preset_value_ibt_default|Domyślne
+2114818006||option_ibt_hairstyle_half_with_ponytail|Luźno zebrane włosy, związane z tyłu głowy
+2114818007||option_ibt_hairstyle_long_loose|Długie rozpuszczone włosy
+2114818008||option_ibt_hairstyle_shaved_with_ponytail|Golenie i koński ogon
+2114818009||option_ibt_hairstyle_short_loose|Krótkie rozpuszczone włosy
+2114818010||option_ibt_hairstyle_mohawk_with_ponytail|Wygolone na skroniach i koński ogon
+2114818011||option_ibt_hairstyle_elven_rebel|Na elfiego buntownika
+2114818012||panel_ibt_default_hair_styles|Domyślne fryzury dla kategorii
+2114818013||preset_Mods_immersive_beard_trimming_ibt_default_hair_styles|Predefiniowane ustawienia fryzur
+2114818014||preset_value_ibt_ibt_hairclass_unknown|Nieznana
+2114818015||preset_value_ibt_ibt_hairclass_stage1_loose|Stopień 1, rozpuszczone
+2114818016||preset_value_ibt_ibt_hairclass_stage1_tied|Stopień 1, związane
+2114818017||preset_value_ibt_ibt_hairclass_stage2_loose|Stopień 2, rozpuszczone
+2114818018||preset_value_ibt_ibt_hairclass_stage2_tied|Stopień 2, związane
+2114818019||option_ibt_ibt_hairclass_stage1_loose|Stopień 1, rozpuszczone
+2114818020||option_ibt_ibt_hairclass_stage1_tied|Stopień 1, związane
+2114818021||option_ibt_ibt_hairclass_stage2_loose|Stopień 2, rozpuszczone
+2114818022||option_ibt_ibt_hairclass_stage2_tied|Stopień 2, związane
+2114818023||preset_value_ibt_hairstyle_none|Brak
+2114818024||preset_value_ibt_hairstyle_half_with_ponytail|Luźno zebrane włosy, związane z tyłu głowy
+2114818025||preset_value_ibt_hairstyle_long_loose|Długie rozpuszczone włosy
+2114818026||preset_value_ibt_hairstyle_shaved_with_ponytail|Golenie i koński ogon
+2114818027||preset_value_ibt_hairstyle_short_loose|Krótkie rozpuszczone włosy
+2114818028||preset_value_ibt_hairstyle_mohawk_with_ponytail|Wygolone na skroniach i koński ogon
+2114818029||preset_value_ibt_hairstyle_elven_rebel|Na elfiego buntownika
+2114818030||item_name_ibt_scissors|Nożyczki
+2114818031||item_desc_ibt_scissors|Używane do podcinania brody i włosów.
+2114818032||item_desc_ibt_scissors_mode_preamble|Tryb
+2114818033||item_desc_ibt_scissors_mode_beard|Broda
+2114818034||item_desc_ibt_scissors_mode_hair|Włosy
+2114818035||ibt_panel_button_changeScissorsMode|Zmień tryb nożyczek
+2114818036||ibt_notif_used_scissors_beard_success|Broda Geralta została podcięta
+2114818037||ibt_notif_used_scissors_beard_failure|Geralt jest już ogolony na gładko
+2114818038||ibt_notif_used_scissors_hair_success|Włosy Geralta zostały skrócone
+2114818039||ibt_notif_used_scissors_hair_failure|Włosy Geralta nie mogą już zostać dalej skrócone
+2114818040||item_name_ibt_hairtie|Gumka do włosów
+2114818041||item_desc_ibt_hairtie|Używana do wiązania włosów w koński ogon.
+2114818042||ibt_notif_equipped_hairtie_success|Włosy Geralta zostały zawiązane w koński ogon
+2114818043||ibt_notif_equipped_hairtie_failure|Włosy Geralta nie mogą zostać znów zawiązane w koński ogon
+2114818044||ibt_notif_unequipped_hairtie_success|Włosy Geralta zostały rozpuszczone
+2114818045||ibt_notif_unequipped_hairtie_failure|Włosy Geralta nie mogły zostać jeszcze bardziej rozpuszczone
+2114818046||item_name_ibt_tonic_beard|Tonik na porost brody
+2114818047||item_desc_ibt_tonic_beard|Używany do natychmiastowego rozwijania stadium zarostu.
+2114818048||item_name_ibt_tonic_hair|Tonik na porost włoów
+2114818049||item_desc_ibt_tonic_hair|Używany do natychmiastowego wydłużania włosów.
+2114818050||ibt_notif_drank_tonic_beard_success|Broda Geralta urosła o jeden stopień
+2114818051||ibt_notif_drank_tonic_beard_failure|Broda Geralta jest już w swoim ostatnim stadium
+2114818052||ibt_notif_drank_tonic_hair_success|Włosy Geralta zostały wydłużone
+2114818053||ibt_notif_drank_tonic_hair_failure|Włosy Geralta już są długie
+2114818054||panel_ibt_item_behaviour|Zachowanie przedmiotów
+2114818055||preset_Mods_immersive_beard_trimming_ibt_item_behaviour|Predefiniowane ustawienia zachowań przedmiotów
+2114818056||option_ibt_behaviour_combat_block|Blokuj akcje w czasie walki
+2114818057||option_ibt_behaviour_custom_beard_trim|Podcinanie niestandardowej brody
+2114818058||preset_value_ibt_behaviour_do_nothing|Nie rób nic
+2114818059||preset_value_ibt_behaviour_beard_set_0|Ustaw na gładko ogolony
+2114818060||preset_value_ibt_behaviour_beard_set_1|Ustaw na stopień 1
+2114818061||preset_value_ibt_behaviour_beard_set_2|Ustaw na stopień 2
+2114818062||preset_value_ibt_behaviour_beard_set_3|Ustaw na stopień 3
+2114818063||preset_value_ibt_behaviour_beard_set_4|Ustaw na stopień 4
+2114818064||option_ibt_behaviour_custom_beard_grow|Porost niestandardowej brody
+2114818065||option_ibt_behaviour_block_unnecessary_tonic_consumption|Zapobiegnij niepotrzebnemu zużyciu toników
+2114818066||option_ibt_behaviour_show_notifications|Pokazuj powiadomienia

@@ -1,51 +1,69 @@
 ;meta[language=en]
 ; id | key(hex) | key(str) | text
 2114818000||dlc_beard_trimming|Immersive Beard Trimming
-2114818001||dlc_beard_trimming_desc|Cut Geralt's hair and beard like a true barber
+2114818001||dlc_beard_trimming_desc|Cut Geralt's hair and beard like a professional barber
 2114818002||panel_immersive_beard_trimming|Immersive Beard Trimming
-2114818003||preset_Mods_immersive_beard_trimming_ibt_hair_styles|Presets
-2114818004||preset_value_ibt_default|Default
-2114818005||option_ibt_hair_short_tied|Short tied hair
-2114818006||preset_value_ibt_hairstyle_shaved_with_ponytail|Shaved except for a pony tail
-2114818007||preset_value_ibt_hairstyle_mohawk_with_ponytail|Shaved on the sides, short on top, and a ponytail
-2114818008||option_ibt_hair_short_untied|Short untied hair
-2114818009||preset_value_ibt_hairstyle_short_loose|Loose, not too long
-2114818010||preset_value_ibt_hairstyle_elven_rebel|The elven rebel
-2114818011||item_name_ibt_scissors|Scissors
-2114818012||item_desc_ibt_scissors|Used for grooming beard and hair.
-2114818013||item_desc_ibt_scissors_mode_preamble|Mode
-2114818014||item_desc_ibt_scissors_mode_beard|Beard
-2114818015||item_desc_ibt_scissors_mode_hair|Hair
-2114818016||ibt_panel_button_changeScissorsMode|Change scissors mode
-2114818017||ibt_notif_used_scissors_beard_success|Geralt's beard has been trimmed
-2114818018||ibt_notif_used_scissors_beard_failure|Geralt is already clean shaved
-2114818019||ibt_notif_used_scissors_hair_success|Geralt's hair has been shortened
-2114818020||ibt_notif_used_scissors_hair_failure|Geralt's hair can't be shortened any further
-2114818021||item_name_ibt_hairtie|Hair tie
-2114818022||item_desc_ibt_hairtie|Used for tieing hair into a ponytail.
-2114818023||ibt_notif_equipped_hairtie_success|Geralt's hair has been tied into a ponytail
-2114818024||ibt_notif_equipped_hairtie_failure|Geralt's hair could not be tied into a ponytail again
-2114818025||ibt_notif_unequipped_hairtie_success|Geralt's hair has been made loose
-2114818026||ibt_notif_unequipped_hairtie_failure|Geralt's hair could not be made loose any further
-2114818027||item_name_ibt_tonic_beard|Beard Growth Tonic
-2114818028||item_desc_ibt_tonic_beard|Used for instantly making beard thicker.
-2114818029||item_name_ibt_tonic_hair|Hair Growth Tonic
-2114818030||item_desc_ibt_tonic_hair|Used for instantly making hair longer.
-2114818031||ibt_notif_drank_tonic_beard_success|Geralt's beard growth has been advanced by one stage
-2114818032||ibt_notif_drank_tonic_beard_failure|Geralt's beard is already at the last growth stage
-2114818033||ibt_notif_drank_tonic_hair_success|Geralt's hair has grown longer
-2114818034||ibt_notif_drank_tonic_hair_failure|Geralt's hair is already long
-2114818035||panel_ibt_hair_styles|Hair Style Options
-2114818036||panel_ibt_item_behaviour|Item behaviour
-2114818037||preset_Mods_immersive_beard_trimming_ibt_item_behaviour|Presets
-2114818038||option_ibt_behaviour_combat_block|Block actions during combat
-2114818039||option_ibt_behaviour_custom_beard_trim|Trimming a custom beard
-2114818040||preset_value_ibt_behaviour_do_nothing|Do nothing
-2114818041||preset_value_ibt_behaviour_beard_set_0|Set beard to clean shaved
-2114818042||preset_value_ibt_behaviour_beard_set_1|Set beard to stage 1
-2114818043||preset_value_ibt_behaviour_beard_set_2|Set beard to stage 2
-2114818044||preset_value_ibt_behaviour_beard_set_3|Set beard to stage 3
-2114818045||preset_value_ibt_behaviour_beard_set_4|Set beard to stage 4
-2114818046||option_ibt_behaviour_custom_beard_grow|Growing a custom beard
-2114818047||option_ibt_behaviour_block_unnecessary_tonic_consumption|Prevent unnecessary tonic consumption
-2114818048||option_ibt_behaviour_show_notifications|Show notifications
+2114818003||panel_ibt_hair_classes|Hair categories
+2114818004||preset_Mods_immersive_beard_trimming_ibt_hair_classes|Presets for hair categories
+2114818005||preset_value_ibt_default|Default
+2114818006||option_ibt_hairstyle_half_with_ponytail|Loosely gathered, tied behind the head
+2114818007||option_ibt_hairstyle_long_loose|Long and loose
+2114818008||option_ibt_hairstyle_shaved_with_ponytail|Shaved head and ponytail
+2114818009||option_ibt_hairstyle_short_loose|Loose, not too long
+2114818010||option_ibt_hairstyle_mohawk_with_ponytail|Shaved on the sides, short on top, and a ponytail
+2114818011||option_ibt_hairstyle_elven_rebel|Elven rebel cut
+2114818012||panel_ibt_default_hair_styles|Default hairstyles for categories
+2114818013||preset_Mods_immersive_beard_trimming_ibt_default_hair_styles|Presets for hairstyles
+2114818014||preset_value_ibt_ibt_hairclass_unknown|Unknown
+2114818015||preset_value_ibt_ibt_hairclass_stage1_loose|Stage 1, loose
+2114818016||preset_value_ibt_ibt_hairclass_stage1_tied|Stage 1, tied
+2114818017||preset_value_ibt_ibt_hairclass_stage2_loose|Stage 2, loose
+2114818018||preset_value_ibt_ibt_hairclass_stage2_tied|Stage 2, tied
+2114818019||option_ibt_ibt_hairclass_stage1_loose|Stage 1, loose
+2114818020||option_ibt_ibt_hairclass_stage1_tied|Stage 1, tied
+2114818021||option_ibt_ibt_hairclass_stage2_loose|Stage 2, loose
+2114818022||option_ibt_ibt_hairclass_stage2_tied|Stage 2, tied
+2114818023||preset_value_ibt_hairstyle_none|None
+2114818024||preset_value_ibt_hairstyle_half_with_ponytail|Loosely gathered, tied behind the head
+2114818025||preset_value_ibt_hairstyle_long_loose|Long and loose
+2114818026||preset_value_ibt_hairstyle_shaved_with_ponytail|Shaved head and ponytail
+2114818027||preset_value_ibt_hairstyle_short_loose|Loose, not too long
+2114818028||preset_value_ibt_hairstyle_mohawk_with_ponytail|Shaved on the sides, short on top, and a ponytail
+2114818029||preset_value_ibt_hairstyle_elven_rebel|Elven rebel cut
+2114818030||item_name_ibt_scissors|Scissors
+2114818031||item_desc_ibt_scissors|Used for grooming beard and hair.
+2114818032||item_desc_ibt_scissors_mode_preamble|Mode
+2114818033||item_desc_ibt_scissors_mode_beard|Beard
+2114818034||item_desc_ibt_scissors_mode_hair|Hair
+2114818035||ibt_panel_button_changeScissorsMode|Change scissors mode
+2114818036||ibt_notif_used_scissors_beard_success|Geralt's beard has been trimmed
+2114818037||ibt_notif_used_scissors_beard_failure|Geralt is already clean shaved
+2114818038||ibt_notif_used_scissors_hair_success|Geralt's hair has been shortened
+2114818039||ibt_notif_used_scissors_hair_failure|Geralt's hair can't be shortened any further
+2114818040||item_name_ibt_hairtie|Hair tie
+2114818041||item_desc_ibt_hairtie|Used for tieing hair into a ponytail.
+2114818042||ibt_notif_equipped_hairtie_success|Geralt's hair has been tied into a ponytail
+2114818043||ibt_notif_equipped_hairtie_failure|Geralt's hair could not be tied into a ponytail again
+2114818044||ibt_notif_unequipped_hairtie_success|Geralt's hair has been made loose
+2114818045||ibt_notif_unequipped_hairtie_failure|Geralt's hair could not be made loose any further
+2114818046||item_name_ibt_tonic_beard|Beard Growth Tonic
+2114818047||item_desc_ibt_tonic_beard|Used for instantly making beard thicker.
+2114818048||item_name_ibt_tonic_hair|Hair Growth Tonic
+2114818049||item_desc_ibt_tonic_hair|Used for instantly making hair longer.
+2114818050||ibt_notif_drank_tonic_beard_success|Geralt's beard growth has been advanced by one stage
+2114818051||ibt_notif_drank_tonic_beard_failure|Geralt's beard is already at the last growth stage
+2114818052||ibt_notif_drank_tonic_hair_success|Geralt's hair has grown longer
+2114818053||ibt_notif_drank_tonic_hair_failure|Geralt's hair is already long
+2114818054||panel_ibt_item_behaviour|Item behaviour
+2114818055||preset_Mods_immersive_beard_trimming_ibt_item_behaviour|Presets for item behaviour
+2114818056||option_ibt_behaviour_combat_block|Block actions during combat
+2114818057||option_ibt_behaviour_custom_beard_trim|Trimming a custom beard
+2114818058||preset_value_ibt_behaviour_do_nothing|Do nothing
+2114818059||preset_value_ibt_behaviour_beard_set_0|Set beard to clean shaved
+2114818060||preset_value_ibt_behaviour_beard_set_1|Set beard to stage 1
+2114818061||preset_value_ibt_behaviour_beard_set_2|Set beard to stage 2
+2114818062||preset_value_ibt_behaviour_beard_set_3|Set beard to stage 3
+2114818063||preset_value_ibt_behaviour_beard_set_4|Set beard to stage 4
+2114818064||option_ibt_behaviour_custom_beard_grow|Growing a custom beard
+2114818065||option_ibt_behaviour_block_unnecessary_tonic_consumption|Prevent unnecessary tonic consumption
+2114818066||option_ibt_behaviour_show_notifications|Show notifications
