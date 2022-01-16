@@ -29,6 +29,63 @@ function IBT_Config_HairNameToHairClass( hairName: name ) : IBT_EHairClass
         case IBT_HS_Nilfgaardian:
             varid = 'HairClassElvenRebel';
             break;
+        case IBT_HS_DLC2I_ArdLongLoose:
+            varid = 'HairClassDLC2ILongLooseBehindEars';
+            break;
+        case IBT_HS_DLC2I_ArdHeadband:
+            varid = 'HairClassDLC2ILongWithHeadband';
+            break;
+        case IBT_HS_DLC2I_ArdLongLooseAlt:
+            varid = 'HairClassDLC2ILongLooseBehindEarsAlt';
+            break;
+        case IBT_HS_DLC2I_ArdHeadbandAlt:
+            varid = 'HairClassDLC2ILongWithHeadbandAlt';
+            break;
+        case IBT_HS_DLC2I_CraniumjFullPony:
+            varid = 'HairClassDLC2IPonyTail';
+            break;
+        case IBT_HS_DLC2I_RoksaOlgierd:
+            varid = 'HairClassDLC2IOlgierd';
+            break;
+        case IBT_HS_DLC2I_RoksaWitold:
+            varid = 'HairClassDLC2IWitold';
+            break;
+        case IBT_HS_DLC2I_CraniumjFullPonyLong:
+            varid = 'HairClassDLC2IPonyTailLong';
+            break;
+        case IBT_HS_DLC2I_ArdShavedWithTailLong:
+            varid = 'HairClassDLC2IShavedWithPonytailLong';
+            break;
+        case IBT_HS_DLC2I_ArdRivianTail:
+            varid = 'HairClassDLC2IRivianPonytail';
+            break;
+        case IBT_HS_DLC2I_ArdShaved:
+            varid = 'HairClassDLC2IShaved';
+            break;
+        case IBT_HS_DLC2I_HellspawnLogan:
+            varid = 'HairClassDLC2ILogan';
+            break;
+        case IBT_HS_DLC2I_FeregornZoltan:
+            varid = 'HairClassDLC2IZoltan';
+            break;
+        case IBT_HS_DLC2I_FeregornCinematic:
+            varid = 'HairClassDLC2ISlickedBackLong';
+            break;
+        case IBT_HS_DLC2I_ArdMohawkWithPonytailLong:
+            varid = 'HairClassDLC2IMohawkWithPonytailLong';
+            break;
+        case IBT_HS_DLC2I_FidoxViking:
+            varid = 'HairClassDLC2IViking';
+            break;
+        case IBT_HS_DLC2I_ArdElvenLong:
+            varid = 'HairClassDLC2ILongElven';
+            break;
+        case IBT_HS_DLC2I_ArdElvenHeadband:
+            varid = 'HairClassDLC2ILongElvenWithHeadband';
+            break;
+        case IBT_HS_DLC2I_RoksaOlgierdAlt:
+            varid = 'HairClassDLC2IOlgierdAlt';
+            break;
         default:
 			varid = '';
     }
@@ -67,6 +124,12 @@ function IBT_Config_HairClassToHairName( hairClass: IBT_EHairClass ) : name
             break;
 		case IBT_HC_Stage2Tied:
             varid = 'DefaultHairstyleStage2Tied';
+            break;
+		case IBT_HC_Stage3Loose:
+            varid = 'DefaultHairstyleStage3Loose';
+            break;
+		case IBT_HC_Stage3Tied:
+            varid = 'DefaultHairstyleStage3Tied';
             break;
 		default:
 			varid = '';
@@ -126,7 +189,7 @@ function IBT_Config_BlockUnnecessaryTonicConsumption() : bool
 	config = theGame.GetInGameConfigWrapper();
     return config.GetVarValue('ImmersiveBeardTrimming_ItemBehaviour', 'BehaviourBlockUnnecessaryTonicConsumption');
 }
-
+//TODO should even use notifications to begin with? use only with errors?
 function IBT_Config_ShowNotifications() : bool
 {
     var config	: CInGameConfigWrapper;
