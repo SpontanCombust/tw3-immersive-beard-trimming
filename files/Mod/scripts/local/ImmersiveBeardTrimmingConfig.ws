@@ -2,7 +2,7 @@
 
 function IBT_IsDLC2ImprovedModInstalled() : bool
 {
-    if( GetLocStringByKey( "Long and loose, passing behind the ears." ) != "" )
+    if( StrLen(GetLocStringById(2114400000)) > 0 )
     {
         return true;
     }
@@ -105,6 +105,8 @@ function IBT_Config_HairNameToHairClass( hairName: name ) : IBT_EHairClass
         default:
 			varid = '';
     }
+
+    IBT_Log( "IBT_Config_HairNameToHairClass: " + varid );
 
 	if( varid != '' )
 		return (IBT_EHairClass)StringToInt( config.GetVarValue('ImmersiveBeardTrimming_HairClasses', varid), 0);

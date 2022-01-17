@@ -1,3 +1,9 @@
+function IBT_Log( s: string )
+{
+	LogChannel( 'IBT', s );
+}
+
+
 function IBT_GetGeraltHead() : IBT_SGeraltHead
 {
 	var head 		: IBT_SGeraltHead;
