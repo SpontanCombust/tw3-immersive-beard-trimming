@@ -73,7 +73,7 @@ function IBT_TrimGeraltBeard() : bool
 
 		// ...otherwise continue on with changing the beard
 		head.isCustom = false;
-		head.beardStage = (int)beh;
+		head.beardStage = (int)beh - 1; // -1 to adjust for offset of enum values compared to beard stages
 		ret = true;
 	}
 	else if( head.beardStage > 0 )
@@ -112,7 +112,7 @@ function IBT_GrowGeraltBeard() : bool
 		}
 
 		head.isCustom = false;
-		head.beardStage = (int)beh;
+		head.beardStage = (int)beh - 1; // -1 to adjust for offset of enum values compared to beard stages
 		ret = true;
 	}
 	else if( head.beardStage >= 0 && head.beardStage < 4 )
@@ -193,15 +193,61 @@ function IBT_EquipGeraltHair( hairName : name )
 	inv.MountItem(ids[0]);
 }
 
+function IBT_IsTiedHairClass( hc: IBT_EHairClass ) : bool
+{
+	return ( hc == IBT_HC_Stage1Tied || hc == IBT_HC_Stage2Tied || hc == IBT_HC_Stage3Tied );
+}
+
+function IBT_IsLooseHairClass( hc: IBT_EHairClass ) : bool
+{
+	return ( hc == IBT_HC_Stage1Loose || hc == IBT_HC_Stage2Loose || hc == IBT_HC_Stage3Loose );
+}
+
+function IBT_HairClassStageNum( hc: IBT_EHairClass ) : int
+{
+	switch( hc )
+	{
+		case IBT_HC_Stage1Loose:
+		case IBT_HC_Stage1Tied:
+			return 1;
+		case IBT_HC_Stage2Loose:
+		case IBT_HC_Stage2Tied:
+			return 2;
+		case IBT_HC_Stage3Loose:
+		case IBT_HC_Stage3Tied:
+			return 3;
+		default:
+			return -1;
+	}
+}
+
+function IBT_IsDLC2ImprovedHairstyle( hs: IBT_EHairStyle ) : bool
+{
+	if( hs > IBT_HS_Nilfgaardian )
+	{
+		return true;
+	}
+
+	return false;
+}
+
 function IBT_CutGeraltHair() : bool
 {
 	var hairClass	: IBT_EHairClass;
+	var hairStyle	: IBT_EHairStyle;
 	var hairName	: name;
 
 	hairClass = IBT_GetGeraltHairClass();
-	if( hairClass == IBT_HC_Stage2Tied || hairClass == IBT_HC_Stage2Loose )
+	if( hairClass != IBT_HC_Unknown && IBT_HairClassStageNum( hairClass ) > 1 )
 	{
-		hairName = IBT_Config_HairClassToHairName( hairClass - 2 );
+		hairStyle = IBT_Config_HairClassToHairStyle( hairClass - 2 );
+
+		if( IBT_IsDLC2ImprovedHairstyle( hairStyle ) && !IBT_IsDLC2ImprovedModInstalled() )
+		{
+			return false;
+		}
+
+		hairName = IBT_HairstyleEnumToName( hairStyle );
 		IBT_EquipGeraltHair( hairName );
 		return true;
 	}
@@ -212,12 +258,20 @@ function IBT_CutGeraltHair() : bool
 function IBT_GrowGeraltHair() : bool
 {
 	var hairClass	: IBT_EHairClass;
+	var hairStyle	: IBT_EHairStyle;
 	var hairName	: name;
 
 	hairClass = IBT_GetGeraltHairClass();
-	if( hairClass == IBT_HC_Stage1Tied || hairClass == IBT_HC_Stage1Loose )
+	if( hairClass != IBT_HC_Unknown && IBT_HairClassStageNum( hairClass ) < 3 )
 	{
-		hairName = IBT_Config_HairClassToHairName( hairClass + 2 );
+		hairStyle = IBT_Config_HairClassToHairStyle( hairClass + 2 );
+
+		if( IBT_IsDLC2ImprovedHairstyle( hairStyle ) && !IBT_IsDLC2ImprovedModInstalled() )
+		{
+			return false;
+		}
+
+		hairName = IBT_HairstyleEnumToName( hairStyle );
 		IBT_EquipGeraltHair( hairName );
 		return true;
 	}
@@ -228,12 +282,20 @@ function IBT_GrowGeraltHair() : bool
 function IBT_TieGeraltHair() : bool
 {
 	var hairClass	: IBT_EHairClass;
+	var hairStyle	: IBT_EHairStyle;
 	var hairName	: name;
 
 	hairClass = IBT_GetGeraltHairClass();
-	if( hairClass == IBT_HC_Stage1Loose || hairClass == IBT_HC_Stage2Loose )
+	if( IBT_IsLooseHairClass( hairClass ) )
 	{
-		hairName = IBT_Config_HairClassToHairName( hairClass + 1 );
+		hairStyle = IBT_Config_HairClassToHairStyle( hairClass + 1 );
+
+		if( IBT_IsDLC2ImprovedHairstyle( hairStyle ) && !IBT_IsDLC2ImprovedModInstalled() )
+		{
+			return false;
+		}
+
+		hairName = IBT_HairstyleEnumToName( hairStyle );
 		IBT_EquipGeraltHair( hairName );
 		return true;
 	}
@@ -244,12 +306,20 @@ function IBT_TieGeraltHair() : bool
 function IBT_UntieGeraltHair() : bool
 {
 	var hairClass	: IBT_EHairClass;
+	var hairStyle	: IBT_EHairStyle;
 	var hairName	: name;
 
 	hairClass = IBT_GetGeraltHairClass();
-	if( hairClass == IBT_HC_Stage1Tied || hairClass == IBT_HC_Stage2Tied )
+	if( IBT_IsTiedHairClass( hairClass ) )
 	{
-		hairName = IBT_Config_HairClassToHairName( hairClass - 1 );
+		hairStyle = IBT_Config_HairClassToHairStyle( hairClass - 1 );
+
+		if( IBT_IsDLC2ImprovedHairstyle( hairStyle ) && !IBT_IsDLC2ImprovedModInstalled() )
+		{
+			return false;
+		}
+
+		hairName = IBT_HairstyleEnumToName( hairStyle );
 		IBT_EquipGeraltHair( hairName );
 		return true;
 	}

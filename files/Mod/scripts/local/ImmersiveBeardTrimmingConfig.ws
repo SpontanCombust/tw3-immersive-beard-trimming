@@ -1,3 +1,19 @@
+//////////////////////////// CONFIGURATION BASED ON OTHER MODS INSTALLED ////////////////////////////
+
+function IBT_IsDLC2ImprovedModInstalled() : bool
+{
+    if( GetLocStringByKey( "Long and loose, passing behind the ears." ) != "" )
+    {
+        return true;
+    }
+
+    return false;
+}
+
+
+
+
+
 //////////////////////////// HAIR CLASSES ////////////////////////////
 
 function IBT_Config_HairNameToHairClass( hairName: name ) : IBT_EHairClass
@@ -103,7 +119,7 @@ function IBT_Config_HairNameToHairClass( hairName: name ) : IBT_EHairClass
 
 //////////////////////////// DEFAULT HAIRSTYLES FOR CLASSES ////////////////////////////
 
-function IBT_Config_HairClassToHairName( hairClass: IBT_EHairClass ) : name
+function IBT_Config_HairClassToHairStyle( hairClass: IBT_EHairClass ) : IBT_EHairStyle
 {
     var config	    : CInGameConfigWrapper;
 	var varid		: name;
@@ -140,7 +156,7 @@ function IBT_Config_HairClassToHairName( hairClass: IBT_EHairClass ) : name
 	else
 		hairStyle = IBT_HS_None;
 
-    return IBT_HairstyleEnumToName( hairStyle );
+    return hairStyle;
 }
 
 
