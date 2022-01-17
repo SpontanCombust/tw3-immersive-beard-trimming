@@ -5,8 +5,9 @@ chcp 65001
 
 
 :: Mod info
+set MOD_NAME_FULL='Immersive Beard Trimming'
 set MOD_NAME=BeardTrimming
-set MOD_VERSION="2.0.0"
+set MOD_VERSION="2.1.2"
 set MOD_ID=4818
 
 :: Tools

@@ -1,4 +1,4 @@
-cd variables.bat
+call variables.bat
 
 
 :: move and launch
