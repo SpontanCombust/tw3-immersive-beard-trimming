@@ -5,65 +5,109 @@
 2114818002||panel_immersive_beard_trimming|Immmersyjne Podcinanie Brody
 2114818003||panel_ibt_hair_classes|Kategorie fryzur
 2114818004||preset_Mods_immersive_beard_trimming_ibt_hair_classes|Predefiniowane ustawienia kategorii
-2114818005||preset_value_ibt_default|Domyślne
-2114818006||option_ibt_hairstyle_half_with_ponytail|Luźno zebrane włosy, związane z tyłu głowy
-2114818007||option_ibt_hairstyle_long_loose|Długie rozpuszczone włosy
-2114818008||option_ibt_hairstyle_shaved_with_ponytail|Golenie i koński ogon
-2114818009||option_ibt_hairstyle_short_loose|Krótkie rozpuszczone włosy
-2114818010||option_ibt_hairstyle_mohawk_with_ponytail|Wygolone na skroniach i koński ogon
-2114818011||option_ibt_hairstyle_elven_rebel|Na elfiego buntownika
-2114818012||panel_ibt_default_hair_styles|Domyślne fryzury dla kategorii
-2114818013||preset_Mods_immersive_beard_trimming_ibt_default_hair_styles|Predefiniowane ustawienia fryzur
-2114818014||preset_value_ibt_ibt_hairclass_unknown|Nieznana
-2114818015||preset_value_ibt_ibt_hairclass_stage1_loose|Stopień 1, rozpuszczone
-2114818016||preset_value_ibt_ibt_hairclass_stage1_tied|Stopień 1, związane
-2114818017||preset_value_ibt_ibt_hairclass_stage2_loose|Stopień 2, rozpuszczone
-2114818018||preset_value_ibt_ibt_hairclass_stage2_tied|Stopień 2, związane
-2114818019||option_ibt_ibt_hairclass_stage1_loose|Stopień 1, rozpuszczone
-2114818020||option_ibt_ibt_hairclass_stage1_tied|Stopień 1, związane
-2114818021||option_ibt_ibt_hairclass_stage2_loose|Stopień 2, rozpuszczone
-2114818022||option_ibt_ibt_hairclass_stage2_tied|Stopień 2, związane
-2114818023||preset_value_ibt_hairstyle_none|Brak
-2114818024||preset_value_ibt_hairstyle_half_with_ponytail|Luźno zebrane włosy, związane z tyłu głowy
-2114818025||preset_value_ibt_hairstyle_long_loose|Długie rozpuszczone włosy
-2114818026||preset_value_ibt_hairstyle_shaved_with_ponytail|Golenie i koński ogon
-2114818027||preset_value_ibt_hairstyle_short_loose|Krótkie rozpuszczone włosy
-2114818028||preset_value_ibt_hairstyle_mohawk_with_ponytail|Wygolone na skroniach i koński ogon
-2114818029||preset_value_ibt_hairstyle_elven_rebel|Na elfiego buntownika
-2114818030||item_name_ibt_scissors|Nożyczki
-2114818031||item_desc_ibt_scissors|Używane do podcinania brody i włosów.
-2114818032||item_desc_ibt_scissors_mode_preamble|Tryb
-2114818033||item_desc_ibt_scissors_mode_beard|Broda
-2114818034||item_desc_ibt_scissors_mode_hair|Włosy
-2114818035||ibt_panel_button_changeScissorsMode|Zmień tryb nożyczek
-2114818036||ibt_notif_used_scissors_beard_success|Broda Geralta została podcięta
-2114818037||ibt_notif_used_scissors_beard_failure|Geralt jest już ogolony na gładko
-2114818038||ibt_notif_used_scissors_hair_success|Włosy Geralta zostały skrócone
-2114818039||ibt_notif_used_scissors_hair_failure|Włosy Geralta nie mogą już zostać dalej skrócone
-2114818040||item_name_ibt_hairtie|Gumka do włosów
-2114818041||item_desc_ibt_hairtie|Używana do wiązania włosów w koński ogon.
-2114818042||ibt_notif_equipped_hairtie_success|Włosy Geralta zostały zawiązane w koński ogon
-2114818043||ibt_notif_equipped_hairtie_failure|Włosy Geralta nie mogą zostać znów zawiązane w koński ogon
-2114818044||ibt_notif_unequipped_hairtie_success|Włosy Geralta zostały rozpuszczone
-2114818045||ibt_notif_unequipped_hairtie_failure|Włosy Geralta nie mogły zostać jeszcze bardziej rozpuszczone
-2114818046||item_name_ibt_tonic_beard|Tonik na porost brody
-2114818047||item_desc_ibt_tonic_beard|Używany do natychmiastowego rozwijania stadium zarostu.
-2114818048||item_name_ibt_tonic_hair|Tonik na porost włoów
-2114818049||item_desc_ibt_tonic_hair|Używany do natychmiastowego wydłużania włosów.
-2114818050||ibt_notif_drank_tonic_beard_success|Broda Geralta urosła o jeden stopień
-2114818051||ibt_notif_drank_tonic_beard_failure|Broda Geralta jest już w swoim ostatnim stadium
-2114818052||ibt_notif_drank_tonic_hair_success|Włosy Geralta zostały wydłużone
-2114818053||ibt_notif_drank_tonic_hair_failure|Włosy Geralta już są długie
-2114818054||panel_ibt_item_behaviour|Zachowanie przedmiotów
-2114818055||preset_Mods_immersive_beard_trimming_ibt_item_behaviour|Predefiniowane ustawienia zachowań przedmiotów
-2114818056||option_ibt_behaviour_combat_block|Blokuj akcje w czasie walki
-2114818057||option_ibt_behaviour_custom_beard_trim|Podcinanie niestandardowej brody
-2114818058||preset_value_ibt_behaviour_do_nothing|Nie rób nic
-2114818059||preset_value_ibt_behaviour_beard_set_0|Ustaw na gładko ogolony
-2114818060||preset_value_ibt_behaviour_beard_set_1|Ustaw na stopień 1
-2114818061||preset_value_ibt_behaviour_beard_set_2|Ustaw na stopień 2
-2114818062||preset_value_ibt_behaviour_beard_set_3|Ustaw na stopień 3
-2114818063||preset_value_ibt_behaviour_beard_set_4|Ustaw na stopień 4
-2114818064||option_ibt_behaviour_custom_beard_grow|Porost niestandardowej brody
-2114818065||option_ibt_behaviour_block_unnecessary_tonic_consumption|Zapobiegnij niepotrzebnemu zużyciu toników
-2114818066||option_ibt_behaviour_show_notifications|Pokazuj powiadomienia
+2114818005||preset_value_ibt_preset_default_vanilla|Domyślne Vanilla
+2114818006||preset_value_ibt_preset_default_dlc2i|Domyślne DLC2I
+2114818007||option_ibt_hairstyle_half_with_ponytail|Luźno zebrane włosy, związane z tyłu głowy
+2114818008||option_ibt_hairstyle_long_loose|Długie rozpuszczone włosy
+2114818009||option_ibt_hairstyle_shaved_with_ponytail|Golenie i koński ogon
+2114818010||option_ibt_hairstyle_short_loose|Krótkie rozpuszczone włosy
+2114818011||option_ibt_hairstyle_mohawk_with_ponytail|Wygolone na skroniach i koński ogon
+2114818012||option_ibt_hairstyle_elven_rebel|Na elfiego buntownika
+2114818013||option_ibt_hairstyle_dlc2i_long_loose_behind_ears|Długie rozpuszczone włosy założone za uszy
+2114818014||option_ibt_hairstyle_dlc2i_long_with_headband|Długie włosy z opaską
+2114818015||option_ibt_hairstyle_dlc2i_long_loose_behind_ears_alt|Długie rozpuszczone włosy założone za uszy (alternatywne)
+2114818016||option_ibt_hairstyle_dlc2i_long_with_headband_alt|Długie włosy z opaską (alternatywne)
+2114818017||option_ibt_hairstyle_dlc2i_ponytail|Koński ogon
+2114818018||option_ibt_hairstyle_dlc2i_olgierd|Na Olgierda
+2114818019||option_ibt_hairstyle_dlc2i_witold|Na Witolda
+2114818020||option_ibt_hairstyle_dlc2i_ponytail_long|Koński ogon (długi)
+2114818021||option_ibt_hairstyle_dlc2i_shaved_with_ponytail_long|Golenie i koński ogon (długi)
+2114818022||option_ibt_hairstyle_dlc2i_rivian_ponytail|Rivijski koński ogon
+2114818023||option_ibt_hairstyle_dlc2i_shaved|Ogolony
+2114818024||option_ibt_hairstyle_dlc2i_logan|Na Logana
+2114818025||option_ibt_hairstyle_dlc2i_zoltan|Na Zoltana
+2114818026||option_ibt_hairstyle_dlc2i_slicked_back_long|Długie zaczesane do tyłu włosy
+2114818027||option_ibt_hairstyle_dlc2i_mohawk_with_ponytail_long|Włosy wygolone na skroniach, krótko na górze i koński ogon (długi)
+2114818028||option_ibt_hairstyle_dlc2i_viking|Wikińskie warkocze
+2114818029||option_ibt_hairstyle_dlc2i_long_elven|Długie elfickie
+2114818030||option_ibt_hairstyle_dlc2i_long_elven_with_headband|Długie elfickie z opaską
+2114818031||option_ibt_hairstyle_dlc2i_olgierd_alt|Na Olgierda (alternatywne)
+2114818032||panel_ibt_default_hair_styles|Domyślne fryzury dla kategorii
+2114818033||preset_Mods_immersive_beard_trimming_ibt_default_hair_styles|Predefiniowane ustawienia fryzur
+2114818034||preset_value_ibt_ibt_hairclass_unknown|Nieznana
+2114818035||preset_value_ibt_ibt_hairclass_stage1_loose|Stopień 1, rozpuszczone
+2114818036||preset_value_ibt_ibt_hairclass_stage1_tied|Stopień 1, związane
+2114818037||preset_value_ibt_ibt_hairclass_stage2_loose|Stopień 2, rozpuszczone
+2114818038||preset_value_ibt_ibt_hairclass_stage2_tied|Stopień 2, związane
+2114818039||preset_value_ibt_ibt_hairclass_stage3_loose|Stopień 3, rozpuszczone
+2114818040||preset_value_ibt_ibt_hairclass_stage3_tied|Stopień 3, związane
+2114818041||option_ibt_ibt_hairclass_stage1_loose|Stopień 1, rozpuszczone
+2114818042||option_ibt_ibt_hairclass_stage1_tied|Stopień 1, związane
+2114818043||option_ibt_ibt_hairclass_stage2_loose|Stopień 2, rozpuszczone
+2114818044||option_ibt_ibt_hairclass_stage2_tied|Stopień 2, związane
+2114818045||option_ibt_ibt_hairclass_stage3_loose|Stopień 3, rozpuszczone
+2114818046||option_ibt_ibt_hairclass_stage3_tied|Stopień 3, związane
+2114818047||preset_value_ibt_hairstyle_none|Brak
+2114818048||preset_value_ibt_hairstyle_half_with_ponytail|Luźno zebrane włosy, związane z tyłu głowy
+2114818049||preset_value_ibt_hairstyle_long_loose|Długie rozpuszczone włosy
+2114818050||preset_value_ibt_hairstyle_shaved_with_ponytail|Golenie i koński ogon
+2114818051||preset_value_ibt_hairstyle_short_loose|Krótkie rozpuszczone włosy
+2114818052||preset_value_ibt_hairstyle_mohawk_with_ponytail|Wygolone na skroniach i koński ogon
+2114818053||preset_value_ibt_hairstyle_elven_rebel|Na elfiego buntownika
+2114818054||preset_value_ibt_hairstyle_dlc2i_long_loose_behind_ears|Długie rozpuszczone włosy założone za uszy
+2114818055||preset_value_ibt_hairstyle_dlc2i_long_with_headband|Długie włosy z opaską
+2114818056||preset_value_ibt_hairstyle_dlc2i_long_loose_behind_ears_alt|Długie rozpuszczone włosy założone za uszy (alternatywne)
+2114818057||preset_value_ibt_hairstyle_dlc2i_long_with_headband_alt|Długie włosy z opaską (alternatywne)
+2114818058||preset_value_ibt_hairstyle_dlc2i_ponytail|Koński ogon
+2114818059||preset_value_ibt_hairstyle_dlc2i_olgierd|Na Olgierda
+2114818060||preset_value_ibt_hairstyle_dlc2i_witold|Na Witolda
+2114818061||preset_value_ibt_hairstyle_dlc2i_ponytail_long|Koński ogon (długi)
+2114818062||preset_value_ibt_hairstyle_dlc2i_shaved_with_ponytail_long|Golenie i koński ogon (długi)
+2114818063||preset_value_ibt_hairstyle_dlc2i_rivian_ponytail|Rivijski koński ogon
+2114818064||preset_value_ibt_hairstyle_dlc2i_shaved|Ogolony
+2114818065||preset_value_ibt_hairstyle_dlc2i_logan|Na Logana
+2114818066||preset_value_ibt_hairstyle_dlc2i_zoltan|Na Zoltana
+2114818067||preset_value_ibt_hairstyle_dlc2i_slicked_back_long|Długie zaczesane do tyłu włosy
+2114818068||preset_value_ibt_hairstyle_dlc2i_mohawk_with_ponytail_long|Włosy wygolone na skroniach, krótko na górze i koński ogon (długi)
+2114818069||preset_value_ibt_hairstyle_dlc2i_viking|Wikińskie warkocze
+2114818070||preset_value_ibt_hairstyle_dlc2i_long_elven|Długie elfickie
+2114818071||preset_value_ibt_hairstyle_dlc2i_long_elven_with_headband|Długie elfickie z opaską
+2114818072||preset_value_ibt_hairstyle_dlc2i_olgierd_alt|Na Olgierda (alternatywne)
+2114818073||item_name_ibt_scissors|Nożyczki
+2114818074||item_desc_ibt_scissors|Używane do podcinania brody i włosów.
+2114818075||item_desc_ibt_scissors_mode_preamble|Tryb
+2114818076||item_desc_ibt_scissors_mode_beard|Broda
+2114818077||item_desc_ibt_scissors_mode_hair|Włosy
+2114818078||ibt_panel_button_changeScissorsMode|Zmień tryb nożyczek
+2114818079||ibt_notif_used_scissors_beard_success|Broda Geralta została podcięta
+2114818080||ibt_notif_used_scissors_beard_failure|Geralt jest już ogolony na gładko
+2114818081||ibt_notif_used_scissors_hair_success|Włosy Geralta zostały skrócone
+2114818082||ibt_notif_used_scissors_hair_failure|Włosy Geralta nie mogą już zostać dalej skrócone
+2114818083||item_name_ibt_hairtie|Gumka do włosów
+2114818084||item_desc_ibt_hairtie|Używana do wiązania włosów w koński ogon.
+2114818085||ibt_notif_equipped_hairtie_success|Włosy Geralta zostały zawiązane w koński ogon
+2114818086||ibt_notif_equipped_hairtie_failure|Włosy Geralta nie mogą zostać znów zawiązane w koński ogon
+2114818087||ibt_notif_unequipped_hairtie_success|Włosy Geralta zostały rozpuszczone
+2114818088||ibt_notif_unequipped_hairtie_failure|Włosy Geralta nie mogły zostać jeszcze bardziej rozpuszczone
+2114818089||item_name_ibt_tonic_beard|Tonik na porost brody
+2114818090||item_desc_ibt_tonic_beard|Używany do natychmiastowego rozwijania stadium zarostu.
+2114818091||item_name_ibt_tonic_hair|Tonik na porost włoów
+2114818092||item_desc_ibt_tonic_hair|Używany do natychmiastowego wydłużania włosów.
+2114818093||ibt_notif_drank_tonic_beard_success|Broda Geralta urosła o jeden stopień
+2114818094||ibt_notif_drank_tonic_beard_failure|Broda Geralta jest już w swoim ostatnim stadium
+2114818095||ibt_notif_drank_tonic_hair_success|Włosy Geralta zostały wydłużone
+2114818096||ibt_notif_drank_tonic_hair_failure|Włosy Geralta już są długie
+2114818097||panel_ibt_item_behaviour|Zachowanie przedmiotów
+2114818098||preset_Mods_immersive_beard_trimming_ibt_item_behaviour|Predefiniowane ustawienia zachowań przedmiotów
+2114818099||preset_value_ibt_preset_default|Domyślne
+2114818100||option_ibt_behaviour_combat_block|Blokuj akcje w czasie walki
+2114818101||option_ibt_behaviour_custom_beard_trim|Podcinanie niestandardowej brody
+2114818102||preset_value_ibt_behaviour_do_nothing|Nie rób nic
+2114818103||preset_value_ibt_behaviour_beard_set_0|Ustaw na gładko ogolony
+2114818104||preset_value_ibt_behaviour_beard_set_1|Ustaw na stopień 1
+2114818105||preset_value_ibt_behaviour_beard_set_2|Ustaw na stopień 2
+2114818106||preset_value_ibt_behaviour_beard_set_3|Ustaw na stopień 3
+2114818107||preset_value_ibt_behaviour_beard_set_4|Ustaw na stopień 4
+2114818108||option_ibt_behaviour_custom_beard_grow|Porost niestandardowej brody
+2114818109||option_ibt_behaviour_block_unnecessary_tonic_consumption|Zapobiegnij niepotrzebnemu zużyciu toników
+2114818110||option_ibt_behaviour_show_notifications|Pokazuj powiadomienia

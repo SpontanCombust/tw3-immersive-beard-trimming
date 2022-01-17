@@ -1214,7 +1214,7 @@
 
 	<Group id="ImmersiveBeardTrimming_ItemBehaviour" displayName="Mods.immersive_beard_trimming.ibt_item_behaviour">
 		<PresetsArray>
-			<Preset id="0" displayName="ibt_default">
+			<Preset id="0" displayName="ibt_preset_default">
 				<Entry varId="BehaviourShowNotifications" value="true"/>
 				<Entry varId="BehaviourBlockActionsDuringCombat" value="true"/>
 				<Entry varId="BehaviourCustomBeardTrim" value="2"/>
