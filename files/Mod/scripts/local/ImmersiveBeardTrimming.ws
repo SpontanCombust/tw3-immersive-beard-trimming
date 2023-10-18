@@ -157,31 +157,32 @@ function IBT_HairNameToType( hairName : name ) : IBT_EHairType
 	}
 }
 
+function IBT_HairStyleEnumToName( hairStyle: IBT_EHairStyle ) : name
+{
+	switch( hairStyle )
+	{
+		case IBT_EHairStyleShavedWithPonytail:
+			return 'Shaved With Tail Hairstyle';
+		case IBT_EHairStyleMohawkWithPonytail:
+			return 'Mohawk With Ponytail Hairstyle';
+		case IBT_EHairStyleShortLoose:
+			return 'Short Loose Hairstyle';
+		case IBT_EHairStyleElvenRebel:
+			return 'Nilfgaardian Hairstyle';
+		default:
+			return '';
+	}
+}
+
 function IBT_MenuShortHairName( tied: bool ) : name
 {
-	var config	: CInGameConfigWrapper;
-	var idx		: int;
+	var settings : IBT_Settings;
+	var style: IBT_EHairStyle;
 
-	config = theGame.GetInGameConfigWrapper();
-
-	if( tied )
-	{
-		idx = StringToInt( config.GetVarValue('ImmersiveBeardTrimming', 'HairShortTied'), 0);
-
-		if( idx == 0 )
-			return 'Shaved With Tail Hairstyle';
-		else
-			return 'Mohawk With Ponytail Hairstyle';
-	}
-	else
-	{
-		idx = StringToInt( config.GetVarValue('ImmersiveBeardTrimming', 'HairShortUntied'), 0);
-
-		if( idx == 0 )
-			return 'Short Loose Hairstyle';
-		else
-			return 'Nilfgaardian Hairstyle';
-	}
+	settings = GetIBT_Settings();
+	style = tied ? settings.Main.HairShortTied : settings.Main.HairShortUntied;
+	
+	return IBT_HairStyleEnumToName(style);
 }
 
 function IBT_HairTypeToName( hairType : IBT_EHairType ) : name
@@ -373,7 +374,7 @@ function IBT_ChangeScissorsMode( item: SItemUniqueId, inv: CInventoryComponent )
 {
 	var mode	: IBT_EScissorsMode;
 
-	mode = (IBT_EScissorsMode)inv.GetItemModifierInt( item, 'ibt_scissors_mode', (int)IBT_SM_Beard );
+	mode = IBT_GetScissorsMode(item, inv);
 
 	if( mode == IBT_SM_Beard )
 	{
