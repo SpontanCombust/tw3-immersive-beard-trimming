@@ -1,6 +1,6 @@
-call variables.bat
+call .\tasks\variables.bat
 
-call %PROJECT_DIR%\tasks\pack_bundle.bat
-call %PROJECT_DIR%\tasks\pack_menu.bat
-call %PROJECT_DIR%\tasks\pack_scripts.bat
-call %PROJECT_DIR%\tasks\pack_strings.bat
+call .\tasks\pack_bundle.bat
+call .\tasks\pack_menu.bat
+call .\tasks\pack_scripts.bat
+call .\tasks\pack_strings.bat

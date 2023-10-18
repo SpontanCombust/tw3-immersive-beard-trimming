@@ -10,7 +10,7 @@ if not exist %OUT_DIR% (
 )
 
 :: encode ENG
-w3stringsx %CSV_ENG% -o %PACKED% -l all
+%W3STRINGSX% %CSV_ENG% -o %PACKED% -l all
 
 :: encode PL
-w3stringsx %CSV_PL% -o %PACKED% -l pl
+%W3STRINGSX% %CSV_PL% -o %PACKED% -l pl

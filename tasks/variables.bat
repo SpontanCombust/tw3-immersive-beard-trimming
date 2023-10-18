@@ -6,20 +6,14 @@ chcp 65001
 
 :: Mod info
 set MOD_NAME=ImmersiveBeardTrimming
-set MOD_VERSION="2.0.0"
+set MOD_VERSION="3.0.0"
 set MOD_ID=4818
 
 :: Tools
-set WCC_DIR="D:\Przemek\Witcher3Modding\Modkit\bin\x64\"
+:: Their directories should be contained in the PATH environment variable
 set WCC="wcc_lite.exe"
-set W3STRINGS_ENCODER_DIR="D:\Przemek\Witcher3Modding\W3String Encoder"
-set W3STRINGS_ENCODER="w3strings.exe"
-set WOLVENKIT_DIR="D:\Przemek\Witcher3Modding\Wolvenkit"
-set WOLVENKIT="WolvenKit.exe"
-set SCRIPT_MERGER_DIR="D:\Przemek\Wiedźmin 3 - Edycja GOTY\W3SM"
-set SCRIPT_MERGER="WitcherScriptMerger.exe"
-set SCRIPT_STUDIO_DIR="D:\Przemek\Wiedźmin 3 - Edycja GOTY\The Witcher 3 Wild Hunt GOTY\bin\x64"
-set SCRIPT_STUDIO="scriptStudio.exe"
+set MSF_PARSER="settings_parser.exe"
+set W3STRINGSX="w3stringsx.py"
 
 :: Full path to the game directory
 set GAME_DIR="D:\Przemek\Wiedźmin 3 - Edycja GOTY\The Witcher 3 Wild Hunt GOTY"

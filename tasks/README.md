@@ -1,0 +1,1 @@
+These scripts should be executed from the root directory of the project.

@@ -1,4 +1,4 @@
-call variables.bat
+call .\tasks\variables.bat
 
 set PACKED_DLC_CONTENT=%PACKED%\DLC\dlc%MOD_NAME%\content
 
