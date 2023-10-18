@@ -1,33 +1,32 @@
-;meta[language=en]
-; id | key(hex) | key(str) | text
-2114818000||dlc_beard_trimming|Immersive Beard Trimming
-2114818001||dlc_beard_trimming_desc|Cut Geralt's hair and beard like a true barber
-2114818002||panel_immersive_beard_trimming|Immersive Beard Trimming
-2114818003||preset_Mods_immersive_beard_trimming|Presets
-2114818004||preset_value_ibt_default|Default
-2114818005||option_ibt_hair_short_tied|Short tied hair
-2114818006||preset_value_ibt_hairstyle_shaved_with_ponytail|Shaved except for a pony tail
-2114818007||preset_value_ibt_hairstyle_mohawk_with_ponytail|Shaved on the sides, short on top, and a ponytail
-2114818008||option_ibt_hair_short_untied|Short untied hair
-2114818009||preset_value_ibt_hairstyle_short_loose|Loose, not too long
-2114818010||preset_value_ibt_hairstyle_elven_rebel|The elven rebel
-2114818011||item_name_ibt_scissors|Scissors
-2114818012||item_desc_ibt_scissors|Used for grooming beard and hair.
-2114818013||item_desc_ibt_scissors_mode_preamble|Mode
-2114818014||item_desc_ibt_scissors_mode_beard|Beard
-2114818015||item_desc_ibt_scissors_mode_hair|Hair
-2114818016||ibt_panel_button_changeScissorsMode|Change scissors mode
-2114818017||ibt_notif_used_scissors_beard_success|Geralt's beard has been trimmed
-2114818018||ibt_notif_used_scissors_beard_failure|Geralt is already clean shaved
-2114818019||ibt_notif_used_scissors_hair_success|Geralt's hair has been shortened
-2114818020||ibt_notif_used_scissors_hair_failure|Geralt's hair can't be shortened any further
-2114818021||item_name_ibt_hairtie|Hair tie
-2114818022||item_desc_ibt_hairtie|Used for tieing hair into a ponytail.
-2114818023||item_name_ibt_tonic_beard|Beard Growth Tonic
-2114818024||item_desc_ibt_tonic_beard|Used for instantly making beard thicker.
-2114818025||item_name_ibt_tonic_hair|Hair Growth Tonic
-2114818026||item_desc_ibt_tonic_hair|Used for instantly making hair longer.
-2114818027||ibt_notif_drank_tonic_beard_success|Geralt's beard growth has been advanced by one stage
-2114818028||ibt_notif_drank_tonic_beard_failure|Geralt's beard is already at the last growth stage
-2114818029||ibt_notif_drank_tonic_hair_success|Geralt's hair has grown longer
-2114818030||ibt_notif_drank_tonic_hair_failure|Geralt's hair is already long
+;idspace=4818
+dlc_beard_trimming|Immersive Beard Trimming
+dlc_beard_trimming_desc|Cut Geralt's hair and beard like a true barber
+panel_immersive_beard_trimming|Immersive Beard Trimming
+preset_Mods_immersive_beard_trimming|Presets
+preset_value_ibt_default|Default
+option_ibt_hair_short_tied|Short tied hair
+preset_value_ibt_hairstyle_shaved_with_ponytail|Shaved except for a pony tail
+preset_value_ibt_hairstyle_mohawk_with_ponytail|Shaved on the sides, short on top, and a ponytail
+option_ibt_hair_short_untied|Short untied hair
+preset_value_ibt_hairstyle_short_loose|Loose, not too long
+preset_value_ibt_hairstyle_elven_rebel|The elven rebel
+item_name_ibt_scissors|Scissors
+item_desc_ibt_scissors|Used for grooming beard and hair.
+item_desc_ibt_scissors_mode_preamble|Mode
+item_desc_ibt_scissors_mode_beard|Beard
+item_desc_ibt_scissors_mode_hair|Hair
+ibt_panel_button_changeScissorsMode|Change scissors mode
+ibt_notif_used_scissors_beard_success|Geralt's beard has been trimmed
+ibt_notif_used_scissors_beard_failure|Geralt is already clean shaved
+ibt_notif_used_scissors_hair_success|Geralt's hair has been shortened
+ibt_notif_used_scissors_hair_failure|Geralt's hair can't be shortened any further
+item_name_ibt_hairtie|Hair tie
+item_desc_ibt_hairtie|Used for tieing hair into a ponytail.
+item_name_ibt_tonic_beard|Beard Growth Tonic
+item_desc_ibt_tonic_beard|Used for instantly making beard thicker.
+item_name_ibt_tonic_hair|Hair Growth Tonic
+item_desc_ibt_tonic_hair|Used for instantly making hair longer.
+ibt_notif_drank_tonic_beard_success|Geralt's beard growth has been advanced by one stage
+ibt_notif_drank_tonic_beard_failure|Geralt's beard is already at the last growth stage
+ibt_notif_drank_tonic_hair_success|Geralt's hair has grown longer
+ibt_notif_drank_tonic_hair_failure|Geralt's hair is already long

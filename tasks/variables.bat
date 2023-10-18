@@ -5,7 +5,7 @@ chcp 65001
 
 
 :: Mod info
-set MOD_NAME=BeardTrimming
+set MOD_NAME=ImmersiveBeardTrimming
 set MOD_VERSION="2.0.0"
 set MOD_ID=4818
 
@@ -25,7 +25,7 @@ set SCRIPT_STUDIO="scriptStudio.exe"
 set GAME_DIR="D:\Przemek\Wiedźmin 3 - Edycja GOTY\The Witcher 3 Wild Hunt GOTY"
 
 :: Full path to this project - no spaces allowed
-set PROJECT_DIR=D:\Przemek\Witcher3Modding\Projects\BeardTrimming
+set PROJECT_DIR=.
 
 :: Mod directory locations
 set DLC_BUNDLE=%PROJECT_DIR%\files\DLC\Bundle

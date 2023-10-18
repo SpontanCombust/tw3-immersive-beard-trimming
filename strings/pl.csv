@@ -1,33 +1,32 @@
-;meta[language=pl]
-; id | key(hex) | key(str) | text
-2114818000||dlc_beard_trimming|Podcinanie Brody
-2114818001||dlc_beard_trimming_desc|Podcinaj brodę i włosy Geralta jak prawdziwy golibroda
-2114818002||panel_immersive_beard_trimming|Immmersyjne Podcinanie Brody
-2114818003||preset_Mods_immersive_beard_trimming|Predefiniowane ustawienia
-2114818004||preset_value_ibt_default|Domyślne
-2114818005||option_ibt_hair_short_tied|Krótkie związane włosy
-2114818006||preset_value_ibt_hairstyle_shaved_with_ponytail|Golenie i koński ogon
-2114818007||preset_value_ibt_hairstyle_mohawk_with_ponytail|Wygolone na skroniach i koński ogon
-2114818008||option_ibt_hair_short_untied|Krótkie rozpuszczone włosy
-2114818009||preset_value_ibt_hairstyle_short_loose|Niezbyt długie rozpuszczone
-2114818010||preset_value_ibt_hairstyle_elven_rebel|Na elfiego buntownika
-2114818011||item_name_ibt_scissors|Nożyczki
-2114818012||item_desc_ibt_scissors|Używane do podcinania brody i włosów.
-2114818013||item_desc_ibt_scissors_mode_preamble|Tryb
-2114818014||item_desc_ibt_scissors_mode_beard|Broda
-2114818015||item_desc_ibt_scissors_mode_hair|Włosy
-2114818016||ibt_panel_button_changeScissorsMode|Zmień tryb nożyczek
-2114818017||ibt_notif_used_scissors_beard_success|Broda Geralta została podcięta
-2114818018||ibt_notif_used_scissors_beard_failure|Geralt jest już ogolony na gładko
-2114818019||ibt_notif_used_scissors_hair_success|Włosy Geralta zostały skrócone
-2114818020||ibt_notif_used_scissors_hair_failure|Włosy Geralta nie mogą już zostać dalej skrócone
-2114818021||item_name_ibt_hairtie|Gumka do włosów
-2114818022||item_desc_ibt_hairtie|Używana do wiązania włosów w koński ogon.
-2114818023||item_name_ibt_tonic_beard|Tonik na porost brody
-2114818024||item_desc_ibt_tonic_beard|Używany do natychmiastowego rozwijania stadium zarostu.
-2114818025||item_name_ibt_tonic_hair|Tonik na porost włoów
-2114818026||item_desc_ibt_tonic_hair|Używany do natychmiastowego wydłużania włosów.
-2114818027||ibt_notif_drank_tonic_beard_success|Broda Geralta urosła o jeden stopień
-2114818028||ibt_notif_drank_tonic_beard_failure|Broda Geralta jest już w swoim ostatnim stadium
-2114818029||ibt_notif_drank_tonic_hair_success|Włosy Geralta zostały wydłużone
-2114818030||ibt_notif_drank_tonic_hair_failure|Włosy Geralta już są długie
+;idspace=4818
+dlc_beard_trimming|Podcinanie Brody
+dlc_beard_trimming_desc|Podcinaj brodę i włosy Geralta jak prawdziwy golibroda
+panel_immersive_beard_trimming|Immmersyjne Podcinanie Brody
+preset_Mods_immersive_beard_trimming|Predefiniowane ustawienia
+preset_value_ibt_default|Domyślne
+option_ibt_hair_short_tied|Krótkie związane włosy
+preset_value_ibt_hairstyle_shaved_with_ponytail|Golenie i koński ogon
+preset_value_ibt_hairstyle_mohawk_with_ponytail|Wygolone na skroniach i koński ogon
+option_ibt_hair_short_untied|Krótkie rozpuszczone włosy
+preset_value_ibt_hairstyle_short_loose|Niezbyt długie rozpuszczone
+preset_value_ibt_hairstyle_elven_rebel|Na elfiego buntownika
+item_name_ibt_scissors|Nożyczki
+item_desc_ibt_scissors|Używane do podcinania brody i włosów.
+item_desc_ibt_scissors_mode_preamble|Tryb
+item_desc_ibt_scissors_mode_beard|Broda
+item_desc_ibt_scissors_mode_hair|Włosy
+ibt_panel_button_changeScissorsMode|Zmień tryb nożyczek
+ibt_notif_used_scissors_beard_success|Broda Geralta została podcięta
+ibt_notif_used_scissors_beard_failure|Geralt jest już ogolony na gładko
+ibt_notif_used_scissors_hair_success|Włosy Geralta zostały skrócone
+ibt_notif_used_scissors_hair_failure|Włosy Geralta nie mogą już zostać dalej skrócone
+item_name_ibt_hairtie|Gumka do włosów
+item_desc_ibt_hairtie|Używana do wiązania włosów w koński ogon.
+item_name_ibt_tonic_beard|Tonik na porost brody
+item_desc_ibt_tonic_beard|Używany do natychmiastowego rozwijania stadium zarostu.
+item_name_ibt_tonic_hair|Tonik na porost włoów
+item_desc_ibt_tonic_hair|Używany do natychmiastowego wydłużania włosów.
+ibt_notif_drank_tonic_beard_success|Broda Geralta urosła o jeden stopień
+ibt_notif_drank_tonic_beard_failure|Broda Geralta jest już w swoim ostatnim stadium
+ibt_notif_drank_tonic_hair_success|Włosy Geralta zostały wydłużone
+ibt_notif_drank_tonic_hair_failure|Włosy Geralta już są długie
