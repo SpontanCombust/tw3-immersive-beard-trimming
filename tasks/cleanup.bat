@@ -1,4 +1,6 @@
-call variables.bat
+call .\tasks\variables.bat
 
 
-rmdir /q /s %PACKED%
+echo Cleanup...
+
+rmdir /q /s "%PACKED%"
