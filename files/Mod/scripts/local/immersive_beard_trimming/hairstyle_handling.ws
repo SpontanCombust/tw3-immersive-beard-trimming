@@ -1,4 +1,4 @@
-function IBT_HairstyleToLength(hair: IBT_HairStyle) : IBT_HairLength
+function IBT_HairstyleToLength(hair: IBT_HairStyle) : int
 {
 	var settings: IBT_Settings = GetIBT_Settings();
 
@@ -17,11 +17,11 @@ function IBT_HairstyleToLength(hair: IBT_HairStyle) : IBT_HairLength
 		case IBT_HairStyleNilfgaardian:
 			return settings.HairLength.Nilfgaardian;
 		default:
-			return IBT_HairLengthMedium;
+			return 1;
 	}
 }
 
-function IBT_HairstylesForLength(length: IBT_HairLength) : array<IBT_HairStyle>
+function IBT_HairstylesForLength(length: int) : array<IBT_HairStyle>
 {
 	var i: int;
 	var max: int;
