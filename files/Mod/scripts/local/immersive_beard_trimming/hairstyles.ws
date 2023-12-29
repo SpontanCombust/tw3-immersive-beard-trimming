@@ -164,6 +164,7 @@ function IBT_HairStyleLocString(hair: IBT_HairStyle) : string
 			return "ibt_hairstyle_mohawk_with_ponytal";
 		case IBT_HairStyleNilfgaardian:
 			return "ibt_hairstyle_nilfgaardian";
+        // DLC2 Improved
 		case IBT_HairStyleArdLongLoose:
             return "ibt_hairstyle_ard_long_loose";
         case IBT_HairStyleArdHeadband:

@@ -3,8 +3,31 @@
 	<Group id="IBTHairLength" msfVariable="HairLength" displayName="Mods.immersive_beard_trimming.hair_length">
 		<PresetsArray>
 			<Preset id="0" displayName="ibt_default">
-				<Entry varId="HairShortTied" value="0"/>
-				<Entry varId="HairShortUntied" value="0"/>
+				<Entry varId="HalfWithTail" value="2"/>
+				<Entry varId="ShavedWithTail" value="1"/>
+				<Entry varId="LongLoose" value="2"/>
+				<Entry varId="ShortLoose" value="1"/>
+				<Entry varId="MohawkWithPonytail" value="0"/>
+				<Entry varId="Nilfgaardian" value="1"/>
+				<Entry varId="ArdLongLoose" value="2"/>
+				<Entry varId="ArdHeadband" value="2"/>
+				<Entry varId="ArdLongLooseAlt" value="2"/>
+				<Entry varId="ArdHeadbandAlt" value="2"/>
+				<Entry varId="CraniumjFullPony" value="1"/>
+				<Entry varId="RoksaOlgierd" value="0"/>
+				<Entry varId="RoksaWitold" value="0"/>
+				<Entry varId="CraniumjFullPonyLong" value="2"/>
+				<Entry varId="ArdShavedWithTailLong" value="0"/>
+				<Entry varId="ArdRivianTail" value="2"/>
+				<Entry varId="ArdShaved" value="0"/>
+				<Entry varId="HellspawnLogan" value="1"/>
+				<Entry varId="FeregornZoltan" value="0"/>
+				<Entry varId="FeregornCinematic" value="2"/>
+				<Entry varId="ArdMohawkWithPonytailLong" value="0"/>
+				<Entry varId="FidoxViking" value="0"/>
+				<Entry varId="ArdElvenLong" value="2"/>
+				<Entry varId="ArdElvenHeadband" value="2"/>
+				<Entry varId="RoksaOlgierdAlt" value="0"/>
 			</Preset>
 		</PresetsArray>
 		<VisibleVars>
@@ -83,6 +106,257 @@
 					</Option>
 					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
 						<Entry varId="Nilfgaardian" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+
+			<!-- TODO reparse for MSF -->
+			<Var id="Separator" displayName="DLC2 Improved" displayType="SUBTLE_SEPARATOR"/>
+
+			<Var id="ArdLongLoose" displayName="ibt_hairstyle_ard_long_loose" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="ArdLongLoose" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="ArdLongLoose" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="ArdLongLoose" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="ArdHeadband" displayName="ibt_hairstyle_ard_headband" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="ArdHeadband" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="ArdHeadband" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="ArdHeadband" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="ArdLongLooseAlt" displayName="ibt_hairstyle_ard_alt_long_loose" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="ArdLongLooseAlt" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="ArdLongLooseAlt" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="ArdLongLooseAlt" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="ArdHeadbandAlt" displayName="ibt_hairstyle_ard_alt_headband" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="ArdHeadbandAlt" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="ArdHeadbandAlt" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="ArdHeadbandAlt" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="CraniumjFullPony" displayName="ibt_hairstyle_craniumj_full_pony" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="CraniumjFullPony" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="CraniumjFullPony" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="CraniumjFullPony" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="RoksaOlgierd" displayName="ibt_hairstyle_roksa_olgierd" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="RoksaOlgierd" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="RoksaOlgierd" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="RoksaOlgierd" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="RoksaWitold" displayName="ibt_hairstyle_roksa_witold" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="RoksaWitold" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="RoksaWitold" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="RoksaWitold" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="CraniumjFullPonyLong" displayName="ibt_hairstyle_craniumj_long_full_pony" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="CraniumjFullPonyLong" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="CraniumjFullPonyLong" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="CraniumjFullPonyLong" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="ArdShavedWithTailLong" displayName="ibt_hairstyle_ard_shaved_with_long_tail" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="ArdShavedWithTailLong" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="ArdShavedWithTailLong" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="ArdShavedWithTailLong" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="ArdRivianTail" displayName="ibt_hairstyle_ard_rivian_tail" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="ArdRivianTail" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="ArdRivianTail" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="ArdRivianTail" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="ArdShaved" displayName="ibt_hairstyle_ard_shaved" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="ArdShaved" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="ArdShaved" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="ArdShaved" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="HellspawnLogan" displayName="ibt_hairstyle_hellspawn_logan" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="HellspawnLogan" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="HellspawnLogan" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="HellspawnLogan" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="FeregornZoltan" displayName="ibt_hairstyle_feregorn_zoltan" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="FeregornZoltan" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="FeregornZoltan" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="FeregornZoltan" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="FeregornCinematic" displayName="ibt_hairstyle_feregorn_cinematic" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="FeregornCinematic" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="FeregornCinematic" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="FeregornCinematic" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="ArdMohawkWithPonytailLong" displayName="ibt_hairstyle_ard_mohawk_with_long_ponytail" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="ArdMohawkWithPonytailLong" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="ArdMohawkWithPonytailLong" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="ArdMohawkWithPonytailLong" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="FidoxViking" displayName="ibt_hairstyle_fidox_viking" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="FidoxViking" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="FidoxViking" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="FidoxViking" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="ArdElvenLong" displayName="ibt_hairstyle_ard_elven_long" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="ArdElvenLong" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="ArdElvenLong" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="ArdElvenLong" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="ArdElvenHeadband" displayName="ibt_hairstyle_ard_elven_headband" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="ArdElvenHeadband" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="ArdElvenHeadband" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="ArdElvenHeadband" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="RoksaOlgierdAlt" displayName="ibt_hairstyle_roksa_alt_olgierd" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="RoksaOlgierdAlt" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="RoksaOlgierdAlt" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="RoksaOlgierdAlt" value="2"/>
 					</Option>
 				</OptionsArray>
 			</Var>
