@@ -29,7 +29,7 @@ exec function ibt_growhair()
 
 exec function ibt_cuthair()
 {
-    IBT_CutGeraltHair();
+    IBT_HairstyleChoicePopup();
 }
 
 exec function ibt_growbeard()

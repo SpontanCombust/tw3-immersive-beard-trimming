@@ -105,17 +105,11 @@ class IBT_HairstyleChoiceSliderPopupData extends IBT_ChoiceSliderPopupData
     }
 }
 
-exec function ibt_test_slider() 
+
+function IBT_ShowChoiceSliderPopup(data: IBT_ChoiceSliderPopupData)
 {
-    var rootMenu: CR4Menu;
-    var invMenu: CR4InventoryMenu;
-    var data: IBT_HairstyleChoiceSliderPopupData;
-    
-    data = new IBT_HairstyleChoiceSliderPopupData in theGame;
-    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Short Loose Hairstyle", "", true, (int)IBT_HairStyleShortLoose));
-    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Half With Tail Hairstyle", "(requires hairtie)", true, (int)IBT_HairStyleHalfWithTail));
-    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Long Loose Hairstyle", "(hair needs to be longer)", false, (int)IBT_HairStyleLongLoose));
-    data.Init();
+    var rootMenu    : CR4Menu;
+    var invMenu     : CR4InventoryMenu;   
 
     rootMenu = theGame.GetGuiManager().GetRootMenu();
     if (rootMenu)
@@ -127,4 +121,17 @@ exec function ibt_test_slider()
             invMenu.RequestSubMenu('PopupMenu', data);
         }
     }
+}
+
+exec function ibt_test_slider() 
+{
+    var data: IBT_HairstyleChoiceSliderPopupData;
+    
+    data = new IBT_HairstyleChoiceSliderPopupData in theGame;
+    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Short Loose Hairstyle", "", true, (int)IBT_HairStyleShortLoose));
+    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Half With Tail Hairstyle", "(requires hairtie)", true, (int)IBT_HairStyleHalfWithTail));
+    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Long Loose Hairstyle", "(hair needs to be longer)", false, (int)IBT_HairStyleLongLoose));
+    data.Init();
+
+    IBT_ShowChoiceSliderPopup(data);
 }

@@ -1,26 +1,3 @@
-function IBT_HairstyleToLength(hair: IBT_HairStyle) : int
-{
-	var settings: IBT_Settings = GetIBT_Settings();
-
-	switch (hair)
-	{
-		case IBT_HairStyleHalfWithTail:
-			return settings.HairLength.HalfWithTail;
-		case IBT_HairStyleShavedWithTail:
-			return settings.HairLength.ShavedWithTail;
-		case IBT_HairStyleLongLoose:
-			return settings.HairLength.LongLoose;
-		case IBT_HairStyleShortLoose:
-			return settings.HairLength.ShortLoose;
-		case IBT_HairStyleMohawkWithPonytail:
-			return settings.HairLength.MohawkWithPonytail;
-		case IBT_HairStyleNilfgaardian:
-			return settings.HairLength.Nilfgaardian;
-		default:
-			return 1;
-	}
-}
-
 function IBT_HairstylesForLength(length: int) : array<IBT_HairStyle>
 {
 	var i: int;
@@ -92,11 +69,76 @@ function IBT_EquipHair(hairName : name)
 	inv.MountItem(ids[0]);
 }
 
-function IBT_CutGeraltHair() : bool
+function IBT_HairstyleChoicePopup()
 {
-	//TODO
+	var currentHair		: IBT_HairStyle;
+	var currentLength	: int;
+	var currentHasTie	: bool;
+	var popupData		: IBT_HairstyleChoiceSliderPopupData;
+	var length			: int;
+	var hairs			: array<IBT_HairStyle>;
+	var i				: int;
+	var hair			: IBT_HairStyle;
 
-	return false;
+
+	currentHair = IBT_GetGeraltHairstyle();
+	currentLength = IBT_HairstyleToLength(currentHair);
+	currentHasTie = IBT_IsHairStyleWithTie(currentHair);
+
+	popupData = new IBT_HairstyleChoiceSliderPopupData in theGame;
+
+	for (length = IBT_HairStyleLengthMin; length <= IBT_HairStyleLengthMax; length += 1)
+	{
+		hairs = IBT_HairstylesForLength(length);
+
+		size = hairs.Size();
+		for (i = 0; i < hairs.Size(); i += 1)
+		{
+			hair = hairs[i];
+			popupData.entries.PushBack(IBT_PopupEntryForHairstyle(currentHair, currentLength, currentHasTie, hair));
+		}
+	}
+
+	IBT_ShowChoiceSliderPopup(popupData);
+}
+
+function IBT_PopupEntryForHairstyle(currentHair: IBT_HairStyle, currentLength: int, currentHasTie: bool, testedHair: IBT_HairStyle) : IBT_ChoiceSliderPopupDataEntry
+{
+	var dataEntry		: IBT_ChoiceSliderPopupDataEntry;
+	var requirements	: array<string>;
+	var i				: int;
+
+	dataEntry.mainText = IBT_HairStyleLocString(testedHair);
+
+	if (IBT_HairstyleToLength(testedHair) > currentLength)
+	{
+		requirements.PushBack(GetLocStringByKey("ibt_choice_requires_longer_hair"));
+	}
+	if (IBT_IsHairStyleWithTie(testedHair) && !currentHasTie && !thePlayer.inv.HasItem('ibt_hairtie'))
+	{
+		requirements.PushBack(GetLocStringByKey("ibt_choice_requires_hairtie"));
+	}
+
+	if (requirements.Size() > 0)
+	{
+		dataEntry.extraText = requirements[0];
+		for (i = 1; i < requirements.Size(); i += 1)
+		{
+			dataEntry.extraText += ", " + requirements[i];
+		}
+
+		dataEntry.extraText = "(" + GetLocStringByKey("ibt_choice_requires") + ": " + dataEntry.extraText + ")"
+		dataEntry.isAvailable = false;
+	}
+	else
+	{
+		dataEntry.extraText = "";
+		dataEntry.isAvailable = true;
+	}
+
+	dataEntry.value = (int)testedHair;
+
+	return dataEntry;
 }
 
 function IBT_GrowGeraltHair() : bool

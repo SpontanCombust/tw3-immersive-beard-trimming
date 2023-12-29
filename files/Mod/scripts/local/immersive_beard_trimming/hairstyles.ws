@@ -150,62 +150,91 @@ function IBT_HairStyleNameToEnum(hair: name) : IBT_HairStyle
 
 function IBT_HairStyleLocString(hair: IBT_HairStyle) : string
 {
+    var key: string;
+
 	switch (hair)
 	{
 		case IBT_HairStyleHalfWithTail:
-			return "ibt_hairstyle_half_with_tail";
+			key = "ibt_hairstyle_half_with_tail";
+            break;
 		case IBT_HairStyleShavedWithTail:
-			return "ibt_hairstyle_shaved_with_tail";
+			key = "ibt_hairstyle_shaved_with_tail";
+            break;
 		case IBT_HairStyleLongLoose:
-			return "ibt_hairstyle_long_loose";
+			key = "ibt_hairstyle_long_loose";
+            break;
 		case IBT_HairStyleShortLoose:
-			return "ibt_hairstyle_short_loose";
+			key = "ibt_hairstyle_short_loose";
+            break;
 		case IBT_HairStyleMohawkWithPonytail:
-			return "ibt_hairstyle_mohawk_with_ponytal";
+			key = "ibt_hairstyle_mohawk_with_ponytal";
+            break;
 		case IBT_HairStyleNilfgaardian:
-			return "ibt_hairstyle_nilfgaardian";
+			key = "ibt_hairstyle_nilfgaardian";
+            break;
         // DLC2 Improved
 		case IBT_HairStyleArdLongLoose:
-            return "ibt_hairstyle_ard_long_loose";
+            key = "ibt_hairstyle_ard_long_loose";
+            break;
         case IBT_HairStyleArdHeadband:
-            return "ibt_hairstyle_ard_headband";
+            key = "ibt_hairstyle_ard_headband";
+            break;
         case IBT_HairStyleArdLongLooseAlt:
-            return "ibt_hairstyle_ard_alt_long_loose";
+            key = "ibt_hairstyle_ard_alt_long_loose";
+            break;
         case IBT_HairStyleArdHeadbandAlt:
-            return "ibt_hairstyle_ard_alt_headband";
+            key = "ibt_hairstyle_ard_alt_headband";
+            break;
         case IBT_HairStyleCraniumjFullPony:
-            return "ibt_hairstyle_craniumj_full_pony";
+            key = "ibt_hairstyle_craniumj_full_pony";
+            break;
         case IBT_HairStyleRoksaOlgierd:
-            return "ibt_hairstyle_roksa_olgierd";
+            key = "ibt_hairstyle_roksa_olgierd";
+            break;
         case IBT_HairStyleRoksaWitold:
-            return "ibt_hairstyle_roksa_witold";
+            key = "ibt_hairstyle_roksa_witold";
+            break;
         case IBT_HairStyleCraniumjFullPonyLong:
-            return "ibt_hairstyle_craniumj_long_full_pony";
+            key = "ibt_hairstyle_craniumj_long_full_pony";
+            break;
         case IBT_HairStyleArdShavedWithTailLong:
-            return "ibt_hairstyle_ard_shaved_with_long_tail";
+            key = "ibt_hairstyle_ard_shaved_with_long_tail";
+            break;
         case IBT_HairStyleArdRivianTail:
-            return "ibt_hairstyle_ard_rivian_tail";
+            key = "ibt_hairstyle_ard_rivian_tail";
+            break;
         case IBT_HairStyleArdShaved:
-            return "ibt_hairstyle_ard_shaved";
+            key = "ibt_hairstyle_ard_shaved";
+            break;
         case IBT_HairStyleHellspawnLogan:
-            return "ibt_hairstyle_hellspawn_logan";
+            key = "ibt_hairstyle_hellspawn_logan";
+            break;
         case IBT_HairStyleFeregornZoltan:
-            return "ibt_hairstyle_feregorn_zoltan";
+            key = "ibt_hairstyle_feregorn_zoltan";
+            break;
         case IBT_HairStyleFeregornCinematic:
-            return "ibt_hairstyle_feregorn_cinematic";
+            key = "ibt_hairstyle_feregorn_cinematic";
+            break;
         case IBT_HairStyleArdMohawkWithPonytailLong:
-            return "ibt_hairstyle_ard_mohawk_with_long_ponytail";
+            key = "ibt_hairstyle_ard_mohawk_with_long_ponytail";
+            break;
         case IBT_HairStyleFidoxViking:
-            return "ibt_hairstyle_fidox_viking";
+            key = "ibt_hairstyle_fidox_viking";
+            break;
         case IBT_HairStyleArdElvenLong:
-            return "ibt_hairstyle_ard_elven_long";
+            key = "ibt_hairstyle_ard_elven_long";
+            break;
         case IBT_HairStyleArdElvenHeadband:
-            return "ibt_hairstyle_ard_elven_headband";
+            key = "ibt_hairstyle_ard_elven_headband";
+            break;
         case IBT_HairStyleRoksaOlgierdAlt:
-            return "ibt_hairstyle_roksa_alt_olgierd";
+            key = "ibt_hairstyle_roksa_alt_olgierd";
+            break;
 		default:
-			return "";
+			key = "";
 	}
+
+    return GetLocStringByKey(key);
 }
 
 function IBT_IsHairStyleWithTie(hair: IBT_HairStyle) : bool
@@ -239,4 +268,73 @@ function IBT_IsDLC2ImprovedModInstalled() : bool
     }
 
     return false;
+}
+
+
+enum IBT_HairStyleLengthBounds
+{
+    IBT_HairStyleLengthMin = 1,
+    IBT_HairStyleLengthMax = 3,
+}
+
+function IBT_HairstyleToLength(hair: IBT_HairStyle) : int
+{
+	var settings: IBT_Settings = GetIBT_Settings();
+
+	switch (hair)
+	{
+		case IBT_HairStyleHalfWithTail:
+			return settings.HairLength.HalfWithTail;
+		case IBT_HairStyleShavedWithTail:
+			return settings.HairLength.ShavedWithTail;
+		case IBT_HairStyleLongLoose:
+			return settings.HairLength.LongLoose;
+		case IBT_HairStyleShortLoose:
+			return settings.HairLength.ShortLoose;
+		case IBT_HairStyleMohawkWithPonytail:
+			return settings.HairLength.MohawkWithPonytail;
+		case IBT_HairStyleNilfgaardian:
+			return settings.HairLength.Nilfgaardian;
+		// DLC2 Improved
+		case IBT_HairStyleArdLongLoose:
+            return settings.HairLength.ArdLongLoose;
+        case IBT_HairStyleArdHeadband:
+            return settings.HairLength.ArdHeadband;
+        case IBT_HairStyleArdLongLooseAlt:
+            return settings.HairLength.ArdLongLooseAlt;
+        case IBT_HairStyleArdHeadbandAlt:
+            return settings.HairLength.ArdHeadbandAlt;
+        case IBT_HairStyleCraniumjFullPony:
+            return settings.HairLength.CraniumjFullPony;
+        case IBT_HairStyleRoksaOlgierd:
+            return settings.HairLength.RoksaOlgierd;
+        case IBT_HairStyleRoksaWitold:
+            return settings.HairLength.RoksaWitold;
+        case IBT_HairStyleCraniumjFullPonyLong:
+            return settings.HairLength.CraniumjFullPonyLong;
+        case IBT_HairStyleArdShavedWithTailLong:
+            return settings.HairLength.ArdShavedWithTailLong;
+        case IBT_HairStyleArdRivianTail:
+            return settings.HairLength.ArdRivianTail;
+        case IBT_HairStyleArdShaved:
+            return settings.HairLength.ArdShaved;
+        case IBT_HairStyleHellspawnLogan:
+            return settings.HairLength.HellspawnLogan;
+        case IBT_HairStyleFeregornZoltan:
+            return settings.HairLength.FeregornZoltan;
+        case IBT_HairStyleFeregornCinematic:
+            return settings.HairLength.FeregornCinematic;
+        case IBT_HairStyleArdMohawkWithPonytailLong:
+            return settings.HairLength.ArdMohawkWithPonytailLong;
+        case IBT_HairStyleFidoxViking:
+            return settings.HairLength.FidoxViking;
+        case IBT_HairStyleArdElvenLong:
+            return settings.HairLength.ArdElvenLong;
+        case IBT_HairStyleArdElvenHeadband:
+            return settings.HairLength.ArdElvenHeadband;
+        case IBT_HairStyleRoksaOlgierdAlt:
+            return settings.HairLength.RoksaOlgierdAlt;
+		default:
+			return 1;
+	}
 }
