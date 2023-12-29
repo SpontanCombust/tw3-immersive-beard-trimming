@@ -1,126 +1,72 @@
-// Code generated using Mod Settings Framework v1.0.0 by SpontanCombust & Aeltoth
+// Code generated using Mod Settings Framework v0.6.0 by SpontanCombust & Aeltoth
 
 class IBT_Settings extends ISettingsMaster
 {
 	default modVersion = "3.0.0";
 
-	public var Main : IBT_Settings_Main;
+	public var HairLength : IBT_Settings_HairLength;
 
 	protected /* override */ function Parser_Init() : void
 	{
-		Main = new IBT_Settings_Main in this;
-		Main.Init(this);
-		m_groups.PushBack(Main);
+		HairLength = new IBT_Settings_HairLength in this;
+		HairLength.Init(this);
+		m_groups.PushBack(HairLength);
 	}
 
 	protected /* override */ function Parser_ShouldResetSettingsToDefaultOnInit(config : CInGameConfigWrapper) : bool
 	{
-		return ReadSettingValue(config, 'ImmersiveBeardTrimming','HairShortTied') == "-1";
+		return ReadSettingValue(config, 'IBTHairLength','HalfWithTail') == "-1";
 	}
 }
 
-class IBT_Settings_Main extends ISettingsGroup
+class IBT_Settings_HairLength extends ISettingsGroup
 {
-	public var HairShortTied : IBT_EHairStyle;
-	public var HairShortUntied : IBT_EHairStyle;
+	public var HalfWithTail : IBT_HairLength;
+	public var ShavedWithTail : IBT_HairLength;
+	public var LongLoose : IBT_HairLength;
+	public var ShortLoose : IBT_HairLength;
+	public var MohawkWithPonytail : IBT_HairLength;
+	public var Nilfgaardian : IBT_HairLength;
 
-	default id = 'ImmersiveBeardTrimming';
+	default id = 'IBTHairLength';
 	default defaultPresetIndex = 0;
 
 	protected /* override */ function Parser_ValidateSettings() : void
 	{
-		HairShortTied = (IBT_EHairStyle)EnumValueMappingValidateUnified('HairShortTied', (int)HairShortTied);
-		HairShortUntied = (IBT_EHairStyle)EnumValueMappingValidateUnified('HairShortUntied', (int)HairShortUntied);
+		HalfWithTail = (IBT_HairLength)Clamp((int)HalfWithTail, 0, 2);
+		ShavedWithTail = (IBT_HairLength)Clamp((int)ShavedWithTail, 0, 2);
+		LongLoose = (IBT_HairLength)Clamp((int)LongLoose, 0, 2);
+		ShortLoose = (IBT_HairLength)Clamp((int)ShortLoose, 0, 2);
+		MohawkWithPonytail = (IBT_HairLength)Clamp((int)MohawkWithPonytail, 0, 2);
+		Nilfgaardian = (IBT_HairLength)Clamp((int)Nilfgaardian, 0, 2);
 	}
 
 	protected /* override */ function Parser_ReadSettings(config: CInGameConfigWrapper) : void
 	{
-		HairShortTied = (IBT_EHairStyle)ReadUnifiedEnumSettingValue(config, 'HairShortTied');
-		HairShortUntied = (IBT_EHairStyle)ReadUnifiedEnumSettingValue(config, 'HairShortUntied');
+		HalfWithTail = (IBT_HairLength)ReadIntSettingValue(config, 'HalfWithTail');
+		ShavedWithTail = (IBT_HairLength)ReadIntSettingValue(config, 'ShavedWithTail');
+		LongLoose = (IBT_HairLength)ReadIntSettingValue(config, 'LongLoose');
+		ShortLoose = (IBT_HairLength)ReadIntSettingValue(config, 'ShortLoose');
+		MohawkWithPonytail = (IBT_HairLength)ReadIntSettingValue(config, 'MohawkWithPonytail');
+		Nilfgaardian = (IBT_HairLength)ReadIntSettingValue(config, 'Nilfgaardian');
 	}
 
 	protected /* override */ function Parser_WriteSettings(config: CInGameConfigWrapper) : void
 	{
-		WriteUnifiedEnumSettingValue(config, 'HairShortTied', (int)HairShortTied);
-		WriteUnifiedEnumSettingValue(config, 'HairShortUntied', (int)HairShortUntied);
-	}
-
-	protected /* override */ function Parser_EnumValueMappingValidateUnified(vId: name, val: int) : int
-	{
-		switch(vId)
-		{
-		case 'HairShortTied':
-			switch(val)
-			{
-			case 0: 
-			case 1: 
-				return val;
-			default:
-				return 0;
-			}
-		case 'HairShortUntied':
-			switch(val)
-			{
-			case 2: 
-			case 3: 
-				return val;
-			default:
-				return 2;
-			}
-		}
-
-		return 0;
-	}
-
-	protected /* override */ function Parser_EnumValueMappingConfigToUnified(vId: name, val: int) : int
-	{
-		switch(vId)
-		{
-		case 'HairShortTied':
-			switch(val)
-			{
-			case 0: return 0;
-			case 1: return 1;
-			}
-		case 'HairShortUntied':
-			switch(val)
-			{
-			case 0: return 2;
-			case 1: return 3;
-			}
-		}
-
-		return -1;
-	}
-
-	protected /* override */ function Parser_EnumValueMappingUnifiedToConfig(vId: name, val: int) : int
-	{
-		switch(vId)
-		{
-		case 'HairShortTied':
-			switch(val)
-			{
-			case 0: return 0;
-			case 1: return 1;
-			}
-		case 'HairShortUntied':
-			switch(val)
-			{
-			case 2: return 0;
-			case 3: return 1;
-			}
-		}
-
-		return -1;
+		WriteIntSettingValue(config, 'HalfWithTail', (int)HalfWithTail);
+		WriteIntSettingValue(config, 'ShavedWithTail', (int)ShavedWithTail);
+		WriteIntSettingValue(config, 'LongLoose', (int)LongLoose);
+		WriteIntSettingValue(config, 'ShortLoose', (int)ShortLoose);
+		WriteIntSettingValue(config, 'MohawkWithPonytail', (int)MohawkWithPonytail);
+		WriteIntSettingValue(config, 'Nilfgaardian', (int)Nilfgaardian);
 	}
 }
 
-enum IBT_EHairStyle
+enum IBT_HairLength
 {
-	IBT_EHairStyleShavedWithPonytail = 0,
-	IBT_EHairStyleMohawkWithPonytail = 1,
-	IBT_EHairStyleShortLoose = 2,
-	IBT_EHairStyleElvenRebel = 3,
+	IBT_HairLengthShort = 0,
+	IBT_HairLengthMedium = 1,
+	IBT_HairLengthLong = 2,
 }
 
 

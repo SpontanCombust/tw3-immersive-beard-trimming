@@ -125,114 +125,76 @@ function IBT_GrowGeraltBeard() : bool
 
 
 
-
-
-
-
-enum IBT_EHairType
+function IBT_HairstyleToLength(hair: IBT_HairStyle) : IBT_HairLength
 {
-	IBT_HT_Unknown		= 0,
-	IBT_HT_ShortTied	= 1,
-	IBT_HT_ShortUntied	= 2,
-	IBT_HT_LongTied		= 3,
-	IBT_HT_LongUntied	= 4
-}
+	var settings: IBT_Settings = GetIBT_Settings();
 
-function IBT_HairNameToType( hairName : name ) : IBT_EHairType
-{
-	switch( hairName )
+	switch (hair)
 	{
-		case 'Mohawk With Ponytail Hairstyle':
-		case 'Shaved With Tail Hairstyle':
-			return IBT_HT_ShortTied;
-		case 'Short Loose Hairstyle':
-		case 'Nilfgaardian Hairstyle':
-			return IBT_HT_ShortUntied;
-		case 'Half With Tail Hairstyle':
-			return IBT_HT_LongTied;
-		case 'Long Loose Hairstyle':
-			return IBT_HT_LongUntied;
+		case IBT_HairStyleHalfWithTail:
+			return settings.HairLength.HalfWithTail;
+		case IBT_HairStyleShavedWithTail:
+			return settings.HairLength.ShavedWithTail;
+		case IBT_HairStyleLongLoose:
+			return settings.HairLength.LongLoose;
+		case IBT_HairStyleShortLoose:
+			return settings.HairLength.ShortLoose;
+		case IBT_HairStyleMohawkWithPonytail:
+			return settings.HairLength.MohawkWithPonytail;
+		case IBT_HairStyleNilfgaardian:
+			return settings.HairLength.Nilfgaardian;
 		default:
-			return IBT_HT_Unknown;
+			return IBT_HairLengthMedium;
 	}
 }
 
-function IBT_HairStyleEnumToName( hairStyle: IBT_EHairStyle ) : name
+function IBT_HairstylesForLength(length: IBT_HairLength) : array<IBT_HairStyle>
 {
-	switch( hairStyle )
-	{
-		case IBT_EHairStyleShavedWithPonytail:
-			return 'Shaved With Tail Hairstyle';
-		case IBT_EHairStyleMohawkWithPonytail:
-			return 'Mohawk With Ponytail Hairstyle';
-		case IBT_EHairStyleShortLoose:
-			return 'Short Loose Hairstyle';
-		case IBT_EHairStyleElvenRebel:
-			return 'Nilfgaardian Hairstyle';
-		default:
-			return '';
-	}
-}
-
-function IBT_MenuShortHairName( tied: bool ) : name
-{
-	var settings : IBT_Settings;
-	var style: IBT_EHairStyle;
-
-	settings = GetIBT_Settings();
-	style = tied ? settings.Main.HairShortTied : settings.Main.HairShortUntied;
+	var i: int;
+	var max: int;
+	var h: IBT_HairStyle;
+	var hairs: array<IBT_HairStyle>;
 	
-	return IBT_HairStyleEnumToName(style);
-}
-
-function IBT_HairTypeToName( hairType : IBT_EHairType ) : name
-{
-	switch( hairType )
+	max = EnumGetMax('IBT_HairStyle');
+	for (i = 0; i <= max; i += 1)
 	{
-		case IBT_HT_ShortTied:
-			return IBT_MenuShortHairName(true);
-		case IBT_HT_ShortUntied:
-			return IBT_MenuShortHairName(false);
-		case IBT_HT_LongTied:
-			return 'Half With Tail Hairstyle';
-		case IBT_HT_LongUntied:
-			return 'Long Loose Hairstyle';
-		default:
-			return '';
+		h = (IBT_HairStyle)i;
+		if (IBT_HairstyleToLength(h) == length)
+		{
+			hairs.PushBack(h);
+		}
 	}
+
+	return hairs;
 }
 
-function IBT_GetGeraltHairType() : IBT_EHairType
+function IBT_GetGeraltHairstyle() : IBT_HairStyle
 {
 	var inv 		: CInventoryComponent;
 	var ids			: array<SItemUniqueId>;
 	var i			: int;
 	var size		: int;
-	var hairType	: IBT_EHairType;
-	var hairName	: name;
 
 	inv = GetWitcherPlayer().GetInventory();
-	ids = inv.GetItemsByCategory( 'hair' );
+	ids = inv.GetItemsByCategory('hair');
 	size = ids.Size();
-	hairType = IBT_HT_Unknown;
 
-	if( size > 0 )
+	if(size > 0)
 	{
 		for(i = 0; i < size; i += 1)
 		{
-			if( inv.IsItemMounted( ids[i] ) )
+			if(inv.IsItemMounted(ids[i]))
 			{
-				hairName = inv.GetItemName( ids[i] );
-				hairType = IBT_HairNameToType( hairName );
-				break;
+				return IBT_HairStyleNameToEnum(inv.GetItemName(ids[i]));
 			}
 		}
 	}
 
-	return hairType;
+	LogChannel('IBT', "IBT_GetGeraltHairstyle: No hair detected, falling back on IBT_HairStyleHalfWithTail");
+	return IBT_HairStyleHalfWithTail;
 }
 
-function IBT_EquipHair( hairName : name )
+function IBT_EquipHair(hairName : name)
 {
 	var inv 		: CInventoryComponent;
 	var ids			: array<SItemUniqueId>;
@@ -240,15 +202,15 @@ function IBT_EquipHair( hairName : name )
 	var size		: int;
 
 	inv = GetWitcherPlayer().GetInventory();
-	ids = inv.GetItemsByCategory( 'hair' );
+	ids = inv.GetItemsByCategory('hair');
 	size = ids.Size();
 
 	// first clean up all hair items that are in inventory...
-	if( size > 0 )
+	if(size > 0)
 	{
-		for( i = 0; i < size; i+=1 )
+		for(i = 0; i < size; i += 1)
 		{
-			inv.RemoveItem( ids[i], 1 );
+			inv.RemoveItem(ids[i], 1);
 		}
 	}
 
@@ -259,64 +221,16 @@ function IBT_EquipHair( hairName : name )
 
 function IBT_CutGeraltHair() : bool
 {
-	var hairType	: IBT_EHairType;
-	var hairName	: name;
+	//TODO
 
-	hairType = IBT_GetGeraltHairType();
-	if( hairType == IBT_HT_LongTied || hairType == IBT_HT_LongUntied )
-	{
-		hairName = IBT_HairTypeToName( hairType - 2 );
-		IBT_EquipHair( hairName );
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return false;
 }
 
 function IBT_GrowGeraltHair() : bool
 {
-	var hairType	: IBT_EHairType;
-	var hairName	: name;
-
-	hairType = IBT_GetGeraltHairType();
-	if( hairType == IBT_HT_ShortTied || hairType == IBT_HT_ShortUntied )
-	{
-		hairName = IBT_HairTypeToName( hairType + 2 );
-		IBT_EquipHair( hairName );
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-function IBT_TieGeraltHair()
-{
-	var hairType	: IBT_EHairType;
-	var hairName	: name;
-
-	hairType = IBT_GetGeraltHairType();
-	if( hairType == IBT_HT_ShortUntied || hairType == IBT_HT_LongUntied )
-	{
-		hairName = IBT_HairTypeToName( hairType - 1 );
-		IBT_EquipHair( hairName );
-	}
-}
-
-function IBT_UntieGeraltHair()
-{
-	var hairType	: IBT_EHairType;
-	var hairName	: name;
-
-	hairType = IBT_GetGeraltHairType();
-	if( hairType == IBT_HT_ShortTied || hairType == IBT_HT_LongTied )
-	{
-		hairName = IBT_HairTypeToName( hairType + 1 );
-		IBT_EquipHair( hairName );
-	}
+	//TODO
+	
+	return false;
 }
 
 

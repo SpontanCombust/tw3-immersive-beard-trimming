@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <UserConfig msfClass="IBT_Settings" msfVersion="3.0.0">
-	<Group id="ImmersiveBeardTrimming" msfVariable="Main" displayName="Mods.immersive_beard_trimming">
+	<Group id="IBTHairLength" msfVariable="HairLength" displayName="Mods.immersive_beard_trimming.hair_length">
 		<PresetsArray>
 			<Preset id="0" displayName="ibt_default">
 				<Entry varId="HairShortTied" value="0"/>
@@ -8,23 +8,81 @@
 			</Preset>
 		</PresetsArray>
 		<VisibleVars>
-			<Var id="HairShortTied" displayName="ibt_hair_short_tied" displayType="OPTIONS">
-				<OptionsArray msfEnum="IBT_EHairStyle">
-					<Option id="0" displayName="ibt_hairstyle_shaved_with_ponytail" msfEnumValue="ShavedWithPonytail">
-						<Entry varId="HairShortTied" value="0"/>
+			<Var id="HalfWithTail" displayName="ibt_hairstyle_half_with_tail" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="HalfWithTail" value="0"/>
 					</Option>
-					<Option id="1" displayName="ibt_hairstyle_mohawk_with_ponytail" msfEnumValue="MohawkWithPonytail">
-						<Entry varId="HairShortTied" value="1"/>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="HalfWithTail" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="HalfWithTail" value="2"/>
 					</Option>
 				</OptionsArray>
 			</Var>
-			<Var id="HairShortUntied" displayName="ibt_hair_short_untied" displayType="OPTIONS">
-				<OptionsArray msfEnum="IBT_EHairStyle">
-					<Option id="0" displayName="ibt_hairstyle_short_loose" msfEnumValue="ShortLoose">
-						<Entry varId="HairShortUntied" value="0"/>
+			<Var id="ShavedWithTail" displayName="ibt_hairstyle_shaved_with_tail" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="ShavedWithTail" value="0"/>
 					</Option>
-					<Option id="1" displayName="ibt_hairstyle_elven_rebel" msfEnumValue="ElvenRebel">
-						<Entry varId="HairShortUntied" value="1"/>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="ShavedWithTail" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="ShavedWithTail" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="LongLoose" displayName="ibt_hairstyle_long_loose" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="LongLoose" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="LongLoose" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="LongLoose" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="ShortLoose" displayName="ibt_hairstyle_short_loose" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="ShortLoose" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="ShortLoose" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="ShortLoose" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="MohawkWithPonytail" displayName="ibt_hairstyle_mohawk_with_ponytal" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="MohawkWithPonytail" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="MohawkWithPonytail" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="MohawkWithPonytail" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="Nilfgaardian" displayName="ibt_hairstyle_nilfgaardian" displayType="OPTIONS">
+				<OptionsArray msfEnum="IBT_HairLength">
+					<Option id="0" displayName="ibt_hair_length_short" msfEnumValue="Short">
+						<Entry varId="Nilfgaardian" value="0"/>
+					</Option>
+					<Option id="1" displayName="ibt_hair_length_medium" msfEnumValue="Medium">
+						<Entry varId="Nilfgaardian" value="1"/>
+					</Option>
+					<Option id="2" displayName="ibt_hair_length_long" msfEnumValue="Long">
+						<Entry varId="Nilfgaardian" value="2"/>
 					</Option>
 				</OptionsArray>
 			</Var>
