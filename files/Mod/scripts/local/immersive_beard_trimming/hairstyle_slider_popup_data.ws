@@ -1,11 +1,10 @@
 struct IBT_ChoiceSliderPopupDataEntry
 {
     /// main title displayed over the slider
-    var mainTitle       : string;
-    /// extra text after mainTitle, can be empty strings 
+    var mainText       : string;
+    /// extra text after mainText, can be empty strings 
+    /// green if isAvailable, red otherwise
     var extraText       : string; 
-    /// can be empty strings
-    var extraTextColor  : string;
     /// if false will grey out the entry and make it impossible to be accepted 
     var isAvailable     : bool;
     /// integer value of the option; should suffice for enum values, otherwise may need to change it to string or something later
@@ -29,34 +28,32 @@ class IBT_ChoiceSliderPopupData extends SliderPopupData
     // to be invoked every time popup is updated
     public function GetGFxData(parentFlashValueStorage : CScriptedFlashValueStorage) : CScriptedFlashObject
     {
-        var current     : IBT_ChoiceSliderPopupDataEntry;
-        var titleColor  : string;
+        var current         : IBT_ChoiceSliderPopupDataEntry;
+        var mainTextColor   : string;
+        var extraTextColor  : string;
         
         current = this.CurrentEntry();
 
         if (current.isAvailable)
         {
-            titleColor = "#B58D45";
+            mainTextColor = "#B58D45";
+            extraTextColor = "#00FF00"
         }
         else
         {
-            titleColor = "#A2A2A2";
-        }
-
-        if (current.extraTextColor == "")
-        {
-            current.extraTextColor = titleColor;
+            mainTextColor = "#A2A2A2";
+            extraTextColor = "#FF0000"
         }
 
         this.m_TextTitle =  "<font size='25'>" +
-                                "<font color = '" + titleColor + "'>" + current.mainTitle + "</font>" +
-                                "<font color = '" + current.extraTextColor + "'>" + current.extraText + "</font>" +
+                                "<font color = '" + mainTextColor + "'>" + current.mainText + "</font>" +
+                                "<font color = '" + extraTextColor + "'>" + current.extraText + "</font>" +
                             "</font>";
 
         return super.GetGFxData(parentFlashValueStorage);
     }
 
-    protected function DefineDefaultButtons():void
+    protected function DefineDefaultButtons() : void
 	{
 		this.AddButtonDef("panel_button_common_accept", "enter-gamepad_A", IK_Enter);
         this.AddButtonDef("panel_button_common_exit", "escape-gamepad_B", IK_Escape);
@@ -115,9 +112,9 @@ exec function ibt_test_slider()
     var data: IBT_HairstyleChoiceSliderPopupData;
     
     data = new IBT_HairstyleChoiceSliderPopupData in theGame;
-    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Short Loose Hairstyle", "", "", true, (int)IBT_HairStyleShortLoose));
-    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Half With Tail Hairstyle", "(requires hairtie)", "#00FF00", true, (int)IBT_HairStyleHalfWithTail));
-    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Long Loose Hairstyle", "(hair needs to be longer)", "#FF0000", false, (int)IBT_HairStyleLongLoose));
+    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Short Loose Hairstyle", "", true, (int)IBT_HairStyleShortLoose));
+    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Half With Tail Hairstyle", "(requires hairtie)", true, (int)IBT_HairStyleHalfWithTail));
+    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Long Loose Hairstyle", "(hair needs to be longer)", false, (int)IBT_HairStyleLongLoose));
     data.Init();
 
     rootMenu = theGame.GetGuiManager().GetRootMenu();
