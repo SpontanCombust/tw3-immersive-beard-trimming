@@ -32,16 +32,6 @@ exec function ibt_cuthair()
     IBT_CutGeraltHair();
 }
 
-exec function ibt_tiehair()
-{
-    IBT_TieGeraltHair();
-}
-
-exec function ibt_untiehair()
-{
-    IBT_UntieGeraltHair();
-}
-
 exec function ibt_growbeard()
 {
     IBT_GrowGeraltBeard();
