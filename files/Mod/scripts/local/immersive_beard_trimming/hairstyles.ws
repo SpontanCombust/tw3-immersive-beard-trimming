@@ -28,6 +28,16 @@ enum IBT_HairStyle
 	IBT_HairStyleRoksaOlgierdAlt
 }
 
+function IBT_IsDLC2ImprovedHairStyle(hair: IBT_HairStyle) : bool 
+{
+    if ((int)hair >= (int)IBT_HairStyleArdLongLoose)
+    {
+        return true;
+    }
+
+    return false;
+}
+
 function IBT_HairStyleEnumToName(hair: IBT_HairStyle) : name
 {
 	switch (hair)

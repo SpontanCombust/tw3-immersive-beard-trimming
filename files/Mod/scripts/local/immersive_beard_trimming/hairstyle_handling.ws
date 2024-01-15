@@ -9,6 +9,11 @@ function IBT_HairstylesForLength(length: int) : array<IBT_HairStyle>
 	for (i = 0; i <= max; i += 1)
 	{
 		h = (IBT_HairStyle)i;
+		if (!IBT_IsDLC2ImprovedModInstalled() && IBT_IsDLC2ImprovedHairStyle(h))
+		{
+			break;
+		}
+
 		if (IBT_HairstyleToLength(h) == length)
 		{
 			hairs.PushBack(h);
