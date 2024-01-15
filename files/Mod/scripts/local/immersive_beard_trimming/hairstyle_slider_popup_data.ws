@@ -13,15 +13,16 @@ struct IBT_ChoiceSliderPopupDataEntry
 
 class IBT_ChoiceSliderPopupData extends SliderPopupData
 {
-    public var entries  : array<IBT_ChoiceSliderPopupDataEntry>;
+    protected var entries  : array<IBT_ChoiceSliderPopupDataEntry>;
 
+    default minValue = 1;
     default currentValue = 1;
+    default maxValue = 1;
 
 
-    // to be invoked only once the object is created
-    public function Init() : void
+    public function AddEntry(choiceEntry: IBT_ChoiceSliderPopupDataEntry)
     {
-        this.minValue = 1;
+        this.entries.PushBack(choiceEntry);
         this.maxValue = entries.Size();
     }
 
@@ -66,8 +67,13 @@ class IBT_ChoiceSliderPopupData extends SliderPopupData
         if (keyCode == "enter-gamepad_A")
         {
             current = this.CurrentEntry();
-            if (current.isAvailable && this.OnAccept(current.value))
+            if (!current.isAvailable)
             {
+                theSound.SoundEvent("gui_global_denied");
+            }
+            else if (this.OnAccept(current.value))
+            {
+                theSound.SoundEvent("gui_inventory_other_attach");
                 this.ClosePopup();
             }
         }
@@ -90,22 +96,6 @@ class IBT_ChoiceSliderPopupData extends SliderPopupData
     }
 }
 
-class IBT_HairstyleChoiceSliderPopupData extends IBT_ChoiceSliderPopupData
-{
-    protected function OnAccept(value: int) : bool
-    {
-        var hair: IBT_HairStyle;
-
-        hair = (IBT_HairStyle)value;
-
-        LogChannel('IBT', "Applied hairstyle: " + IBT_HairStyleEnumToName(hair));
-
-        // virtual
-        return true;
-    }
-}
-
-
 function IBT_ShowChoiceSliderPopup(data: IBT_ChoiceSliderPopupData)
 {
     var rootMenu    : CR4Menu;
@@ -121,17 +111,4 @@ function IBT_ShowChoiceSliderPopup(data: IBT_ChoiceSliderPopupData)
             invMenu.RequestSubMenu('PopupMenu', data);
         }
     }
-}
-
-exec function ibt_test_slider() 
-{
-    var data: IBT_HairstyleChoiceSliderPopupData;
-    
-    data = new IBT_HairstyleChoiceSliderPopupData in theGame;
-    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Short Loose Hairstyle", "", true, (int)IBT_HairStyleShortLoose));
-    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Half With Tail Hairstyle", "(requires hairtie)", true, (int)IBT_HairStyleHalfWithTail));
-    data.entries.PushBack(IBT_ChoiceSliderPopupDataEntry("Long Loose Hairstyle", "(hair needs to be longer)", false, (int)IBT_HairStyleLongLoose));
-    data.Init();
-
-    IBT_ShowChoiceSliderPopup(data);
 }

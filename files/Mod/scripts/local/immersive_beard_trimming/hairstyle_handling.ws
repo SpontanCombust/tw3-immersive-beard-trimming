@@ -100,7 +100,7 @@ function IBT_HairstyleChoicePopup()
 		for (i = 0; i < hairs.Size(); i += 1)
 		{
 			hair = hairs[i];
-			popupData.entries.PushBack(IBT_PopupEntryForHairstyle(currentHair, currentLength, currentHasTie, hair));
+			popupData.AddEntry(IBT_PopupEntryForHairstyle(currentHair, currentLength, currentHasTie, hair));
 		}
 	}
 
@@ -144,6 +144,41 @@ function IBT_PopupEntryForHairstyle(currentHair: IBT_HairStyle, currentLength: i
 	dataEntry.value = (int)testedHair;
 
 	return dataEntry;
+}
+
+class IBT_HairstyleChoiceSliderPopupData extends IBT_ChoiceSliderPopupData
+{
+    protected function OnAccept(value: int) : bool
+    {
+        var targetHair      : IBT_HairStyle;
+        var targetHairName  : name;
+        var currentHair     : IBT_HairStyle;
+		var currentWithTie	: bool;
+		var targetWithTie	: bool;
+
+        targetHair = (IBT_HairStyle)value;
+        targetHairName = IBT_HairStyleEnumToName(targetHair);
+
+        currentHair = IBT_GetGeraltHairstyle();
+        IBT_EquipHair(targetHairName);
+
+        LogChannel('IBT', "Applied hairstyle: " + IBT_HairStyleEnumToName(targetHair));
+
+		currentWithTie = IBT_IsHairStyleWithTie(currentHair);
+		targetWithTie = IBT_IsHairStyleWithTie(targetHair);
+        if (currentWithTie && !targetWithTie)
+        {
+			thePlayer.inv.AddAnItem('ibt_hairtie', 1);
+			theGame.GetGuiManager().ShowNotification(GetLocStringByKeyExt("ibt_notif_added_hairtie"));
+        }
+		else if (!currentWithTie && targetWithTie)
+		{
+			thePlayer.inv.RemoveItemByName('ibt_hairtie', 1);
+			theGame.GetGuiManager().ShowNotification(GetLocStringByKeyExt("ibt_notif_removed_hairtie"));
+		}
+
+        return true;
+    }
 }
 
 function IBT_GrowGeraltHair() : bool

@@ -6,8 +6,6 @@ enum IBT_EScissorsMode
 
 function IBT_UseScissors( mode: IBT_EScissorsMode )
 {
-
-	
 	var success: bool;
 
 	if (thePlayer.IsInCombat())
@@ -20,26 +18,22 @@ function IBT_UseScissors( mode: IBT_EScissorsMode )
 		if( mode == IBT_SM_Beard )
 		{
 			success = IBT_TrimGeraltBeard();
-			if( success )
+			if(success)
+			{
 				theGame.GetGuiManager().ShowNotification( GetLocStringByKeyExt("ibt_notif_used_scissors_beard_success") );
+				theSound.SoundEvent("gui_inventory_other_attach");
+			}
 			else
+			{
 				theGame.GetGuiManager().ShowNotification( GetLocStringByKeyExt("ibt_notif_used_scissors_beard_failure") );
+				theSound.SoundEvent("gui_global_denied");
+			}
 		}
 		else
 		{
 			IBT_HairstyleChoicePopup();
-			// TODO move to IBT_HairstyleChoiceSliderPopupData
-			// if( success )
-			// 	theGame.GetGuiManager().ShowNotification( GetLocStringByKeyExt("ibt_notif_used_scissors_hair_success") );
-			// else
-			// 	theGame.GetGuiManager().ShowNotification( GetLocStringByKeyExt("ibt_notif_used_scissors_hair_failure") );
 		}
 	}
-
-	if( success )
-		theSound.SoundEvent("gui_inventory_other_attach");
-	else
-		theSound.SoundEvent("gui_global_denied");
 }
 
 function IBT_GetScissorsMode( item: SItemUniqueId, inv: CInventoryComponent ) : IBT_EScissorsMode
